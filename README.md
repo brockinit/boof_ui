@@ -1,2 +1,6 @@
-# boof_ui
-Front-end
+# Better Odds of Football Blog
+
+Powered by [Airship](http://airshipcms.io/)
+* * *
+
+

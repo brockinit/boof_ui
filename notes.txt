@@ -1,0 +1,12 @@
+Requirements:
+
+3 pages (Home page, individual post, contact page)
+
+Home page:
+  * Clean, minimal design
+  * Topbar, nav, infinite scroll of articles/content
+  * Only show preview of each post
+
+Individual post:
+  * Shows entire post
+
