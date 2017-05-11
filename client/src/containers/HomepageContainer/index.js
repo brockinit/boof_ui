@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
-import MenuItem from 'material-ui/MenuItem';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {
+  Card,
+  CardActions,
+  CardHeader,
+  CardMedia,
+  CardTitle,
+  CardText,
+} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
 class Home extends Component {
