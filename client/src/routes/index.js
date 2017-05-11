@@ -1,5 +1,10 @@
 import React from 'react';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import {
+  Router,
+  Route,
+  IndexRoute,
+  hashHistory,
+} from 'react-router';
 import App from '../App';
 import Home from '../containers/HomepageContainer';
 // import AboutUs from '../containers/AboutUsContainer';
@@ -12,4 +17,4 @@ const routes = (
   </Route>
 );
 
-export default () => <Router history={hashHistory} routes={routes} />
+export default () => <Router history={hashHistory} routes={routes} />;

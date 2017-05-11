@@ -8,8 +8,8 @@ import './index.css';
 injectTapEventPlugin();
 
 ReactDOM.render(
-    <MuiThemeProvider>
-      <BoofRouter />
-    </MuiThemeProvider>,
-  document.getElementById('root')
+  <MuiThemeProvider>
+    <BoofRouter />
+  </MuiThemeProvider>,
+  document.getElementById('root'),
 );
