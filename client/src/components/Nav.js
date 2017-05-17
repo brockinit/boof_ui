@@ -1,18 +1,16 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 
-const styles = {
-  root: {
-  }
-}
-
-const App = () => {
+const NavBar = () => {
   return (
       <AppBar
         title="Better Odds of Football"
-        iconClassNameRight="muidocs-icon-navigation-expand-more"
+        className="navigation-bar"
+        style={{backgroundColor: '#fffff'}}
+        titleStyle={{color: '#000000'}}
+
       />
   );
 };
 
-export default App;
+export default NavBar;
