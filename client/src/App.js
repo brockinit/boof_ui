@@ -1,5 +1,5 @@
 import React from 'react';
-import AppBar from 'material-ui/AppBar';
+import Nav from './components/Nav';
 import Home from './containers/HomepageContainer';
 
 import './App.css';
@@ -7,8 +7,9 @@ import './App.css';
 const App = () => {
   return (
     <div className="container">
-      <AppBar title="Better Odds of Football" />
+      <Nav />
       <Home />
+
     </div>
   );
 };

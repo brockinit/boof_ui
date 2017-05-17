@@ -21,35 +21,25 @@ const styles = {
 const tilesData = [
   {
     img: 'https://s3.amazonaws.com/web-ready-andrea/nepal-bells.png',
-    title: 'Breakfast',
+    title: 'Why are the Browns Sooooo Bad',
     author: 'jill111',
     featured: true,
   },
   {
-    img: 'https://s3.amazonaws.com/web-ready-andrea/lisbon-sunset-edited+4+2.png',
-    title: 'Tasty burger',
-    author: 'pashminu',
-  },
-  {
     img: 'https://s3.amazonaws.com/web-ready-andrea/nepal-mt-view.png',
-    title: 'Camera',
+    title: 'Are you Ready',
     author: 'Danson67',
   },
   {
     img: 'https://s3.amazonaws.com/web-ready-andrea/japan-temple.png',
-    title: 'Morning',
+    title: 'To Receive the Knowing',
     author: 'fancycrave1',
-    featured: true,
   },
   {
     img: 'https://s3.amazonaws.com/web-ready-andrea/portugal-blue-house.png',
-    title: 'Hats',
+    title: 'Top Quarterback Picks for your 2017 Draft',
     author: 'Hans',
-  },
-  {
-    img: 'https://s3.amazonaws.com/web-ready-andrea/thailand-beach.png',
-    title: 'Honey',
-    author: 'fancycravel',
+    featured: true,
   },
   {
     img: 'https://s3.amazonaws.com/web-ready-andrea/thailand-boats.png',
@@ -71,7 +61,8 @@ const GridListHome = () => (
   <div>
   <div style={styles.header}>
     <h1>Better Odds of Football</h1>
-    <h2>Changing the game via deep data analysis and rants.</h2>
+    <h2>Changing the game via deep data analysis and wild rants.</h2>
+    <p>------------</p>
     <p>Read our latest rants below.</p>
   </div>
   <div style={styles.gridContainer}>
