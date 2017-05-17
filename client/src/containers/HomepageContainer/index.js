@@ -1,15 +1,18 @@
 import React from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
 
 const styles = {
-  root: {
+  header: {
+    padding: '40px',
+  },
+  gridContainer: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+    padding: '0 40px 40px 40px',
   },
   gridList: {
-    width: 900,
+    width: 'auto',
     height: 'auto',
     overflowY: 'auto',
   },
@@ -65,7 +68,13 @@ const tilesData = [
  * The tiles have a customised title, positioned at the top and with a custom gradient `titleBackground`.
  */
 const GridListHome = () => (
-  <div style={styles.root}>
+  <div>
+  <div style={styles.header}>
+    <h1>Better Odds of Football</h1>
+    <h2>Changing the game via deep data analysis and rants.</h2>
+    <p>Read our latest rants below.</p>
+  </div>
+  <div style={styles.gridContainer}>
     <GridList
       cols={2}
       cellHeight={180}
@@ -87,6 +96,8 @@ const GridListHome = () => (
       ))}
     </GridList>
   </div>
+</div>
+
 );
 
 export default GridListHome;
