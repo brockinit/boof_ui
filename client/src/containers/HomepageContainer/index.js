@@ -1,43 +1,94 @@
-import React, { Component } from 'react';
-import {
-  Card,
-  CardActions,
-  CardHeader,
-  CardMedia,
-  CardTitle,
-  CardText,
-} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import React from 'react';
+import {GridList, GridTile} from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
-class Home extends Component {
-  render() {
-    return (
-      <div className="container">
-        <div className="App-header">
-          <Card>
-            <CardHeader
-              title="Without Avatar"
-              subtitle="Subtitle"
-            />
-            <CardMedia>
-              <img src="https://s3.amazonaws.com/web-ready-andrea/lisbon-sunset-edited+4+2.png" height="300px" width="500px" />
-            </CardMedia>
-            <CardTitle title="Card title" subtitle="Card subtitle" />
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-              Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-              Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-            </CardText>
-            <CardActions>
-              <FlatButton label="Action1" />
-              <FlatButton label="Action2" />
-            </CardActions>
-          </Card>
-        </div>
-      </div>
-    );
-  }
-}
+const styles = {
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
+  gridList: {
+    width: 'auto',
+    height: 'auto',
+    overflowY: 'auto',
+  },
+};
 
-export default Home;
+const tilesData = [
+  {
+    img: 'https://s3.amazonaws.com/web-ready-andrea/nepal-bells.png',
+    title: 'Breakfast',
+    author: 'jill111',
+    featured: true,
+  },
+  {
+    img: 'https://s3.amazonaws.com/web-ready-andrea/lisbon-sunset-edited+4+2.png',
+    title: 'Tasty burger',
+    author: 'pashminu',
+  },
+  {
+    img: 'https://s3.amazonaws.com/web-ready-andrea/nepal-mt-view.png',
+    title: 'Camera',
+    author: 'Danson67',
+  },
+  {
+    img: 'https://s3.amazonaws.com/web-ready-andrea/japan-temple.png',
+    title: 'Morning',
+    author: 'fancycrave1',
+    featured: true,
+  },
+  {
+    img: 'https://s3.amazonaws.com/web-ready-andrea/portugal-blue-house.png',
+    title: 'Hats',
+    author: 'Hans',
+  },
+  {
+    img: 'https://s3.amazonaws.com/web-ready-andrea/thailand-beach.png',
+    title: 'Honey',
+    author: 'fancycravel',
+  },
+  {
+    img: 'https://s3.amazonaws.com/web-ready-andrea/thailand-boats.png',
+    title: 'Vegetables',
+    author: 'jill111',
+  },
+  {
+    img: 'https://s3.amazonaws.com/web-ready-andrea/japan-many-boards.png',
+    title: 'Water plant',
+    author: 'BkrmadtyaKarki',
+  },
+];
+
+/**
+ * This example demonstrates "featured" tiles, using the `rows` and `cols` props to adjust the size of the tile.
+ * The tiles have a customised title, positioned at the top and with a custom gradient `titleBackground`.
+ */
+const GridListHome = () => (
+  <div style={styles.root}>
+    <GridList
+      cols={2}
+      cellHeight={200}
+      padding={1}
+      style={styles.gridList}
+    >
+      {tilesData.map((tile) => (
+        <GridTile
+          key={tile.img}
+          title={tile.title}
+          actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+          actionPosition="left"
+          titlePosition="top"
+          titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+          cols={tile.featured ? 2 : 1}
+          rows={tile.featured ? 2 : 1}
+        >
+          <img src={tile.img} />
+        </GridTile>
+      ))}
+    </GridList>
+  </div>
+);
+
+export default GridListHome;
