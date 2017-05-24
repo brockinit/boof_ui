@@ -3,7 +3,7 @@ import {
   Router,
   Route,
   IndexRoute,
-  hashHistory,
+  browserHistory,
 } from 'react-router';
 import App from '../App';
 import Home from '../containers/HomepageContainer';
@@ -19,4 +19,4 @@ const routes = (
   </Route>
 );
 
-export default () => <Router history={hashHistory} routes={routes} />;
+export default () => <Router history={browserHistory} routes={routes} />;

@@ -3,9 +3,9 @@ import AppBar from 'material-ui/AppBar';
 import NavTabs  from './NavTabs';
 
 const tabComponents = [
-  { label: 'About Us' },
-  { label: 'Chart Porn' },
-  { label: 'Articles' }
+  { label: 'About Us', link: '/aboutus' },
+  { label: 'Chart Porn', link: '/' },
+  { label: 'Articles', link: '/article' }
 ];
 
 const NavBar = () => {
