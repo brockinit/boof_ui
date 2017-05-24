@@ -4,31 +4,25 @@ import NavTabs  from './NavTabs';
 
 const tabComponents = [
   { label: 'About Us' },
-  { label: 'Chart Porn' }
+  { label: 'Chart Porn' },
+  { label: 'Articles' }
 ];
 
 const NavBar = () => {
-
 
   return (
     <div>
     <AppBar
       title="Better Odds of Football"
-      children={tabs.map}
+      children={
+        <NavTabs tabComponents={tabComponents} />
+      }
       className="navigation-bar"
       showMenuIconButton={false}
       style={{backgroundColor: '#fffff'}}
       titleStyle={{color: '#000000'}}
       zDepth={0}
     />
-    <Tabs
-      className="menu-items"
-      contentContainerClassName="menu-items-container"
-      >
-      <Tab label="Articles" />
-      <Tab label="Chart Porn" />
-      <Tab label="About Us" />
-    </Tabs>
     </div>
   );
 };

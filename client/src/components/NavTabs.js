@@ -6,7 +6,7 @@ const NavTabs = ({ tabComponents }) => {
     <Tabs>
       {tabComponents.map((tab) => {
         return (
-          <Tab label={tab.label} />
+            <Tab label={tab.label} />
         )
       })}
     </Tabs>
