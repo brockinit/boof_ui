@@ -1,12 +1,20 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
-import { Tabs, Tab } from 'material-ui/Tabs';
+import NavTabs  from './NavTabs';
+
+const tabComponents = [
+  { label: 'About Us' },
+  { label: 'Chart Porn' }
+];
 
 const NavBar = () => {
+
+
   return (
     <div>
     <AppBar
       title="Better Odds of Football"
+      children={tabs.map}
       className="navigation-bar"
       showMenuIconButton={false}
       style={{backgroundColor: '#fffff'}}
