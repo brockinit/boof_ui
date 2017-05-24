@@ -1,7 +1,19 @@
-*{font-family: 'Roboto Condensed', sans-serif;}
+* {
+  font-family: 'Crimson Text', serif;
+  color: #333333;
+  font-weight: 100;
+  background-color: #F8F8F8;
+  line-height: 2rem;
+}
 
 h1 {
+  font-family: 'Palanquin';
   font-size: 55px;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 100;
 }
 
 .App {
@@ -22,6 +34,18 @@ h1 {
 
 .App-intro {
   font-size: large;
+}
+
+.navigation-bar {
+  margin: 20px 0 0 15px;
+}
+
+.footer {
+  list-style-type: none;
+}
+
+.article {
+
 }
 
 @keyframes App-logo-spin {
