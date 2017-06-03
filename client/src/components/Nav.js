@@ -1,30 +1,30 @@
 import React from 'react';
-import AppBar from 'material-ui/AppBar';
-import NavTabs  from './NavTabs';
+import { Redirect, Route } from 'react-router-dom';
+import { Tabs, Tab } from 'material-ui/Tabs';
+// import NavTabs  from './NavTabs';
 
-const tabComponents = [
-  { label: 'About Us', link: '/aboutus' },
-  { label: 'Chart Porn', link: '/' },
-  { label: 'Articles', link: '/article' }
+const navTabs = [
+  { label: 'Home',  value: 'home', route: 'home' },
+  { label: 'About Us', value: 'aboutus', route: 'aboutus' },
+  { label: 'Articles', value: 'articles', route: 'articles' },
 ];
 
 const NavBar = () => {
-
   return (
     <div>
-    <AppBar
-      title="Better Odds of Football"
-      children={
-        <NavTabs tabComponents={tabComponents} />
-      }
-      className="navigation-bar"
-      showMenuIconButton={false}
-      style={{backgroundColor: '#fffff'}}
-      titleStyle={{color: '#000000'}}
-      zDepth={0}
-    />
+      <Tabs>
+      {navTabs.map(({ label, route }, i) =>
+        <Tab
+          value={value}
+          label={label}
+          key={i}
+        >
+        <Route path={home} />
+        </Tab>
+      )}
+      </Tabs>
     </div>
   );
-};
+}
 
 export default NavBar;

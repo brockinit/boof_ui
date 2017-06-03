@@ -1,5 +1,6 @@
 import React from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
+import Nav from '../../components/Nav';
 
 const styles = {
   header: {
@@ -59,6 +60,7 @@ const tilesData = [
  */
 const GridListHome = () => (
   <div>
+  <Nav />
   <div style={styles.header}>
     <h1>Better Odds of Football</h1>
     <h2>Changing the game via deep data analysis and wild rants.</h2>

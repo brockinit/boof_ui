@@ -1,9 +1,10 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {
-  BrowserRouter as Router,
+  Switch,
   Route,
 } from 'react-router-dom';
+import Nav from './components/Nav';
 import './App.css';
 
 import Home from './containers/HomepageContainer';
@@ -12,13 +13,12 @@ import Article from './containers/ArticleContainer';
 
 const App =() => (
   <MuiThemeProvider>
-    <Router>
-      <div className="app">
-        <Route path="/" component={Home} />
-        <Route path="/about" component={AboutUs} />
-        <Route path="/article" component={Article} />
-      </div>
-    </Router>
+    <Switch>
+      <Route exact path='/' component={Home} />
+      <Route path='/about' component={About} />
+      <Route path='/about' component={About} />
+      <Route path='/schedule' component={Schedule} />
+    </Switch>
   </MuiThemeProvider>
 );
 
