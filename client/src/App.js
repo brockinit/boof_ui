@@ -14,9 +14,12 @@ const App =() => (
   <MuiThemeProvider>
     <Router>
       <div className="app">
-        <Route path="/" component={HomepageContainer} />
-        <Route path="/about" component={AboutUsContainer} />
-        <Route path="/article" component={ArticleContainer} />
+        <Route path="/" component={Home} />
+        <Route path="/about" component={AboutUs} />
+        <Route path="/article" component={Article} />
+      </div>
+    </Router>
+  </MuiThemeProvider>
 );
 
 export default App;
