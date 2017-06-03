@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-import Home from './containers/HomepageContainer';
+import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom';
 import './App.css';
 
-class App extends Component {
+import Home from './containers/HomepageContainer';
+import AboutUs from './containers/AboutUsContainer';
+import Article from './containers/ArticleContainer';
 
-  render() {
-    console.log(this.props.history, 'history props');
-    return (
-      <div className="container">
-        <Nav />
-        {this.props.children}
-        <Footer />
-      </div>
-    );
-  }
-};
+const App =() => (
+  <MuiThemeProvider>
+    <Router>
+      <div className="app">
+        <Route path="/" component={HomepageContainer} />
+        <Route path="/about" component={AboutUsContainer} />
+        <Route path="/article" component={ArticleContainer} />
+);
 
 export default App;
