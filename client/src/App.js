@@ -1,5 +1,6 @@
 import React from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+import AppBar from './components/NavBar';
 import {
   BrowserRouter as Router,
   Route,
@@ -11,7 +12,8 @@ import AboutUs from './containers/AboutUsContainer';
 import Article from './containers/ArticleContainer';
 
 const App = () => (
-  <MuiThemeProvider>
+  <div>
+    <AppBar title="COOL BEANS" />
     <Router>
       <div className="app">
         <Route exact path='/' component={Home} />
@@ -19,7 +21,7 @@ const App = () => (
         <Route path='/article' component={Article} />
       </div>
     </Router>
-  </MuiThemeProvider>
+  </div>
 );
 
 export default App;
