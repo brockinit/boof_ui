@@ -1,6 +1,5 @@
 import React from 'react';
-import {GridList, GridTile} from 'material-ui/GridList';
-import NavBar from '../../components/NavBar';
+import { GridList, GridTile } from 'material-ui/GridList';
 
 const styles = {
   header: {
