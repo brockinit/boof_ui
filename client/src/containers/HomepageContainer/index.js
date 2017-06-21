@@ -72,19 +72,36 @@ class GridListHome extends React.Component {
       // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
       accessToken: ACCESS_TOKEN
     });
+    this.getArticles = this.getArticles.bind(this);
+    this.state = {
+      articles: []
+    };
   }
 
   componentDidMount() {
     this.client.getContentTypes()
+      .then(this.getArticles)
+      .catch((error) => {
+        console.error(error, 'error');
+      });
+  }
+
+  getArticles({ items }) {
+    const post = items.find(({ name }) => name === 'Post');
+    this.client.getEntries({
+      content_type: post.sys.id
+    })
     .then((response) => {
-      console.log(response.items, 'RESPONSEs');
+      console.log('response.items', response.items);
+      this.setState({ articles: response.items });
     })
     .catch((error) => {
-      console.error(error, 'error');
+      console.error(error, 'ERROR');
     });
   }
 
   render() {
+    console.log('this.state.articles', this.state.articles);
     return (
       <div>
         <div style={styles.header}>
