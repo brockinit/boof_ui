@@ -10,10 +10,7 @@
     "react-tap-event-plugin": "^2.0.1"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-import": "^2.2.0",
-    "react-scripts": "0.9.5"
+    "react-scripts": "1.0.7"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,3 +19,4 @@
     "eject": "react-scripts eject"
   }
 }
+
