@@ -13,12 +13,17 @@ import Article from './containers/ArticleContainer';
 
 const App = () => (
   <div>
-    <AppBar title="COOL BEANS" />
+    <AppBar
+      title="Better Odds"
+      style={{
+        "backgroundColor": '#FFF',
+      }}
+    />
     <Router>
       <div className="app">
         <Route exact path='/' component={Home} />
         <Route path='/about' component={AboutUs} />
-        <Route path='/article' component={Article} />
+        <Route path='/:articleId' component={Article} />
       </div>
     </Router>
   </div>

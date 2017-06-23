@@ -1,7 +1,5 @@
 import React from 'react';
 import { GridList, GridTile } from 'material-ui/GridList';
-import NavBar from '../../components/NavBar';
-import marked from 'marked';
 import { createClient } from 'contentful';
 
 // Contentful read-only token
@@ -40,7 +38,7 @@ class GridListHome extends React.Component {
       accessToken: ACCESS_TOKEN
     });
     this.getArticles = this.getArticles.bind(this);
-    this.parseMarkdown = this.parseMarkdown.bind(this);
+    this.viewPost = this.viewPost.bind(this);
     this.state = {
       articles: []
     };
@@ -68,10 +66,10 @@ class GridListHome extends React.Component {
     });
   }
 
-  parseMarkdown(markdown) {
-    return {
-      __html: marked(markdown, { sanitize: true })
-    };
+  viewPost(event) {
+    event.preventDefault();
+    console.log('event.target', event.target);
+    this.props.history.push('/article');
   }
 
   render() {
@@ -79,10 +77,7 @@ class GridListHome extends React.Component {
     return (
       <div>
         <div style={styles.header}>
-          <h1>Better Odds of Football</h1>
-          <h2>Changing the game via deep data analysis and wild rants.</h2>
           <p>------------</p>
-          <p>Read our latest rants below.</p>
         </div>
         <div style={styles.gridContainer}>
           <GridList
@@ -95,12 +90,16 @@ class GridListHome extends React.Component {
                 <GridTile
                   key={sys.id}
                   title={fields.articleTitle}
+                  onClick={this.viewPost}
                   subtitle={<span>by <b>{"Sal Saluga"}</b></span>}
                   actionPosition="left"
                   titlePosition="bottom"
                   titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
                 >
-                <img alt={index.toString()} src="http://sports.cbsimg.net/images/blogs/nike-football.jpg" />
+                <img
+                  alt={index.toString()}
+                  src="http://sports.cbsimg.net/images/blogs/nike-football.jpg"
+                />
                 </GridTile>
               );
             })}
