@@ -4,6 +4,10 @@ import NavBar from '../../components/NavBar';
 import marked from 'marked';
 import { createClient } from 'contentful';
 
+// Contentful read-only token
+const SPACE_ID = 'wb0iqsd023ks';
+const ACCESS_TOKEN = '943872b949f9300a341513cc498473efe36b1c8fdffe9f1886b18606bd1363cc';
+
 const styles = {
   header: {
     padding: '40px',
@@ -20,9 +24,6 @@ const styles = {
     overflowY: 'auto',
   },
 };
-
-const SPACE_ID = 'wb0iqsd023ks'
-const ACCESS_TOKEN = '943872b949f9300a341513cc498473efe36b1c8fdffe9f1886b18606bd1363cc'
 
 /**
  * This example demonstrates "featured" tiles, using the `rows` and `cols` props to adjust the size of the tile.
@@ -85,7 +86,6 @@ class GridListHome extends React.Component {
         </div>
         <div style={styles.gridContainer}>
           <GridList
-            cols={2}
             cellHeight={180}
             padding={15}
             style={styles.gridList}
@@ -95,13 +95,12 @@ class GridListHome extends React.Component {
                 <GridTile
                   key={sys.id}
                   title={fields.articleTitle}
+                  subtitle={<span>by <b>{"Sal Saluga"}</b></span>}
                   actionPosition="left"
                   titlePosition="bottom"
                   titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-                  cols={index % 2 === 0 ? 2 : 1}
-                  rows={index % 2 === 0 ? 2 : 1}
                 >
-                  {/*<img src={tile.img} />*/}
+                <img alt={index.toString()} src="http://sports.cbsimg.net/images/blogs/nike-football.jpg" />
                 </GridTile>
               );
             })}
