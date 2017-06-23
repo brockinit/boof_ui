@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
 class AboutUs extends Component {
+  
   render() {
     return (
-      <div>About Us</div>
+      <div>
+      <h1>About Us</h1>
+      <p></p>
+      </div>
     )
   }
 }
