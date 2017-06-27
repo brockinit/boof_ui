@@ -7,6 +7,8 @@ const NavBar = () => {
     textStyle: {
       backgroundColor: 'white',
       textColor: 'black',
+      paddingTop: '1.5rem',
+      paddingBottom: '1.5rem',
     }
   }
   return (

@@ -19,12 +19,14 @@ const RightSideMenu = () => {
   return (
     <div className="right-side-menu" style={styles.buttonLayoutStyle}>
       <FlatButton
-        label="Articles"
+        label="Home"
         labelStyle={styles.textStyle}
+        href={'/'}
       />
       <FlatButton
         label="About Us"
         labelStyle={styles.textStyle}
+        href={'/about'}
       />
     </div>
 )};
