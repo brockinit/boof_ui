@@ -8,12 +8,25 @@ const ACCESS_TOKEN = '943872b949f9300a341513cc498473efe36b1c8fdffe9f1886b18606bd
 
 const styles = {
   header: {
-    padding: '60px',
+    paddingLeft: '3rem',
+    paddingTop: '3rem',
+    paddingBottom: '4rem',
+    marginTop: '6rem',
     fontFamily: 'Roboto',
-    fontSize: '4rem',
+    fontSize: '5rem',
     lineHeight: '5rem',
     fontWeight: 'bold',
-
+  },
+  headerSubText: {
+    fontSize: '1.7rem',
+    fontStyle: 'italic',
+    paddingLeft: '3rem',
+    paddingBottom: '1.5rem',
+  },
+  introText: {
+    fontSize: '1.5rem',
+    paddingLeft: '3rem',
+    paddingBottom: '3rem'
   },
   gridContainer: {
     display: 'flex',
@@ -82,7 +95,16 @@ class HomepageContainer extends React.Component {
     return (
       <div>
         <div style={styles.header}>
-          <p>Better Odds of Football</p>
+          <h1>Better Odds of Football</h1>
+        </div>
+        <div style={styles.headerSubText}>
+          <p>Are you ready to receive the knowing</p>
+        </div>
+        <div style={styles.headerSubText}>
+          <p>----------</p>
+        </div>
+        <div style={styles.introText}>
+          <p>See some of our latest rants below</p>
         </div>
         <div style={styles.gridContainer}>
           <GridList
