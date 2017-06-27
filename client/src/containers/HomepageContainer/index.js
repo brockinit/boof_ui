@@ -8,7 +8,12 @@ const ACCESS_TOKEN = '943872b949f9300a341513cc498473efe36b1c8fdffe9f1886b18606bd
 
 const styles = {
   header: {
-    padding: '40px',
+    padding: '60px',
+    fontFamily: 'Roboto',
+    fontSize: '4rem',
+    lineHeight: '5rem',
+    fontWeight: 'bold',
+
   },
   gridContainer: {
     display: 'flex',
@@ -27,7 +32,7 @@ const styles = {
  * This example demonstrates "featured" tiles, using the `rows` and `cols` props to adjust the size of the tile.
  * The tiles have a customised title, positioned at the top and with a custom gradient `titleBackground`.
  */
-class GridListHome extends React.Component {
+class HomepageContainer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -77,7 +82,7 @@ class GridListHome extends React.Component {
     return (
       <div>
         <div style={styles.header}>
-          <p>------------</p>
+          <p>Better Odds of Football</p>
         </div>
         <div style={styles.gridContainer}>
           <GridList
@@ -110,4 +115,4 @@ class GridListHome extends React.Component {
   }
 }
 
-export default GridListHome;
+export default HomepageContainer;
