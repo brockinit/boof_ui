@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
-import './App.css';
 
 import Home from './containers/HomepageContainer';
 import AboutUs from './containers/AboutUsContainer';
