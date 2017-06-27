@@ -3,9 +3,11 @@ import FlatButton from 'material-ui/FlatButton';
 
 const styles = {
   textStyle: {
-    fontFamily: 'Open Sans',
+    fontFamily: 'Roboto',
     fontSize: '1.2rem',
-    color: 'white',
+    color: 'black',
+    paddingTop: '8px',
+    paddingRight: '20px'
   },
   buttonLayoutStyle: {
     paddingTop: '8px',
@@ -15,15 +17,13 @@ const styles = {
 
 const RightSideMenu = () => {
   return (
-    <div>
+    <div className="right-side-menu" style={styles.buttonLayoutStyle}>
       <FlatButton
         label="Articles"
-        style={styles.buttonLayoutStyle}
         labelStyle={styles.textStyle}
       />
       <FlatButton
         label="About Us"
-        style={styles.buttonLayoutStyle}
         labelStyle={styles.textStyle}
       />
     </div>
