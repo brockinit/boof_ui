@@ -1,6 +1,7 @@
 import React from 'react';
 import { GridList, GridTile } from 'material-ui/GridList';
 import { createClient } from 'contentful';
+import FlatButton from 'material-ui/FlatButton';
 
 // Contentful read-only token
 const SPACE_ID = 'wb0iqsd023ks';
@@ -87,7 +88,7 @@ class HomepageContainer extends React.Component {
 
   viewPost(event) {
     event.preventDefault();
-    console.log('event.target', event.target);
+    console.log('event.target', event);
     this.props.history.push('/article');
   }
 
@@ -119,7 +120,8 @@ class HomepageContainer extends React.Component {
                 <GridTile
                   key={sys.id}
                   title={fields.articleTitle}
-                  onClick={this.viewPost}
+                  containerElement={<FlatButton
+                    href={fields.slug}/>}
                   subtitle={<span>by <b>{"Sal Saluga"}</b></span>}
                   actionPosition="left"
                   titlePosition="bottom"

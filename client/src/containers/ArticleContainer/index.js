@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './Article.css';
+import './Article.css';
 import marked from 'marked';
 
 import { createClient } from 'contentful';
