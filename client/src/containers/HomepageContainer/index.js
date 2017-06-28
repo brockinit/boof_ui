@@ -33,6 +33,7 @@ const styles = {
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     padding: '0 40px 40px 40px',
+    height: 'auto'
   },
   gridList: {
     width: 'auto',
@@ -108,8 +109,9 @@ class HomepageContainer extends React.Component {
         </div>
         <div style={styles.gridContainer}>
           <GridList
-            cellHeight={180}
-            padding={15}
+            cols={2}
+            cellHeight={350}
+            padding={25}
             style={styles.gridList}
           >
             {this.state.articles.map(({ fields, sys }, index) => {
