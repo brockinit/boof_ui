@@ -1,3 +1,29 @@
 .article-container {
-  margin: 3rem;
+  margin: 10% 25% 10% 25%;
+  font-family: 'Merriweather';
+  font-size: 1.1rem;
+  line-height: 2rem;
+}
+
+.article-body {
+  margin-top: 10%;
+}
+
+.h1-article {
+  font-family: 'Roboto';
+  text-align: center;
+  line-height: 5rem;
+}
+
+.date-article {
+  text-align: center;
+}
+
+.author-article {
+  text-align: center;
+}
+
+img {
+  max-width: 175%;
+  margin-left: -35%;
 }
