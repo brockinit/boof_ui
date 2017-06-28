@@ -23,18 +23,29 @@ class Article extends Component {
 
     this.state = {
       articleBody: null,
+      articleTitle: null,
+      author: null,
+      dateCreated: null,
     };
   }
 
   componentDidMount() {
     const postId = this.props.location.pathname.split('/').pop();
-    this.client.getEntry(postId)
+    this.client.getEntries()
       .then((entry) => {
-        console.log('entry', entry);
-        return this.setState({ articleBody: entry.fields.articleBody });
+        for(var i = 0; i < entry.items.length; i++){
+          if (entry.items[i].fields.slug === postId) {
+            return this.setState({
+              articleBody: entry.items[i].fields.articleBody,
+              articleTitle: entry.items[i].fields.articleTitle,
+              author: entry.items[i].fields.author,
+              dateCreated: entry.items[i].fields.dateCreated
+            });
+          }
+        }
       })
       .catch((err) => {
-        console.log('err', err);
+        console.log('error', err);
       });
   }
 
@@ -47,6 +58,9 @@ class Article extends Component {
   render() {
     return (
       <div className="article-container">
+        <h1>{this.state.articleTitle}</h1>
+        <div>{this.state.author}</div>
+        <div>{this.state.dateCreated}</div>
         {this.state.articleBody ? <div dangerouslySetInnerHTML={this.parseMarkdown()} /> : ''}
       </div>
     )
