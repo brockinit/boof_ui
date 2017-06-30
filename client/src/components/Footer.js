@@ -4,18 +4,17 @@ import { Link } from 'react-router-dom';
 const styles= {
   footerContainer: {
     fontFamily: 'Roboto',
-    color: 'gray',
     fontSize: '0.95rem',
-    height: '15rem',
-    lineHeight: '15rem',
-    textAlign: 'center',
+    height: '12rem',
+    lineHeight: '12rem',
     display: 'flex',
     justifyContent: 'center',
   },
   footer: {
     paddingLeft: '1rem',
     paddingRight: '1rem',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    color: 'gray'
   }
 }
 
@@ -23,12 +22,12 @@ class Footer extends Component {
   render() {
     return (
       <div className="footer-container" style={styles.footerContainer}>
-        <div className="footer" style={styles.footer}><Link to='/'>Home</Link></div>
-        <div className="footer" style={styles.footer}><Link to='/about'>Contact</Link></div>
-        <div className="footer" style={styles.footer}><Link to='/'>Articles</Link></div>
-        <div className="footer" style={styles.footer}><Link to='/privacy-policy'>Privacy</Link></div>
-        <div className="footer" style={styles.footer}><Link to='/terms-conditions'>Terms</Link></div>
-        <div className="footer" style={styles.footer}><Link to='/about'>About</Link></div>
+        <div className="footer"><Link to='/' style={styles.footer}>Home</Link></div>
+        <div className="footer"><Link to='/about' style={styles.footer}>Contact</Link></div>
+        <div className="footer"><Link to='/' style={styles.footer}>Articles</Link></div>
+        <div className="footer"><Link to='/privacy-policy' style={styles.footer}>Privacy</Link></div>
+        <div className="footer"><Link to='/terms-conditions' style={styles.footer}>Terms</Link></div>
+        <div className="footer"><Link to='/about' style={styles.footer}>About</Link></div>
       </div>
     );
   }
