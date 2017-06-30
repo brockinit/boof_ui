@@ -9,6 +9,7 @@ import {
 import Home from './containers/HomepageContainer';
 import AboutUs from './containers/AboutUsContainer';
 import Article from './containers/ArticleContainer';
+import Footer from './components/Footer';
 
 const App = () => (
   <div>
@@ -25,6 +26,7 @@ const App = () => (
         <Route path='/:articleId' component={Article} />
       </div>
     </Router>
+    <Footer />
   </div>
 );
 
