@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 const styles= {
   footerContainer: {
@@ -18,17 +19,19 @@ const styles= {
   }
 }
 
-const Footer = () => {
-  return (
-    <div className="footer-container" style={styles.footerContainer}>
-      <div className="footer" style={styles.footer}>Home</div>
-      <div className="footer" style={styles.footer}>Contact</div>
-      <div className="footer" style={styles.footer}>Articles</div>
-      <div className="footer" style={styles.footer}>Privacy</div>
-      <div className="footer" style={styles.footer}>Terms</div>
-      <div className="footer" style={styles.footer}>About</div>
-    </div>
-  );
+class Footer extends Component {
+  render() {
+    return (
+      <div className="footer-container" style={styles.footerContainer}>
+        <div className="footer" style={styles.footer}><Link to='/'>Home</Link></div>
+        <div className="footer" style={styles.footer}><Link to='/about'>Contact</Link></div>
+        <div className="footer" style={styles.footer}><Link to='/'>Articles</Link></div>
+        <div className="footer" style={styles.footer}><Link to='/privacy-policy'>Privacy</Link></div>
+        <div className="footer" style={styles.footer}><Link to='/terms-conditions'>Terms</Link></div>
+        <div className="footer" style={styles.footer}><Link to='/about'>About</Link></div>
+      </div>
+    );
+  }
 };
 
 export default Footer;
