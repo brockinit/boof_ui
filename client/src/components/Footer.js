@@ -1,16 +1,32 @@
 import React from 'react';
 
+const styles= {
+  footerContainer: {
+    fontFamily: 'Roboto',
+    color: 'gray',
+    fontSize: '0.95rem',
+    height: '15rem',
+    lineHeight: '15rem',
+    textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  footer: {
+    paddingLeft: '1rem',
+    paddingRight: '1rem',
+    textDecoration: 'none'
+  }
+}
+
 const Footer = () => {
   return (
-    <div className="footer-container">
-      <ul className="footer">
-        <li className="footer-item">2017 Better Odds of Football</li>
-        <li className="footer-item">About</li>
-        <li className="footer-item">Contact</li>
-        <li className="footer-item">Are you ready</li>
-        <li className="footer-item">Terms and Conditions</li>
-        <li className="footer-item">Privacy Policy</li>
-      </ul>
+    <div className="footer-container" style={styles.footerContainer}>
+      <div className="footer" style={styles.footer}>Home</div>
+      <div className="footer" style={styles.footer}>Contact</div>
+      <div className="footer" style={styles.footer}>Articles</div>
+      <div className="footer" style={styles.footer}>Privacy</div>
+      <div className="footer" style={styles.footer}>Terms</div>
+      <div className="footer" style={styles.footer}>About</div>
     </div>
   );
 };
