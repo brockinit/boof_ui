@@ -1,7 +1,8 @@
 import React from 'react';
 import { GridList, GridTile } from 'material-ui/GridList';
 import { createClient } from 'contentful';
-import FlatButton from 'material-ui/FlatButton';
+// import FlatButton from 'material-ui/FlatButton';
+import { Link } from 'react-router-dom';
 
 // Contentful read-only token
 const SPACE_ID = 'wb0iqsd023ks';
@@ -27,6 +28,8 @@ const styles = {
     paddingBottom: '2rem'
   },
   gridContainer: {
+    fontFamily: 'Merriweather',
+    lineHeight: '1.6rem',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
@@ -118,17 +121,15 @@ class HomepageContainer extends React.Component {
                   key={sys.id}
                   title={fields.articleTitle}
                   containerElement={
-                    <FlatButton
-                      href={fields.slug}
-                      label={fields.articleTitle} />}
-                  subtitle={<span>by <b>{"Sal Saluga"}</b></span>}
+                    <Link to={fields.slug} />}
+                  subtitle={fields.author}
                   actionPosition="left"
                   titlePosition="bottom"
-                  titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+                  titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
                 >
                 <img
                   alt={index.toString()}
-                  src="http://sports.cbsimg.net/images/blogs/nike-football.jpg"
+                  src={fields.images[0].fields.file.url}
                 />
                 </GridTile>
               );
