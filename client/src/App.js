@@ -13,20 +13,22 @@ import Footer from './components/Footer';
 
 const App = () => (
   <div>
-    <AppBar
-      title="Better Odds"
-      style={{
-        "backgroundColor": '#FFF',
-      }}
-    />
     <Router>
       <div className="app">
+        <AppBar
+          title="Better Odds"
+          style={{
+            "backgroundColor": '#FFF',
+          }}
+        />
         <Route exact path='/' component={Home} />
-        <Route path='/about' component={AboutUs} />
+        <Route exact path='/about' component={AboutUs} />
         <Route path='/:articleId' component={Article} />
+        <Footer />
       </div>
+
     </Router>
-    <Footer />
+
   </div>
 );
 
