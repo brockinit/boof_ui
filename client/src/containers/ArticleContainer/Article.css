@@ -6,8 +6,13 @@
   font-weight: 300;
 }
 
-.article-body {
+#article-body {
   margin-top: 10%;
+}
+
+p > img {
+  max-width: 175%;
+  margin-left: -35%;
 }
 
 .h1-article {
@@ -22,9 +27,4 @@
 
 .author-article {
   text-align: center;
-}
-
-img {
-  max-width: 175%;
-  margin-left: -35%;
 }

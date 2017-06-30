@@ -128,6 +128,7 @@ class HomepageContainer extends React.Component {
                   titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
                 >
                 <img
+                  className="homepage-images"
                   alt={index.toString()}
                   src={fields.images[0].fields.file.url}
                 />
