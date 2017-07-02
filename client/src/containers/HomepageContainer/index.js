@@ -1,7 +1,6 @@
 import React from 'react';
 import { GridList, GridTile } from 'material-ui/GridList';
 import { createClient } from 'contentful';
-// import FlatButton from 'material-ui/FlatButton';
 import { Link } from 'react-router-dom';
 
 // Contentful read-only token

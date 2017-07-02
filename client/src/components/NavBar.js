@@ -2,6 +2,7 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import RightSideMenu from './RightSideMenu';
 import Logo from '../assets/boof-logo-colored.svg';
+import { Link } from 'react-router-dom';
 
 const styles = {
   textStyle: {
@@ -23,9 +24,9 @@ const NavBar = () => {
         iconElementRight={<RightSideMenu />}
         title={
           <div>
-            <a href='/'>
+            <Link to='/'>
             <img src={Logo} alt='Better Odds of Football Logo' height='60px' style={styles.imgStyle} />
-            </a>
+            </Link>
           </div>}
         style={styles.textStyle}
       />
