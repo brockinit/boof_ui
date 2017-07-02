@@ -33,7 +33,7 @@ class Article extends Component {
     const postId = this.props.location.pathname.split('/').pop();
     this.client.getEntries()
       .then((entry) => {
-        for(var i = 0; i < entry.items.length; i++){
+        for (var i = 0; i < entry.items.length; i++){
           if (entry.items[i].fields.slug === postId) {
             return this.setState({
               articleBody: entry.items[i].fields.articleBody,
