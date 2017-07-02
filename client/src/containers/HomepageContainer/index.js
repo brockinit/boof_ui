@@ -8,13 +8,32 @@ const ACCESS_TOKEN = '943872b949f9300a341513cc498473efe36b1c8fdffe9f1886b18606bd
 
 const styles = {
   header: {
-    padding: '40px',
+    paddingLeft: '3rem',
+    paddingTop: '3rem',
+    paddingBottom: '4rem',
+    marginTop: '6rem',
+    fontFamily: 'Roboto',
+    fontSize: '5rem',
+    lineHeight: '5rem',
+    fontWeight: 'bold',
+  },
+  headerSubText: {
+    fontSize: '1.7rem',
+    fontStyle: 'italic',
+    paddingLeft: '3rem',
+    paddingBottom: '1.5rem',
+  },
+  introText: {
+    fontSize: '1.5rem',
+    paddingLeft: '3rem',
+    paddingBottom: '3rem'
   },
   gridContainer: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     padding: '0 40px 40px 40px',
+    height: 'auto'
   },
   gridList: {
     width: 'auto',
@@ -27,7 +46,7 @@ const styles = {
  * This example demonstrates "featured" tiles, using the `rows` and `cols` props to adjust the size of the tile.
  * The tiles have a customised title, positioned at the top and with a custom gradient `titleBackground`.
  */
-class GridListHome extends React.Component {
+class HomepageContainer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -77,12 +96,22 @@ class GridListHome extends React.Component {
     return (
       <div>
         <div style={styles.header}>
-          <p>------------</p>
+          <h1>Better Odds of Football</h1>
+        </div>
+        <div style={styles.headerSubText}>
+          <p>Are you ready to receive the knowing</p>
+        </div>
+        <div style={styles.headerSubText}>
+          <p>----------</p>
+        </div>
+        <div style={styles.introText}>
+          <p>See some of our latest rants below</p>
         </div>
         <div style={styles.gridContainer}>
           <GridList
-            cellHeight={180}
-            padding={15}
+            cols={2}
+            cellHeight={350}
+            padding={25}
             style={styles.gridList}
           >
             {this.state.articles.map(({ fields, sys }, index) => {
@@ -110,4 +139,4 @@ class GridListHome extends React.Component {
   }
 }
 
-export default GridListHome;
+export default HomepageContainer;
