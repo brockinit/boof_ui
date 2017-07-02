@@ -21,12 +21,12 @@ const RightSideMenu = () => {
       <FlatButton
         label="Home"
         labelStyle={styles.textStyle}
-        href={'/'}
+        href='/'
       />
       <FlatButton
         label="About Us"
         labelStyle={styles.textStyle}
-        href={'/about'}
+        href='/about'
       />
     </div>
 )};

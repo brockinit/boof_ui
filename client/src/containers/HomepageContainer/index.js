@@ -117,8 +117,10 @@ class HomepageContainer extends React.Component {
                 <GridTile
                   key={sys.id}
                   title={fields.articleTitle}
-                  containerElement={<FlatButton
-                    href={fields.slug}/>}
+                  containerElement={
+                    <FlatButton
+                      href={fields.slug}
+                      label={fields.articleTitle} />}
                   subtitle={<span>by <b>{"Sal Saluga"}</b></span>}
                   actionPosition="left"
                   titlePosition="bottom"
