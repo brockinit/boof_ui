@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const styles= {
@@ -18,19 +18,17 @@ const styles= {
   }
 }
 
-class Footer extends Component {
-  render() {
-    return (
-      <div className="footer-container" style={styles.footerContainer}>
-        <div className="footer"><Link to='/' style={styles.footer}>Home</Link></div>
-        <div className="footer"><Link to='/about' style={styles.footer}>Contact</Link></div>
-        <div className="footer"><Link to='/' style={styles.footer}>Articles</Link></div>
-        <div className="footer"><Link to='/privacy-policy' style={styles.footer}>Privacy</Link></div>
-        <div className="footer"><Link to='/terms-conditions' style={styles.footer}>Terms</Link></div>
-        <div className="footer"><Link to='/about' style={styles.footer}>About</Link></div>
-      </div>
-    );
-  }
+const Footer = () => {
+  return (
+    <div className="footer-container" style={styles.footerContainer}>
+      <div className="footer"><Link to='/' style={styles.footer}>Home</Link></div>
+      <div className="footer"><Link to='/about' style={styles.footer}>Contact</Link></div>
+      <div className="footer"><Link to='/' style={styles.footer}>Articles</Link></div>
+      <div className="footer"><Link to='/privacy-policy' style={styles.footer}>Privacy</Link></div>
+      <div className="footer"><Link to='/terms-conditions' style={styles.footer}>Terms</Link></div>
+      <div className="footer"><Link to='/about' style={styles.footer}>About</Link></div>
+    </div>
+  );
 };
 
 export default Footer;
