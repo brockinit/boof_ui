@@ -78,7 +78,6 @@ class HomepageContainer extends React.Component {
       content_type: post.sys.id
     })
     .then((response) => {
-      console.log('response.items', response.items);
       this.setState({ articles: response.items });
     })
     .catch((error) => {
@@ -88,12 +87,10 @@ class HomepageContainer extends React.Component {
 
   viewPost(event) {
     event.preventDefault();
-    console.log('event.target', event);
     this.props.history.push('/article');
   }
 
   render() {
-    console.log('this.state.articles', this.state.articles);
     return (
       <div>
         <div style={styles.header}>
@@ -120,8 +117,7 @@ class HomepageContainer extends React.Component {
                 <GridTile
                   key={sys.id}
                   title={fields.articleTitle}
-                  containerElement={
-                    <Link to={fields.slug} />}
+                  containerElement={<Link to={fields.slug} />}
                   subtitle={fields.author}
                   actionPosition="left"
                   titlePosition="bottom"
