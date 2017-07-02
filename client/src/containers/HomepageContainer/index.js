@@ -1,6 +1,7 @@
 import React from 'react';
 import { GridList, GridTile } from 'material-ui/GridList';
 import { createClient } from 'contentful';
+import FlatButton from 'material-ui/FlatButton';
 
 // Contentful read-only token
 const SPACE_ID = 'wb0iqsd023ks';
@@ -10,23 +11,20 @@ const styles = {
   header: {
     paddingLeft: '3rem',
     paddingTop: '3rem',
-    paddingBottom: '4rem',
-    marginTop: '6rem',
+    marginTop: '5rem',
     fontFamily: 'Roboto',
-    fontSize: '5rem',
-    lineHeight: '5rem',
+    fontSize: '3rem',
     fontWeight: 'bold',
   },
   headerSubText: {
     fontSize: '1.7rem',
     fontStyle: 'italic',
     paddingLeft: '3rem',
-    paddingBottom: '1.5rem',
   },
   introText: {
     fontSize: '1.5rem',
     paddingLeft: '3rem',
-    paddingBottom: '3rem'
+    paddingBottom: '2rem'
   },
   gridContainer: {
     display: 'flex',
@@ -87,7 +85,7 @@ class HomepageContainer extends React.Component {
 
   viewPost(event) {
     event.preventDefault();
-    console.log('event.target', event.target);
+    console.log('event.target', event);
     this.props.history.push('/article');
   }
 
@@ -119,7 +117,8 @@ class HomepageContainer extends React.Component {
                 <GridTile
                   key={sys.id}
                   title={fields.articleTitle}
-                  onClick={this.viewPost}
+                  containerElement={<FlatButton
+                    href={fields.slug}/>}
                   subtitle={<span>by <b>{"Sal Saluga"}</b></span>}
                   actionPosition="left"
                   titlePosition="bottom"
