@@ -61,7 +61,9 @@ class Article extends Component {
         <h1 className="h1-article">{this.state.articleTitle}</h1>
         <div className="date-article">{this.state.author}</div>
         <div className="author-article">{this.state.dateCreated}</div>
-        {this.state.articleBody ? <div className="article-body" dangerouslySetInnerHTML={this.parseMarkdown()} /> : ''}
+        {this.state.articleBody &&
+          <div className="article-body" dangerouslySetInnerHTML={this.parseMarkdown()} />
+        }
       </div>
     )
   }
