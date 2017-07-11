@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import cat1 from '../../assets/cat-1.jpeg';
+import cat2 from '../../assets/cat-2.jpeg';
+import cat3 from '../../assets/cat-3.jpeg';
 
 const styles = {
   header: {
@@ -28,6 +31,10 @@ const styles = {
     paddingRight: '3rem',
     fontFamily: 'Merriweather',
     lineHeight: '1.6rem'
+  },
+  imageBar: {
+    display: 'flex',
+    justifyContent: 'center'
   }
 }
 
@@ -48,10 +55,10 @@ class AboutUs extends Component {
         <div style={styles.introText}>
           <p>Get to know us. Now.</p>
         </div>
-        <div>
-          <div>
-            <img src='.././assets/cat-1.jpeg' alt='cat'></img>
-          </div>
+        <div style={styles.imageBar}>
+          <img src={cat1}></img>
+          <img src={cat2}></img>
+          <img src={cat3}></img>
         </div>
         <div style={styles.aboutBody}>
           <h2 style={styles.h2}>Brock</h2>
