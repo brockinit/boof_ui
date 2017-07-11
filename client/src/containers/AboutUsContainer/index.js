@@ -4,6 +4,9 @@ import cat2 from '../../assets/cat-2.jpeg';
 import cat3 from '../../assets/cat-3.jpeg';
 
 const styles = {
+  AboutUsContainer: {
+    border: '10px solid blue'
+  },
   header: {
     paddingLeft: '3rem',
     paddingTop: '3rem',
@@ -25,6 +28,7 @@ const styles = {
   },
   h2: {
     fontFamily: 'Roboto',
+    lineHeight: '3rem'
   },
   aboutBody: {
     paddingLeft: '3rem',
@@ -34,7 +38,9 @@ const styles = {
   },
   imageBar: {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    border: '10px solid red',
+    flexWrap: 'wrap'
   }
 }
 
@@ -42,7 +48,7 @@ class AboutUs extends Component {
 
   render() {
     return (
-      <div>
+      <div style={styles.AboutUsContainer}>
         <div style={styles.header}>
           <h1>About Us</h1>
         </div>
