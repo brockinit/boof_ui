@@ -22,9 +22,10 @@ const styles = {
     paddingLeft: '3rem',
   },
   introText: {
-    fontSize: '1.5rem',
+    fontSize: '1.2rem',
     paddingLeft: '3rem',
-    paddingBottom: '2rem'
+    paddingBottom: '2rem',
+    fontFamily: 'Merriweather'
   },
   gridContainer: {
     fontFamily: 'Merriweather',
