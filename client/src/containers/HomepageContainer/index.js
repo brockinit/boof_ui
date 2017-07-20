@@ -1,4 +1,7 @@
 import React from 'react';
+import PageHeader from '../../components/PageHeader';
+import PageHeaderSubText from '../../components/PageHeaderSubText';
+import PageIntroText from '../../components/PageIntroText';
 import { GridList, GridTile } from 'material-ui/GridList';
 import { createClient } from 'contentful';
 import { Link } from 'react-router-dom';
@@ -8,25 +11,6 @@ const SPACE_ID = 'wb0iqsd023ks';
 const ACCESS_TOKEN = '943872b949f9300a341513cc498473efe36b1c8fdffe9f1886b18606bd1363cc';
 
 const styles = {
-  header: {
-    paddingLeft: '3rem',
-    paddingTop: '3rem',
-    marginTop: '5rem',
-    fontFamily: 'Roboto',
-    fontSize: '3rem',
-    fontWeight: 'bold',
-  },
-  headerSubText: {
-    fontSize: '1.7rem',
-    fontStyle: 'italic',
-    paddingLeft: '3rem',
-  },
-  introText: {
-    fontSize: '1.2rem',
-    paddingLeft: '3rem',
-    paddingBottom: '2rem',
-    fontFamily: 'Merriweather'
-  },
   gridContainer: {
     fontFamily: 'Merriweather',
     lineHeight: '1.6rem',
@@ -93,18 +77,15 @@ class HomepageContainer extends React.Component {
   render() {
     return (
       <div>
-        <div style={styles.header}>
-          <h1>Better Odds of Football</h1>
-        </div>
-        <div style={styles.headerSubText}>
-          <p>Are you ready to receive the knowing</p>
-        </div>
-        <div style={styles.headerSubText}>
-          <p>----------</p>
-        </div>
-        <div style={styles.introText}>
-          <p>See some of our latest rants below</p>
-        </div>
+        <PageHeader
+          title="Better Odds of Football"
+        />
+        <PageHeaderSubText
+          text="Are you ready to receive the knowing"
+        />
+        <PageIntroText
+          text="See some of our rants below"
+        />
         <div style={styles.gridContainer}>
           <GridList
             cols={2}
