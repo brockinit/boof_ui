@@ -1,15 +1,16 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import PageHeader from '../../components/PageHeader';
 import PageHeaderSubText from '../../components/PageHeaderSubText';
 import PageIntroText from '../../components/PageIntroText';
-import { Helmet } from 'react-helmet';
 import { GridList, GridTile } from 'material-ui/GridList';
 import { createClient } from 'contentful';
 import { Link } from 'react-router-dom';
 
 // Contentful read-only token
 const SPACE_ID = 'wb0iqsd023ks';
-const ACCESS_TOKEN = '943872b949f9300a341513cc498473efe36b1c8fdffe9f1886b18606bd1363cc';
+const ACCESS_TOKEN =
+  '943872b949f9300a341513cc498473efe36b1c8fdffe9f1886b18606bd1363cc';
 
 const styles = {
   gridContainer: {
@@ -24,8 +25,8 @@ const styles = {
   gridList: {
     width: 'auto',
     height: 'auto',
-    overflowY: 'auto',
-  },
+    overflowY: 'auto'
+  }
 };
 
 /**
@@ -50,24 +51,23 @@ class HomepageContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.client.getContentTypes()
-      .then(this.getArticles)
-      .catch((error) => {
-        console.error(error, 'error');
-      });
+    this.client.getContentTypes().then(this.getArticles).catch(error => {
+      console.error(error, 'error');
+    });
   }
 
   getArticles({ items }) {
     const post = items.find(({ name }) => name === 'Post');
-    this.client.getEntries({
-      content_type: post.sys.id
-    })
-    .then((response) => {
-      this.setState({ articles: response.items });
-    })
-    .catch((error) => {
-      console.error(error, 'ERROR');
-    });
+    this.client
+      .getEntries({
+        content_type: post.sys.id
+      })
+      .then(response => {
+        this.setState({ articles: response.items });
+      })
+      .catch(error => {
+        console.error(error, 'ERROR');
+      });
   }
 
   viewPost(event) {
@@ -81,22 +81,22 @@ class HomepageContainer extends React.Component {
         <Helmet>
           <title>Better Odds of Football</title>
           <meta name="title" content="Better Odds of Football" />
-          <meta name="description" content="Giving you better odds through data science, machine learning, and years of football fandom." />
+          <meta
+            name="description"
+            content="Giving you better odds through data science, machine learning, and years of football fandom."
+          />
           <meta property="og:title" content="Better Odds of Football" />
           <meta property="og:url" content="https://betterodds.io" />
           <meta property="og:type" content="website" />
-          <meta property="og:description" content="Giving you better odds through data science, machine learning, and years of football fandom." />
+          <meta
+            property="og:description"
+            content="Giving you better odds through data science, machine learning, and years of football fandom."
+          />
           <meta property="og:image" content="/assets/boof-logo-metadata.png" />
         </Helmet>
-        <PageHeader
-          title="Better Odds of Football"
-        />
-        <PageHeaderSubText
-          text="Are you ready to receive the knowing"
-        />
-        <PageIntroText
-          text="See some of our rants below"
-        />
+        <PageHeader title="Better Odds of Football" />
+        <PageHeaderSubText text="Are you ready to receive the knowing" />
+        <PageIntroText text="See some of our rants below" />
         <div style={styles.gridContainer}>
           <GridList
             cols={2}
@@ -115,11 +115,11 @@ class HomepageContainer extends React.Component {
                   titlePosition="bottom"
                   titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
                 >
-                <img
-                  className="homepage-images"
-                  alt={index.toString()}
-                  src={fields.images[0].fields.file.url}
-                />
+                  <img
+                    className="homepage-images"
+                    alt={index.toString()}
+                    src={fields.images[0].fields.file.url}
+                  />
                 </GridTile>
               );
             })}
