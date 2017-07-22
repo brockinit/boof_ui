@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import './Article.css';
 import marked from 'marked';
+import moment from 'moment';
 
 import { createClient } from 'contentful';
 
@@ -8,7 +10,7 @@ import { createClient } from 'contentful';
 const SPACE_ID = 'wb0iqsd023ks';
 const ACCESS_TOKEN = '943872b949f9300a341513cc498473efe36b1c8fdffe9f1886b18606bd1363cc';
 
-class Article extends Component {
+class ArticleContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -24,8 +26,10 @@ class Article extends Component {
     this.state = {
       articleBody: null,
       articleTitle: null,
+      articleShortDescription: null,
       author: null,
       dateCreated: null,
+      slug: null
     };
   }
 
@@ -38,8 +42,10 @@ class Article extends Component {
             return this.setState({
               articleBody: entry.items[i].fields.articleBody,
               articleTitle: entry.items[i].fields.articleTitle,
+              articleShortDescription: entry.items[i].fields.articleShortDescription,
               author: entry.items[i].fields.author,
-              dateCreated: entry.items[i].fields.dateCreated
+              dateCreated: moment(entry.items[i].fields.dateCreated).format('LL'),
+              slug: entry.items[i].fields.slug
             });
           }
         }
@@ -58,6 +64,16 @@ class Article extends Component {
   render() {
     return (
       <div className="article-container">
+        <Helmet>
+          <title>{this.state.articleTitle}</title>
+          <meta name="title" content="Better Odds of Football - About Us" />
+          <meta name="description" content={this.state.articleShortDescription} />
+          <meta property="og:title" content="Better Odds of Football - About Us" />
+          <meta property="og:url" content={`https://betterodds.io/${this.state.slug}`} />
+          <meta property="og:type" content="website" />
+          <meta property="og:description" content={this.state.articleShortDescription} />
+          <meta property="og:image" content="/assets/boof-logo-metadata.png" />
+        </Helmet>
         <h1 className="h1-article">{this.state.articleTitle}</h1>
         <div className="date-article">{this.state.author}</div>
         <div className="author-article">{this.state.dateCreated}</div>
@@ -68,4 +84,4 @@ class Article extends Component {
     )
   }
 }
-export default Article;
+export default ArticleContainer;

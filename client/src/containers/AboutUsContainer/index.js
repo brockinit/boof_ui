@@ -4,7 +4,7 @@ import PageHeaderSubText from '../../components/PageHeaderSubText';
 import PageIntroText from '../../components/PageIntroText';
 import AboutUsBody from '../../components/AboutUsBody';
 
-const AboutUs = () => {
+const AboutUsContainer = () => {
   return (
     <div>
       <PageHeader
@@ -21,4 +21,4 @@ const AboutUs = () => {
   );
 }
 
-export default AboutUs;
+export default AboutUsContainer;

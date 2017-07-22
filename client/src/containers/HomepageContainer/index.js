@@ -2,6 +2,7 @@ import React from 'react';
 import PageHeader from '../../components/PageHeader';
 import PageHeaderSubText from '../../components/PageHeaderSubText';
 import PageIntroText from '../../components/PageIntroText';
+import { Helmet } from 'react-helmet';
 import { GridList, GridTile } from 'material-ui/GridList';
 import { createClient } from 'contentful';
 import { Link } from 'react-router-dom';
@@ -77,6 +78,16 @@ class HomepageContainer extends React.Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>Better Odds of Football</title>
+          <meta name="title" content="Better Odds of Football" />
+          <meta name="description" content="Giving you better odds through data science, machine learning, and years of football fandom." />
+          <meta property="og:title" content="Better Odds of Football" />
+          <meta property="og:url" content="https://betterodds.io" />
+          <meta property="og:type" content="website" />
+          <meta property="og:description" content="Giving you better odds through data science, machine learning, and years of football fandom." />
+          <meta property="og:image" content="/assets/boof-logo-metadata.png" />
+        </Helmet>
         <PageHeader
           title="Better Odds of Football"
         />
