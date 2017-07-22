@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import './Article.css';
 import marked from 'marked';
+import moment from 'moment';
 
 import { createClient } from 'contentful';
 
@@ -43,7 +44,7 @@ class ArticleContainer extends Component {
               articleTitle: entry.items[i].fields.articleTitle,
               articleShortDescription: entry.items[i].fields.articleShortDescription,
               author: entry.items[i].fields.author,
-              dateCreated: entry.items[i].fields.dateCreated,
+              dateCreated: moment(entry.items[i].fields.dateCreated).format('LL'),
               slug: entry.items[i].fields.slug
             });
           }
