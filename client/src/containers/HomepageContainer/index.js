@@ -6,6 +6,7 @@ import PageIntroText from '../../components/PageIntroText';
 import { GridList, GridTile } from 'material-ui/GridList';
 import { Link } from 'react-router-dom';
 import { BLOG_POST_ENDPOINT } from '../../constants';
+import { ajax } from 'jquery';
 
 const styles = {
   gridContainer: {
@@ -39,7 +40,17 @@ class HomepageContainer extends React.Component {
   }
 
   getArticles() {
-    // Call ajax service here
+    const options = {
+      method: 'GET',
+      contentType: 'application/json; charset=utf-8',
+      xhrFields: {
+        withCredentials: true,
+      },
+    };
+    return ajax(BLOG_POST_ENDPOINT, options).then(data => {
+      console.log('data', data);
+      this.setState({ articles: data || [] });
+    });
   }
 
   viewPost(event) {
