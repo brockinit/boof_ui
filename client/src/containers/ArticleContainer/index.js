@@ -4,26 +4,10 @@ import './Article.css';
 import marked from 'marked';
 import moment from 'moment';
 
-import { createClient } from 'contentful';
-
-// Contentful read-only token
-const SPACE_ID = 'wb0iqsd023ks';
-const ACCESS_TOKEN =
-  '943872b949f9300a341513cc498473efe36b1c8fdffe9f1886b18606bd1363cc';
-
 class ArticleContainer extends Component {
   constructor(props) {
     super(props);
-
     this.parseMarkdown = this.parseMarkdown.bind(this);
-
-    this.client = createClient({
-      // This is the space ID. A space is like a project folder in Contentful terms
-      space: SPACE_ID,
-      // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
-      accessToken: ACCESS_TOKEN,
-    });
-
     this.state = {
       articleBody: null,
       articleTitle: null,
@@ -36,28 +20,27 @@ class ArticleContainer extends Component {
 
   componentDidMount() {
     const postId = this.props.location.pathname.split('/').pop();
-    this.client
-      .getEntries()
-      .then(entry => {
-        for (var i = 0; i < entry.items.length; i++) {
-          if (entry.items[i].fields.slug === postId) {
-            return this.setState({
-              articleBody: entry.items[i].fields.articleBody,
-              articleTitle: entry.items[i].fields.articleTitle,
-              articleShortDescription:
-                entry.items[i].fields.articleShortDescription,
-              author: entry.items[i].fields.author,
-              dateCreated: moment(entry.items[i].fields.dateCreated).format(
-                'LL',
-              ),
-              slug: entry.items[i].fields.slug,
-            });
-          }
-        }
-      })
-      .catch(err => {
-        console.log('error', err);
-      });
+    // call AJAX service...
+    // .then(entry => {
+    //   for (var i = 0; i < entry.items.length; i++) {
+    //     if (entry.items[i].fields.slug === postId) {
+    //       return this.setState({
+    //         articleBody: entry.items[i].fields.articleBody,
+    //         articleTitle: entry.items[i].fields.articleTitle,
+    //         articleShortDescription:
+    //           entry.items[i].fields.articleShortDescription,
+    //         author: entry.items[i].fields.author,
+    //         dateCreated: moment(entry.items[i].fields.dateCreated).format(
+    //           'LL',
+    //         ),
+    //         slug: entry.items[i].fields.slug,
+    //       });
+    //     }
+    //   }
+    // })
+    // .catch(err => {
+    //   console.log('error', err);
+    // });
   }
 
   parseMarkdown() {
