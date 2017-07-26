@@ -20,13 +20,13 @@ const styles = {
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     padding: '0 40px 40px 40px',
-    height: 'auto'
+    height: 'auto',
   },
   gridList: {
     width: 'auto',
     height: 'auto',
-    overflowY: 'auto'
-  }
+    overflowY: 'auto',
+  },
 };
 
 /**
@@ -41,12 +41,12 @@ class HomepageContainer extends React.Component {
       // This is the space ID. A space is like a project folder in Contentful terms
       space: SPACE_ID,
       // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
-      accessToken: ACCESS_TOKEN
+      accessToken: ACCESS_TOKEN,
     });
     this.getArticles = this.getArticles.bind(this);
     this.viewPost = this.viewPost.bind(this);
     this.state = {
-      articles: []
+      articles: [],
     };
   }
 
@@ -60,7 +60,7 @@ class HomepageContainer extends React.Component {
     const post = items.find(({ name }) => name === 'Post');
     this.client
       .getEntries({
-        content_type: post.sys.id
+        content_type: post.sys.id,
       })
       .then(response => {
         this.setState({ articles: response.items });
