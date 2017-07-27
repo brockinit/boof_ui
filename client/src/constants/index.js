@@ -1,2 +1,2 @@
 export const BLOG_POST_ENDPOINT =
-  'https://pa6q3zu8vg.execute-api.us-west-2.amazonaws.com/prod/blog-posts';
+  'https://lx611j6kog.execute-api.us-west-2.amazonaws.com/dev/blog-posts';

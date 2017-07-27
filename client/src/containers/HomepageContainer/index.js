@@ -40,16 +40,8 @@ class HomepageContainer extends React.Component {
   }
 
   getArticles() {
-    const options = {
-      method: 'GET',
-      contentType: 'application/json; charset=utf-8',
-      xhrFields: {
-        withCredentials: true,
-      },
-    };
-    return ajax(BLOG_POST_ENDPOINT, options).then(data => {
-      console.log('data', data);
-      this.setState({ articles: data || [] });
+    return ajax(BLOG_POST_ENDPOINT).then(data => {
+      this.setState({ articles: data });
     });
   }
 

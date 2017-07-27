@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet';
 import './Article.css';
 import marked from 'marked';
 import moment from 'moment';
+import { ajax } from 'jquery';
+import { BLOG_POST_ENDPOINT } from '../../constants';
 
 class ArticleContainer extends Component {
   constructor(props) {
@@ -20,27 +22,24 @@ class ArticleContainer extends Component {
 
   componentDidMount() {
     const postId = this.props.location.pathname.split('/').pop();
-    // call AJAX service...
-    // .then(entry => {
-    //   for (var i = 0; i < entry.items.length; i++) {
-    //     if (entry.items[i].fields.slug === postId) {
-    //       return this.setState({
-    //         articleBody: entry.items[i].fields.articleBody,
-    //         articleTitle: entry.items[i].fields.articleTitle,
-    //         articleShortDescription:
-    //           entry.items[i].fields.articleShortDescription,
-    //         author: entry.items[i].fields.author,
-    //         dateCreated: moment(entry.items[i].fields.dateCreated).format(
-    //           'LL',
-    //         ),
-    //         slug: entry.items[i].fields.slug,
-    //       });
-    //     }
-    //   }
-    // })
-    // .catch(err => {
-    //   console.log('error', err);
-    // });
+    return ajax(BLOG_POST_ENDPOINT)
+      .then(items => {
+        for (var i = 0; i < items.length; i++) {
+          if (items[i].fields.slug === postId) {
+            return this.setState({
+              articleBody: items[i].fields.articleBody,
+              articleTitle: items[i].fields.articleTitle,
+              articleShortDescription: items[i].fields.articleShortDescription,
+              author: items[i].fields.author,
+              dateCreated: moment(items[i].fields.dateCreated).format('LL'),
+              slug: items[i].fields.slug,
+            });
+          }
+        }
+      })
+      .catch(err => {
+        console.log('error', err);
+      });
   }
 
   parseMarkdown() {
