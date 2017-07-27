@@ -4,13 +4,9 @@ import PageHeader from '../../components/PageHeader';
 import PageHeaderSubText from '../../components/PageHeaderSubText';
 import PageIntroText from '../../components/PageIntroText';
 import { GridList, GridTile } from 'material-ui/GridList';
-import { createClient } from 'contentful';
 import { Link } from 'react-router-dom';
-
-// Contentful read-only token
-const SPACE_ID = 'wb0iqsd023ks';
-const ACCESS_TOKEN =
-  '943872b949f9300a341513cc498473efe36b1c8fdffe9f1886b18606bd1363cc';
+import { BLOG_POST_ENDPOINT } from '../../constants';
+import { ajax } from 'jquery';
 
 const styles = {
   gridContainer: {
@@ -20,54 +16,33 @@ const styles = {
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     padding: '0 40px 40px 40px',
-    height: 'auto'
+    height: 'auto',
   },
   gridList: {
     width: 'auto',
     height: 'auto',
-    overflowY: 'auto'
-  }
+    overflowY: 'auto',
+  },
 };
 
-/**
- * This example demonstrates "featured" tiles, using the `rows` and `cols` props to adjust the size of the tile.
- * The tiles have a customised title, positioned at the top and with a custom gradient `titleBackground`.
- */
 class HomepageContainer extends React.Component {
   constructor(props) {
     super(props);
-
-    this.client = createClient({
-      // This is the space ID. A space is like a project folder in Contentful terms
-      space: SPACE_ID,
-      // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
-      accessToken: ACCESS_TOKEN
-    });
     this.getArticles = this.getArticles.bind(this);
     this.viewPost = this.viewPost.bind(this);
     this.state = {
-      articles: []
+      articles: [],
     };
   }
 
   componentDidMount() {
-    this.client.getContentTypes().then(this.getArticles).catch(error => {
-      console.error(error, 'error');
-    });
+    this.getArticles();
   }
 
-  getArticles({ items }) {
-    const post = items.find(({ name }) => name === 'Post');
-    this.client
-      .getEntries({
-        content_type: post.sys.id
-      })
-      .then(response => {
-        this.setState({ articles: response.items });
-      })
-      .catch(error => {
-        console.error(error, 'ERROR');
-      });
+  getArticles() {
+    return ajax(BLOG_POST_ENDPOINT).then(data => {
+      this.setState({ articles: data });
+    });
   }
 
   viewPost(event) {

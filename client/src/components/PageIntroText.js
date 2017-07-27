@@ -5,16 +5,18 @@ const styles = {
     fontSize: '1.2rem',
     paddingLeft: '3rem',
     paddingBottom: '2rem',
-    fontFamily: 'Merriweather'
-  }
-}
+    fontFamily: 'Merriweather',
+  },
+};
 
-const PageIntroText = (props) => {
+const PageIntroText = props => {
   return (
     <div style={styles.introText}>
-      <p>{props.text}</p>
+      <p>
+        {props.text}
+      </p>
     </div>
-  )
-}
+  );
+};
 
 export default PageIntroText;

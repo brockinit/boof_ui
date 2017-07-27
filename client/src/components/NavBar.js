@@ -12,9 +12,9 @@ const styles = {
     paddingBottom: '1.5rem',
   },
   imgStyle: {
-    marginLeft: '20px'
-  }
-}
+    marginLeft: '20px',
+  },
+};
 
 const NavBar = () => {
   return (
@@ -24,13 +24,20 @@ const NavBar = () => {
         iconElementRight={<RightSideMenu />}
         title={
           <div>
-            <Link to='/'>
-            <img src={Logo} alt='Better Odds of Football Logo' height='60px' style={styles.imgStyle} />
+            <Link to="/">
+              <img
+                src={Logo}
+                alt="Better Odds of Football Logo"
+                height="60px"
+                style={styles.imgStyle}
+              />
             </Link>
-          </div>}
+          </div>
+        }
         style={styles.textStyle}
       />
     </div>
-)};
+  );
+};
 
 export default NavBar;

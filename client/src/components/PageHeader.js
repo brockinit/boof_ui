@@ -7,16 +7,18 @@ const styles = {
     marginTop: '5rem',
     fontFamily: 'Roboto',
     fontSize: '3rem',
-    fontWeight: 'bold'
-  }
-}
+    fontWeight: 'bold',
+  },
+};
 
-const PageHeader = (props) => {
+const PageHeader = props => {
   return (
     <div style={styles.header}>
-      <h1>{props.title}</h1>
+      <h1>
+        {props.title}
+      </h1>
     </div>
-  )
-}
+  );
+};
 
 export default PageHeader;
