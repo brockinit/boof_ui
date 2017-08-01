@@ -84,7 +84,7 @@ class HomepageContainer extends React.Component {
                 <GridTile
                   key={sys.id}
                   title={fields.articleTitle}
-                  containerElement={<Link to={fields.slug} />}
+                  containerElement={<Link to={`article/${fields.slug}`} /> }
                   subtitle={fields.author}
                   actionPosition="left"
                   titlePosition="bottom"
