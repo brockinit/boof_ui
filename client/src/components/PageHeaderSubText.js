@@ -2,20 +2,30 @@ import React from 'react';
 
 const styles = {
   headerSubText: {
-    fontSize: '1.7rem',
+    fontSize: '1.5rem',
     fontStyle: 'italic',
     paddingLeft: '3rem',
     paddingRight: '2rem',
+    paddingBottom: '1rem'
   },
+  hr: {
+    textAlign: 'left',
+    marginLeft: '3rem',
+    height: '1.5px',
+    width: '3.5rem',
+    border: '0',
+    borderTop: '2px solid',
+    paddingTop: '2rem',
+  }
 };
 
 const PageHeaderSubText = props => {
   return (
-    <div style={styles.headerSubText}>
-      <p>
+    <div>
+      <p style={styles.headerSubText}>
         {props.text}
       </p>
-      <p>----------</p>
+      <hr style={styles.hr} />
     </div>
   );
 };

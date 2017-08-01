@@ -6,8 +6,7 @@ const styles = {
     paddingTop: '3rem',
     marginTop: '5rem',
     fontFamily: 'Roboto',
-    fontSize: '3rem',
-    fontWeight: 'bold',
+    fontSize: '2.5rem'
   },
 };
 

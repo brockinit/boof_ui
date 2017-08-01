@@ -2,10 +2,11 @@ import React from 'react';
 
 const styles = {
   introText: {
-    fontSize: '1.2rem',
+    fontSize: '1.1rem',
     paddingLeft: '3rem',
     paddingBottom: '2rem',
     fontFamily: 'Merriweather',
+    fontWeight: '200'
   },
 };
 
