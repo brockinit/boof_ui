@@ -3,7 +3,9 @@ import React from 'react';
 const styles = {
   headerSubText: {
     fontSize: '1.5rem',
+    fontFamily: 'Cormorant Garamond',
     fontStyle: 'italic',
+    fontWeight: '200',
     paddingLeft: '3rem',
     paddingRight: '2rem',
     paddingBottom: '1rem'
@@ -14,8 +16,7 @@ const styles = {
     height: '1.5px',
     width: '3.5rem',
     border: '0',
-    borderTop: '2px solid',
-    paddingTop: '2rem',
+    borderTop: '2px solid'
   }
 };
 

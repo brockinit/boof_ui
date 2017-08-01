@@ -5,7 +5,7 @@ const styles = {
     paddingLeft: '3rem',
     paddingTop: '3rem',
     marginTop: '5rem',
-    fontFamily: 'Roboto',
+    fontFamily: 'Fira Sans',
     fontSize: '2.5rem'
   },
 };
