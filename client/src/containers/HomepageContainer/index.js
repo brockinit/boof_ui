@@ -39,16 +39,18 @@ class HomepageContainer extends React.Component {
         <PageHeaderSubText text="Are you ready to receive the knowing" />
         <PageIntroText text="See some of our rants below" />
         <div className="gridcard-container">
-          {this.state.articles.map(({ fields, sys }, index) => {
-            return (
-              <div>
-                <GridTile
-                  title={fields.articleTitle}
-                  image={fields.images[0].fields.file.url}
-                  />
-              </div>
-            );
-          })}
+          <div className="grid-content">
+            {this.state.articles.map(({ fields, sys }, index) => {
+              return (
+                <div>
+                  <GridTile
+                    title={fields.articleTitle}
+                    image={fields.images[0].fields.file.url}
+                    />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     );
