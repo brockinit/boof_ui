@@ -7,6 +7,10 @@
   border: 10px solid green;
 }
 
+.header-container {
+  border: 10px solid purple;
+}
+
 .title-text-container {
   border: 5px solid red;
 }
@@ -20,16 +24,20 @@
 }
 
 .gridcard-container {
-  border: 10px solid yellow;
+  // border: 10px solid yellow;
+  box-sizing: border-box;
 }
 
 .single-gridtile {
-  border: 5px solid pink;
+  // border: 5px solid pink;
+  box-sizing: border-box;
 }
 
 .grid-content {
   border: 5px solid green;
+  font-family: 'Catamaran', sans-serif;
   display: flex;
+  box-sizing: border-box;
   flex-flow: row wrap;
   align-items: stretch;
   justify-content: center;
@@ -43,6 +51,7 @@
   display: block;
   width: 100%;
   height: 250px;
+  box-sizing: border-box;
 }
 
 a.single-gridtile {
@@ -53,35 +62,42 @@ a.single-gridtile {
   margin: 8px;
   transition: all 0.2s ease;
   .gridcard-text{
+    position: absolute;
+    z-index: 1;
+    height: 250px;
+    overflow: hidden;
+    transition: all 0.2s ease;
     h2 {
-      display: none;
+      visibility: hidden;
     }
     p {
-      display: none;
+      visibility: hidden;
     }
   }
   &:hover{
     transition: all 0.2s ease;
-    background-color: black;
     .gridcard-text{
+      padding: 35px 35px 35px 35px;
+      width: 300px;
+      height: 250px;
+      background-color: #222;
+      transition: all 0.2s ease;
+      background-repeat: no-repeat;
+      box-sizing: border-box;
       h2 {
-        display: block;
+        visibility: visible;
         color: white;
-        font-size: 16px;
-        font-weight: 400;
+        font-size: 18px;
       }
       p {
-        display: block;
+        visibility: visible;
         color: white;
-        font-size: 12px;
+        font-size: 15px;
         line-height: 22px;
-        // word-break: break-word;
       }
     }
   }
 }
-
-
 
 // Article Styles
 

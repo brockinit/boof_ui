@@ -4,6 +4,9 @@
 .navbar-container {
   border: 10px solid green; }
 
+.header-container {
+  border: 10px solid purple; }
+
 .title-text-container {
   border: 5px solid red; }
 
@@ -14,14 +17,16 @@
   border: 5px solid red; }
 
 .gridcard-container {
-  border: 10px solid yellow; }
+  box-sizing: border-box; }
 
 .single-gridtile {
-  border: 5px solid pink; }
+  box-sizing: border-box; }
 
 .grid-content {
   border: 5px solid green;
+  font-family: 'Catamaran', sans-serif;
   display: flex;
+  box-sizing: border-box;
   flex-flow: row wrap;
   align-items: stretch;
   justify-content: center;
@@ -33,7 +38,8 @@
   background-repeat: no-repeat;
   display: block;
   width: 100%;
-  height: 250px; }
+  height: 250px;
+  box-sizing: border-box; }
 
 a.single-gridtile {
   display: block;
@@ -42,23 +48,35 @@ a.single-gridtile {
   box-sizing: border-box;
   margin: 8px;
   transition: all 0.2s ease; }
-  a.single-gridtile .gridcard-text h2 {
-    display: none; }
-  a.single-gridtile .gridcard-text p {
-    display: none; }
+  a.single-gridtile .gridcard-text {
+    position: absolute;
+    z-index: 1;
+    height: 250px;
+    overflow: hidden;
+    transition: all 0.2s ease; }
+    a.single-gridtile .gridcard-text h2 {
+      visibility: hidden; }
+    a.single-gridtile .gridcard-text p {
+      visibility: hidden; }
   a.single-gridtile:hover {
-    transition: all 0.2s ease;
-    background-color: black; }
-    a.single-gridtile:hover .gridcard-text h2 {
-      display: block;
-      color: white;
-      font-size: 16px;
-      font-weight: 400; }
-    a.single-gridtile:hover .gridcard-text p {
-      display: block;
-      color: white;
-      font-size: 12px;
-      line-height: 22px; }
+    transition: all 0.2s ease; }
+    a.single-gridtile:hover .gridcard-text {
+      padding: 35px 35px 35px 35px;
+      width: 300px;
+      height: 250px;
+      background-color: #222;
+      transition: all 0.2s ease;
+      background-repeat: no-repeat;
+      box-sizing: border-box; }
+      a.single-gridtile:hover .gridcard-text h2 {
+        visibility: visible;
+        color: white;
+        font-size: 18px; }
+      a.single-gridtile:hover .gridcard-text p {
+        visibility: visible;
+        color: white;
+        font-size: 15px;
+        line-height: 22px; }
 
 .article-container {
   margin: 10% 20% 10% 20%;

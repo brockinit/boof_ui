@@ -6,10 +6,13 @@ const GridTile = props => {
 
   return (
     <a className="single-gridtile" href="/">
-      <div className="gridcard-text">
-        <h2>{props.title}</h2>
+      <div className="gridcard-container">
+        <div className="gridcard-text">
+          <h2>{props.title}</h2>
+          <p>{props.author}</p>
+        </div>
+        <div className="gridcard-image" style={{ backgroundImage: `url(${props.image})` }} />
       </div>
-      <div className="gridcard-image" style={{ backgroundImage: `url(${props.image})` }} />
     </a>
   );
 };
