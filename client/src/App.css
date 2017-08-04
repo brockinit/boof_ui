@@ -27,12 +27,15 @@
   justify-content: center;
   padding: 8px; }
 
+.gridcard-image {
+  background-image: url("http://images.contentful.com/wb0iqsd023ks/19PYHyS602iIgogiieKCyI/795c9a96816e30ad76b014d02a50cdac/Tom_Brady.jpg"); }
+
 a.single-gridtile {
   display: block;
   width: 300px;
   height: 200px;
   box-sizing: border-box;
-  padding: 8px 8px 8px;
+  margin: 8px;
   transition: all 0.2s ease; }
   a.single-gridtile .gridcard-text h2 {
     display: none; }
@@ -41,18 +44,19 @@ a.single-gridtile {
   a.single-gridtile:hover {
     transition: all 0.2s ease;
     width: 300px;
-    height: 200px; }
+    height: 200px;
+    padding: 20px 10px 10px 20px;
+    background-color: black; }
     a.single-gridtile:hover .gridcard-text h2 {
       display: block;
-      color: black;
-      font-size: 32px;
+      color: white;
+      font-size: 16px;
       font-weight: 400; }
     a.single-gridtile:hover .gridcard-text p {
       display: block;
-      color: black;
-      font-size: 16px;
-      line-height: 22px;
-      word-break: break-word; }
+      color: white;
+      font-size: 12px;
+      line-height: 22px; }
 
 .article-container {
   margin: 10% 20% 10% 20%;
