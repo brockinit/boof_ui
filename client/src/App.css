@@ -4,6 +4,11 @@
 .navbar-container {
   padding: 3rem 3rem 0rem 3rem; }
 
+.container {
+  max-width: 1100px;
+  margin: auto;
+  background-color: blue; }
+
 .header-container {
   padding: 4rem 3rem 3rem; }
   .header-container h1 {
@@ -11,7 +16,6 @@
     line-height: 6rem;
     margin: 0;
     font-weight: bold;
-    max-width: 800px;
     font-family: 'Catamaran', 'Helvetica', sans-serif;
     padding-bottom: 1.5rem; }
 
@@ -43,7 +47,7 @@
   box-sizing: border-box;
   flex-flow: row wrap;
   align-items: stretch;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 8px; }
 
 .gridcard-image {
@@ -94,7 +98,7 @@ a.single-gridtile {
 
 .article-container {
   margin: 10% 20% 10% 20%;
-  font-family: 'Merriweather';
+  font-family: 'Noto Serif', 'Helvetica', sans-serif;
   font-size: 1.1rem;
   line-height: 2.3rem;
   font-weight: 300; }
@@ -107,7 +111,7 @@ p > img {
   margin-left: -35%; }
 
 .h1-article {
-  font-family: 'Roboto';
+  font-family: 'Catamaran', 'Helvetica', sans-serif;
   text-align: center;
   font-size: 3.2rem;
   line-height: 5rem; }
