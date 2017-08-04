@@ -2,8 +2,13 @@ import React from 'react';
 
 const GridTile = props => {
   return (
-    <div>
-      <h1>GridTile</h1>
+    <div className="single-gridtile">
+      <div>{props.title}</div>
+      <img
+        alt="something"
+        src={props.image}
+        width='100px'
+      />
     </div>
   );
 };

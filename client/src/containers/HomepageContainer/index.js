@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from '../../components/PageHeader';
 import PageHeaderSubText from '../../components/PageHeaderSubText';
 import PageIntroText from '../../components/PageIntroText';
-// import GridTile from '/../../components/GridTile';
+import GridTile from '../../components/GridTile';
 // import { Link } from 'react-router-dom';
 import { BLOG_POST_ENDPOINT } from '../../constants';
 import { ajax } from 'jquery';
@@ -38,11 +38,14 @@ class HomepageContainer extends React.Component {
         <PageHeader title="Better Odds of Football" />
         <PageHeaderSubText text="Are you ready to receive the knowing" />
         <PageIntroText text="See some of our rants below" />
-        <div>
+        <div className="gridcard-container">
           {this.state.articles.map(({ fields, sys }, index) => {
             return (
               <div>
-                {fields.articleTitle}
+                <GridTile
+                  title={fields.articleTitle}
+                  image={fields.images[0].fields.file.url}
+                  />
               </div>
             );
           })}
