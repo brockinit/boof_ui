@@ -13,6 +13,7 @@
     "marked": "^0.3.6",
     "material-ui": "^0.18.0",
     "moment": "^2.18.1",
+    "node-sass-chokidar": "0.0.3",
     "normalize.css": "7.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -24,6 +25,8 @@
     "react-scripts": "1.0.7"
   },
   "scripts": {
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

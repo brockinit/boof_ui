@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AppBar from './components/NavBar';
+import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './containers/HomepageContainer';
@@ -9,15 +9,10 @@ import Article from './containers/ArticleContainer';
 import Footer from './components/Footer';
 
 const App = () =>
-  <div>
+  <div id="app-container">
     <Router>
       <div className="app">
-        <AppBar
-          title="Better Odds"
-          style={{
-            backgroundColor: '#FFF',
-          }}
-        />
+        <NavBar />
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={AboutUs} />
         <Route path="/article/:articleId" component={Article} />

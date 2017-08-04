@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
-import './Article.css';
 import marked from 'marked';
 import moment from 'moment';
 import { ajax } from 'jquery';
