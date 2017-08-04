@@ -20,56 +20,39 @@
   border: 5px solid pink; }
 
 .grid-content {
+  border: 5px solid green;
   display: flex;
   flex-flow: row wrap;
   align-items: stretch;
+  justify-content: center;
   padding: 8px; }
 
 a.single-gridtile {
   display: block;
+  width: 300px;
+  height: 200px;
   box-sizing: border-box;
   padding: 8px 8px 8px;
-  transition: all 0.2s ease;
-  position: relative;
-  height: 250px; }
-  @media only screen and (min-width: 400px) {
-    a.single-gridtile {
-      height: 350px; } }
-  @media only screen and (min-width: 600px) {
-    a.single-gridtile {
-      height: 450px; } }
-  a.single-gridtile .gridcard-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: 100%;
-    background-color: #EEE;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    display: block;
-    height: 250px; }
-    @media only screen and (min-width: 400px) {
-      a.single-gridtile .gridcard-image {
-        height: 350px; } }
-    @media only screen and (min-width: 600px) {
-      a.single-gridtile .gridcard-image {
-        height: 450px; } }
+  transition: all 0.2s ease; }
+  a.single-gridtile .gridcard-text h2 {
+    display: none; }
+  a.single-gridtile .gridcard-text p {
+    display: none; }
   a.single-gridtile:hover {
-    transition: all 0.2s ease; }
-    a.single-gridtile:hover .gridcard-text {
-      background-color: #222;
-      transition: all 0.2s ease; }
-      a.single-gridtile:hover .gridcard-text h2 {
-        color: #FFF;
-        font-size: 32px;
-        font-weight: 400; }
-      a.single-gridtile:hover .gridcard-text p {
-        color: #FFF;
-        font-size: 16px;
-        line-height: 22px;
-        word-break: break-word; }
+    transition: all 0.2s ease;
+    width: 300px;
+    height: 200px; }
+    a.single-gridtile:hover .gridcard-text h2 {
+      display: block;
+      color: black;
+      font-size: 32px;
+      font-weight: 400; }
+    a.single-gridtile:hover .gridcard-text p {
+      display: block;
+      color: black;
+      font-size: 16px;
+      line-height: 22px;
+      word-break: break-word; }
 
 .article-container {
   margin: 10% 20% 10% 20%;
