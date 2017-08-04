@@ -33,6 +33,11 @@
   box-sizing: border-box;
 }
 
+.gridcard-text {
+  height: 300px;
+  width: 250px;
+}
+
 .grid-content {
   border: 5px solid green;
   font-family: 'Catamaran', sans-serif;
@@ -65,8 +70,8 @@ a.single-gridtile {
     position: absolute;
     z-index: 1;
     height: 250px;
+    width: 300px;
     overflow: hidden;
-    transition: all 0.2s ease;
     h2 {
       visibility: hidden;
     }

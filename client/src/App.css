@@ -22,6 +22,10 @@
 .single-gridtile {
   box-sizing: border-box; }
 
+.gridcard-text {
+  height: 300px;
+  width: 250px; }
+
 .grid-content {
   border: 5px solid green;
   font-family: 'Catamaran', sans-serif;
@@ -52,8 +56,8 @@ a.single-gridtile {
     position: absolute;
     z-index: 1;
     height: 250px;
-    overflow: hidden;
-    transition: all 0.2s ease; }
+    width: 300px;
+    overflow: hidden; }
     a.single-gridtile .gridcard-text h2 {
       visibility: hidden; }
     a.single-gridtile .gridcard-text p {
