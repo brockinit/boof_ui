@@ -1,26 +1,48 @@
 
 #app-container {
-  border: 10px solid blue;
+  // border: 10px solid blue;
+  background-color: #FBFAF8;
 }
 
 .navbar-container {
-  border: 10px solid green;
+  // border: 10px solid green;
+  padding: 3rem 3rem 0rem 3rem;
 }
 
 .header-container {
-  border: 10px solid purple;
+  // border: 10px solid purple;
+  padding: 4rem 3rem 3rem;
+  h1{
+    font-size: 6rem;
+    line-height: 6rem;
+    margin: 0;
+    font-weight: bold;
+    max-width: 800px;
+    font-family: 'Catamaran', 'Helvetica', sans-serif;
+    padding-bottom: 1.5rem;
+  }
 }
 
 .title-text-container {
-  border: 5px solid red;
+  // border: 5px solid red;
+  // padding: 0 3rem;
 }
 
 .sub-text-container {
-  border: 5px solid red;
+  // border: 5px solid red;
+  display: inline-block;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Noto Serif', 'Helvetica', sans-serif;
+  font-style: italic;
+  font-size: 19px;
+  padding-bottom: 2rem;
 }
 
 .intro-text-container {
-  border: 5px solid red;
+  // border: 5px solid red;
+  font-family: 'Noto Serif', 'Helvetica', sans-serif;
+  padding-top: 2rem;
+
 }
 
 .gridcard-container {
@@ -39,7 +61,7 @@
 }
 
 .grid-content {
-  border: 5px solid green;
+  // border: 5px solid green;
   font-family: 'Catamaran', sans-serif;
   display: flex;
   box-sizing: border-box;

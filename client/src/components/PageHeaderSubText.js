@@ -6,7 +6,6 @@ const PageHeaderSubText = props => {
       <p>
         {props.text}
       </p>
-      <p>----------</p>
     </div>
   );
 };
