@@ -98,7 +98,7 @@ a.single-gridtile {
 
 .article-container {
   margin: 10% 20% 10% 20%;
-  font-family: 'Noto Serif', 'Helvetica', sans-serif;
+  font-family: 'Merriweather';
   font-size: 1.1rem;
   line-height: 2.3rem;
   font-weight: 300; }
@@ -111,7 +111,7 @@ p > img {
   margin-left: -35%; }
 
 .h1-article {
-  font-family: 'Catamaran', 'Helvetica', sans-serif;
+  font-family: 'Roboto';
   text-align: center;
   font-size: 3.2rem;
   line-height: 5rem; }
