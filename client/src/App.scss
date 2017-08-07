@@ -27,21 +27,20 @@ $large-width: 1024px;
 
 .navbar-container {
   // border: 10px solid green;
-  padding: 3rem 3rem 0rem 3rem;
+  padding: 3rem 3rem 3rem 3rem;
   display: flex;
   justify-content: space-between;
 }
 
 .menu-container {
   display: flex;
-  margin-right: 3rem;
 }
 
 .menu-item {
   visibility: hidden;
   @include medium {
     visibility: visible;
-    padding-left: 12%;
+    padding-left: 2rem;
     white-space: nowrap;
     text-align: center;
     p, a {
@@ -100,7 +99,7 @@ $large-width: 1024px;
 }
 
 .gridcard-container {
-  border: 5px solid green;
+  // border: 5px solid green;
   display: flex;
   box-sizing: border-box;
   flex-flow: row wrap;
@@ -215,4 +214,27 @@ a.gridtile-container {
     max-width: 175%;
     margin-left: -35%;
   }
+}
+
+// About Us Styles
+
+.about-us-content-container {
+  padding: 0rem 3rem 3rem;
+  h2 {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  p {
+    font-family: 'Noto Serif', 'Helvetica', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
+}
+
+.about-us-image-bar {
+  display: none;
+  @include medium {
+    display: block;
+  };
 }
