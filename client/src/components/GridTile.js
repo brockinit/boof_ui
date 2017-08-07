@@ -1,9 +1,6 @@
 import React from 'react';
 
 const GridTile = props => {
-  // const imageUrl = require(`${props.image}`)
-  console.log(props.image, 'props image');
-
   return (
     <a className="gridtile-container" href={`article/${props.slug}`}>
       <div className="gridtile-text">

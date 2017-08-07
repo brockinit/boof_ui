@@ -21,12 +21,10 @@ $large-width: 1024px;
 }
 
 #app-container {
-  // border: 10px solid blue;
   background-color: #FBFAF8;
 }
 
 .navbar-container {
-  // border: 10px solid green;
   padding: 3rem 3rem 3rem 3rem;
   display: flex;
   justify-content: space-between;
@@ -57,18 +55,15 @@ $large-width: 1024px;
 .outer {
   max-width: 1100px;
   margin: auto;
-  // background-color: blue;
 }
 
 .header-container {
-  // border: 10px solid purple;
   padding: 4rem 3rem 3rem;
   h1{
     font-size: 3.8rem;
     line-height: 4rem;
     margin: 0;
     font-weight: bold;
-    // max-width: 800px;
     font-family: 'Catamaran', 'Helvetica', sans-serif;
     padding-bottom: 1.5rem;
     @include medium {
@@ -79,7 +74,6 @@ $large-width: 1024px;
 }
 
 .sub-text-container {
-  // border: 5px solid red;
   display: inline-block;
   border-bottom: 1px solid #AAA;
   padding-bottom: 2rem;
@@ -91,7 +85,6 @@ $large-width: 1024px;
 }
 
 .intro-text-container {
-  // border: 5px solid red;
   padding-top: 2rem;
   p {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
@@ -99,7 +92,6 @@ $large-width: 1024px;
 }
 
 .gridcard-container {
-  // border: 5px solid green;
   display: flex;
   box-sizing: border-box;
   flex-flow: row wrap;
@@ -109,7 +101,6 @@ $large-width: 1024px;
 }
 
 a.gridtile-container {
-  // border: 10px solid red;
   display: block;
   width: 300px;
   height: 250px;
