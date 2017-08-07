@@ -3,7 +3,7 @@ import PageHeader from '../../components/PageHeader';
 import PageHeaderSubText from '../../components/PageHeaderSubText';
 import PageIntroText from '../../components/PageIntroText';
 import GridTile from '../../components/GridTile';
-// import { Link } from 'react-router-dom';
+import Metadata from '../../components/Metadata';
 import { BLOG_POST_ENDPOINT } from '../../constants';
 import { ajax } from 'jquery';
 
@@ -35,6 +35,12 @@ class HomepageContainer extends React.Component {
   render() {
     return (
         <div className="homepage-container">
+          <Metadata
+            title="Better Odds of Football"
+            description="Giving you better odds through data science, machine learning, and years of football fandom."
+            url="https:www.betterodds.io"
+            image="/assets/boof-logo-metadata.png"
+            />
           <div className="header-container-outer outer">
             <div className="header-container div-container">
               <PageHeader title="Better Odds of Football" />
@@ -51,6 +57,7 @@ class HomepageContainer extends React.Component {
                       title={fields.articleTitle}
                       author={fields.author}
                       image={fields.images[0].fields.file.url}
+                      slug={fields.slug}
                       />
                   </div>
                 );

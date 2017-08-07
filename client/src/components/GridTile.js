@@ -5,7 +5,7 @@ const GridTile = props => {
   console.log(props.image, 'props image');
 
   return (
-    <a className="gridtile-container" href="/">
+    <a className="gridtile-container" href={`article/${props.slug}`}>
       <div className="gridtile-text">
         <h2>{props.title}</h2>
         <p>{props.author}</p>

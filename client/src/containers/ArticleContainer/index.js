@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Helmet } from 'react-helmet';
+import Metadata from '../../components/Metadata';
+import ArticleHeader from '../../components/ArticleHeader';
 import marked from 'marked';
 import moment from 'moment';
 import { ajax } from 'jquery';
@@ -49,45 +50,23 @@ class ArticleContainer extends Component {
 
   render() {
     return (
-      <div className="article-container">
-        <Helmet>
-          <title>
-            {this.state.articleTitle}
-          </title>
-          <meta name="title" content="Better Odds of Football - About Us" />
-          <meta
-            name="description"
-            content={this.state.articleShortDescription}
-          />
-          <meta
-            property="og:title"
-            content="Better Odds of Football - About Us"
-          />
-          <meta
-            property="og:url"
-            content={`https://betterodds.io/${this.state.slug}`}
-          />
-          <meta property="og:type" content="website" />
-          <meta
-            property="og:description"
-            content={this.state.articleShortDescription}
-          />
-          <meta property="og:image" content="/assets/boof-logo-metadata.png" />
-        </Helmet>
-        <h1 className="h1-article">
-          {this.state.articleTitle}
-        </h1>
-        <div className="date-article">
-          {this.state.author}
+      <div className="article-container outer">
+        <div className="article-container-inner">
+          <Metadata
+            title={this.state.articleTitle}
+            description={this.state.articleShortDescription}
+            url={`https://www.betterodds.io/${this.state.slug}`}
+            image="/assets/boof-logo-metadata.png" />
+          <ArticleHeader
+            title={this.state.articleTitle}
+            author={this.state.author}
+            date={this.state.dateCreated} />
+          {this.state.articleBody &&
+            <div
+              className="article-body"
+              dangerouslySetInnerHTML={this.parseMarkdown()}
+            />}
         </div>
-        <div className="author-article">
-          {this.state.dateCreated}
-        </div>
-        {this.state.articleBody &&
-          <div
-            className="article-body"
-            dangerouslySetInnerHTML={this.parseMarkdown()}
-          />}
       </div>
     );
   }
