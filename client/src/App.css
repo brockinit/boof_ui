@@ -2,7 +2,29 @@
   background-color: #FBFAF8; }
 
 .navbar-container {
-  padding: 3rem 3rem 0rem 3rem; }
+  padding: 3rem 3rem 0rem 3rem;
+  display: flex;
+  justify-content: space-between; }
+
+.menu-container {
+  display: flex;
+  margin-right: 3rem; }
+
+.menu-item {
+  visibility: hidden; }
+  @media (min-width: 650px) {
+    .menu-item {
+      visibility: visible;
+      padding-left: 12%;
+      white-space: nowrap;
+      text-align: center; }
+      .menu-item p, .menu-item a {
+        font-family: 'Catamaran', 'Helvetica', sans-serif;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: black;
+        font-size: 1.1rem;
+        font-weight: 700; } }
 
 .outer {
   max-width: 1100px;
@@ -19,7 +41,7 @@
     padding-bottom: 1.5rem; }
     @media (min-width: 650px) {
       .header-container h1 {
-        font-size: 6rem;
+        font-size: 5.5rem;
         line-height: 6rem; } }
 
 .sub-text-container {
