@@ -1,17 +1,12 @@
 import React from 'react';
 import Logo from '../assets/boof-logo-colored.svg';
-// import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <div className="navbar-container">
       <div className="logo-container">
         <a href="/">
-          <img
-            src={Logo}
-            alt="Better Odds of Football Logo"
-            height="60px"
-          />
+          <img src={Logo} alt="Better Odds of Football Logo" height="60px" />
         </a>
       </div>
       <div className="menu-container">
