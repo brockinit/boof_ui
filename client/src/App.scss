@@ -30,10 +30,10 @@ $large-width: 1024px;
   padding: 3rem 3rem 0rem 3rem;
 }
 
-.container {
+.outer {
   max-width: 1100px;
   margin: auto;
-  background-color: blue;
+  // background-color: blue;
 }
 
 .header-container {
@@ -50,72 +50,45 @@ $large-width: 1024px;
   }
 }
 
-.title-text-container {
-  // border: 5px solid red;
-  // padding: 0 3rem;
-}
-
 .sub-text-container {
   // border: 5px solid red;
   display: inline-block;
   border-bottom: 1px solid #AAA;
-  font-family: 'Noto Serif', 'Helvetica', sans-serif;
-  font-style: italic;
-  font-size: 19px;
   padding-bottom: 2rem;
+  p {
+    font-family: 'Noto Serif', 'Helvetica', sans-serif;
+    font-style: italic;
+    font-size: 19px;
+  }
 }
 
 .intro-text-container {
   // border: 5px solid red;
-  font-family: 'Noto Serif', 'Helvetica', sans-serif;
   padding-top: 2rem;
-
+  p {
+    font-family: 'Noto Serif', 'Helvetica', sans-serif;
+  }
 }
 
 .gridcard-container {
-  // border: 10px solid yellow;
-  box-sizing: border-box;
-}
-
-.single-gridtile {
-  // border: 5px solid pink;
-  box-sizing: border-box;
-}
-
-.gridcard-text {
-  height: 300px;
-  width: 250px;
-}
-
-.grid-content {
-  // border: 5px solid green;
-  font-family: 'Catamaran', sans-serif;
+  border: 5px solid green;
   display: flex;
   box-sizing: border-box;
   flex-flow: row wrap;
   align-items: stretch;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 8px;
 }
 
-.gridcard-image {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: block;
-  width: 100%;
-  height: 250px;
-  box-sizing: border-box;
-}
-
-a.single-gridtile {
+a.gridtile-container {
+  // border: 10px solid red;
   display: block;
   width: 300px;
   height: 250px;
   box-sizing: border-box;
   margin: 8px;
   transition: all 0.2s ease;
-  .gridcard-text{
+  .gridtile-text{
     position: absolute;
     z-index: 1;
     height: 250px;
@@ -130,7 +103,7 @@ a.single-gridtile {
   }
   &:hover{
     transition: all 0.2s ease;
-    .gridcard-text{
+    .gridtile-text{
       padding: 35px 35px 35px 35px;
       width: 300px;
       height: 250px;
@@ -139,11 +112,13 @@ a.single-gridtile {
       background-repeat: no-repeat;
       box-sizing: border-box;
       h2 {
+        font-family: 'Catamaran', sans-serif;
         visibility: visible;
         color: white;
         font-size: 18px;
       }
       p {
+        font-family: 'Catamaran', sans-serif;
         visibility: visible;
         color: white;
         font-size: 15px;
@@ -151,6 +126,16 @@ a.single-gridtile {
       }
     }
   }
+}
+
+.gridtile-image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+  width: 100%;
+  height: 250px;
+  box-sizing: border-box;
 }
 
 // Article Styles

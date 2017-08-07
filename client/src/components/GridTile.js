@@ -5,14 +5,12 @@ const GridTile = props => {
   console.log(props.image, 'props image');
 
   return (
-    <a className="single-gridtile" href="/">
-      <div className="gridcard-container">
-        <div className="gridcard-text">
-          <h2>{props.title}</h2>
-          <p>{props.author}</p>
-        </div>
-        <div className="gridcard-image" style={{ backgroundImage: `url(${props.image})` }} />
+    <a className="gridtile-container" href="/">
+      <div className="gridtile-text">
+        <h2>{props.title}</h2>
+        <p>{props.author}</p>
       </div>
+      <div className="gridtile-image" style={{ backgroundImage: `url(${props.image})` }} />
     </a>
   );
 };

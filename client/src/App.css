@@ -4,10 +4,9 @@
 .navbar-container {
   padding: 3rem 3rem 0rem 3rem; }
 
-.container {
+.outer {
   max-width: 1100px;
-  margin: auto;
-  background-color: blue; }
+  margin: auto; }
 
 .header-container {
   padding: 4rem 3rem 3rem; }
@@ -22,63 +21,46 @@
 .sub-text-container {
   display: inline-block;
   border-bottom: 1px solid #AAA;
-  font-family: 'Noto Serif', 'Helvetica', sans-serif;
-  font-style: italic;
-  font-size: 19px;
   padding-bottom: 2rem; }
+  .sub-text-container p {
+    font-family: 'Noto Serif', 'Helvetica', sans-serif;
+    font-style: italic;
+    font-size: 19px; }
 
 .intro-text-container {
-  font-family: 'Noto Serif', 'Helvetica', sans-serif;
   padding-top: 2rem; }
+  .intro-text-container p {
+    font-family: 'Noto Serif', 'Helvetica', sans-serif; }
 
 .gridcard-container {
-  box-sizing: border-box; }
-
-.single-gridtile {
-  box-sizing: border-box; }
-
-.gridcard-text {
-  height: 300px;
-  width: 250px; }
-
-.grid-content {
-  font-family: 'Catamaran', sans-serif;
+  border: 5px solid green;
   display: flex;
   box-sizing: border-box;
   flex-flow: row wrap;
   align-items: stretch;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 8px; }
 
-.gridcard-image {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: block;
-  width: 100%;
-  height: 250px;
-  box-sizing: border-box; }
-
-a.single-gridtile {
+a.gridtile-container {
   display: block;
   width: 300px;
   height: 250px;
   box-sizing: border-box;
   margin: 8px;
   transition: all 0.2s ease; }
-  a.single-gridtile .gridcard-text {
+  a.gridtile-container .gridtile-text {
     position: absolute;
     z-index: 1;
     height: 250px;
     width: 300px;
     overflow: hidden; }
-    a.single-gridtile .gridcard-text h2 {
+    a.gridtile-container .gridtile-text h2 {
       visibility: hidden; }
-    a.single-gridtile .gridcard-text p {
+    a.gridtile-container .gridtile-text p {
       visibility: hidden; }
-  a.single-gridtile:hover {
+  a.gridtile-container:hover {
     transition: all 0.2s ease; }
-    a.single-gridtile:hover .gridcard-text {
+    a.gridtile-container:hover .gridtile-text {
       padding: 35px 35px 35px 35px;
       width: 300px;
       height: 250px;
@@ -86,15 +68,26 @@ a.single-gridtile {
       transition: all 0.2s ease;
       background-repeat: no-repeat;
       box-sizing: border-box; }
-      a.single-gridtile:hover .gridcard-text h2 {
+      a.gridtile-container:hover .gridtile-text h2 {
+        font-family: 'Catamaran', sans-serif;
         visibility: visible;
         color: white;
         font-size: 18px; }
-      a.single-gridtile:hover .gridcard-text p {
+      a.gridtile-container:hover .gridtile-text p {
+        font-family: 'Catamaran', sans-serif;
         visibility: visible;
         color: white;
         font-size: 15px;
         line-height: 22px; }
+
+.gridtile-image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+  width: 100%;
+  height: 250px;
+  box-sizing: border-box; }
 
 .article-container {
   margin: 10% 20% 10% 20%;
