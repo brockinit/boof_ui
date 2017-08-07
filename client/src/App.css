@@ -11,12 +11,16 @@
 .header-container {
   padding: 4rem 3rem 3rem; }
   .header-container h1 {
-    font-size: 6rem;
-    line-height: 6rem;
+    font-size: 3.8rem;
+    line-height: 4rem;
     margin: 0;
     font-weight: bold;
     font-family: 'Catamaran', 'Helvetica', sans-serif;
     padding-bottom: 1.5rem; }
+    @media (min-width: 650px) {
+      .header-container h1 {
+        font-size: 6rem;
+        line-height: 6rem; } }
 
 .sub-text-container {
   display: inline-block;
