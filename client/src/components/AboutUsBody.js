@@ -3,34 +3,16 @@ import cat1 from '../assets/cat-1.jpeg';
 import cat2 from '../assets/cat-2.jpeg';
 import cat3 from '../assets/cat-3.jpeg';
 
-const styles = {
-  h2: {
-    fontFamily: 'Roboto',
-    lineHeight: '3rem',
-  },
-  aboutBody: {
-    paddingLeft: '3rem',
-    paddingRight: '3rem',
-    fontFamily: 'Merriweather',
-    lineHeight: '1.6rem',
-  },
-  imageBar: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-  },
-};
-
 const AboutUsBody = props => {
   return (
-    <div>
-      <div style={styles.imageBar}>
+    <div className="about-us-body-container">
+      <div className="about-us-image-bar">
         <img alt="cat-1" src={cat1} />
         <img alt="cat-2" src={cat2} />
         <img alt="cat-3" src={cat3} />
       </div>
-      <div style={styles.aboutBody}>
-        <h2 style={styles.h2}>Brock</h2>
+      <div className="about-us-content-container">
+        <h2>Brock</h2>
         <p>
           A self-proclaimed data nerd with a distaste for baseless arguments and
           emotional decisions, Brock has always been about bringing facts to the
@@ -40,7 +22,7 @@ const AboutUsBody = props => {
           and stock prices. If forced to name one thing he loves as much as
           football, it’d be Persian cats.{' '}
         </p>
-        <h2 style={styles.h2}>Sal</h2>
+        <h2>Sal</h2>
         <p>
           As a lifelong Cleveland Browns fan and aspiring college professor, Sal
           knows all about the long road. Playing fantasy football for over a
@@ -52,7 +34,7 @@ const AboutUsBody = props => {
           currently writing a thesis paper on the topic. Sal also loves a good
           map.
         </p>
-        <h2 style={styles.h2}>Andrea</h2>
+        <h2>Andrea</h2>
         <p>
           As the jack of all trades and master of none, Andrea is a noob
           developer and dabbles in digital advertising, product development, and

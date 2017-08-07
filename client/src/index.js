@@ -1,18 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import './App.css';
 import 'normalize.css';
-
-injectTapEventPlugin();
 
 ReactDOM.render(
   <BrowserRouter>
-    <MuiThemeProvider>
-      <App />
-    </MuiThemeProvider>
+    <App />
   </BrowserRouter>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );

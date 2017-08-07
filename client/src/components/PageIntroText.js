@@ -1,17 +1,8 @@
 import React from 'react';
 
-const styles = {
-  introText: {
-    fontSize: '1.2rem',
-    paddingLeft: '3rem',
-    paddingBottom: '2rem',
-    fontFamily: 'Merriweather',
-  },
-};
-
 const PageIntroText = props => {
   return (
-    <div style={styles.introText}>
+    <div className="intro-text-container">
       <p>
         {props.text}
       </p>
