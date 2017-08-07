@@ -145,33 +145,49 @@ a.gridtile-container {
 // Article Styles
 
 .article-container {
-  margin: 10% 20% 10% 20%;
-  font-family: 'Merriweather';
-  font-size: 1.1rem;
-  line-height: 2.3rem;
-  font-weight: 300;
+  margin: 10% 10% 10% 10%;
+  @include medium {
+    margin: 10% 20% 10% 20%;
+  }
+}
+
+.article-header-container {
+  text-align: center;
+  h1 {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 2.5rem;
+    line-height: 2.8rem;
+    @include medium {
+      font-size: 3.2rem;
+      line-height: 5rem;
+    };
+  }
+  p {
+    font-family: 'Noto Serif', 'Helvetica', sans-serif;
+    font-size: 1rem;
+  }
 }
 
 .article-body {
-  margin-top: 15%;
-}
-
-p > img {
-  max-width: 175%;
-  margin-left: -35%;
-}
-
-.h1-article {
-  font-family: 'Roboto';
-  text-align: center;
-  font-size: 3.2rem;
-  line-height: 5rem;
-}
-
-.date-article {
-  text-align: center;
-}
-
-.author-article {
-  text-align: center;
+  margin-top: 3rem;
+  p {
+    font-family: 'Noto Serif', 'Helvetica', sans-serif;
+    font-size: 1.1rem;
+    line-height: 2.3rem;
+  }
+  table, th, td {
+    font-family: 'Noto Serif', 'Helvetica', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  em, strong {
+    font-family: 'Noto Serif', 'Helvetica', sans-serif;
+    font-weight: 700;
+  }
+  p > img {
+    max-width: 175%;
+    margin-left: -35%;
+  }
 }

@@ -7,10 +7,14 @@ const ArticleHeader = props => {
         {props.title}
       </h1>
       <div className="date-article">
-        {props.author}
+        <p>
+          {props.author}
+        </p>
       </div>
       <div className="author-article">
-        {props.date}
+        <p>
+          {props.date}
+        </p>
       </div>
     </div>
   );
