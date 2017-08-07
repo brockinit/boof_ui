@@ -14,6 +14,11 @@ class HomepageContainer extends React.Component {
     this.viewPost = this.viewPost.bind(this);
     this.state = {
       articles: [],
+      articleTitle: null,
+      author: null,
+      dateCreated: null,
+      image: null,
+      slug: null,
     };
   }
 
@@ -57,6 +62,7 @@ class HomepageContainer extends React.Component {
                       title={fields.articleTitle}
                       author={fields.author}
                       image={fields.images[0].fields.file.url}
+                      date={fields.dateCreated}
                       slug={fields.slug}
                       />
                   </div>

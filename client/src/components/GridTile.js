@@ -9,6 +9,7 @@ const GridTile = props => {
       <div className="gridtile-text">
         <h2>{props.title}</h2>
         <p>{props.author}</p>
+        <p>{props.date}</p>
       </div>
       <div className="gridtile-image" style={{ backgroundImage: `url(${props.image})` }} />
     </a>

@@ -75,7 +75,6 @@ a.gridtile-container {
   a.gridtile-container .gridtile-text {
     position: absolute;
     z-index: 1;
-    height: 250px;
     width: 300px;
     overflow: hidden; }
     a.gridtile-container .gridtile-text h2 {
@@ -89,6 +88,7 @@ a.gridtile-container {
       width: 300px;
       height: 250px;
       background-color: #222;
+      opacity: 0.9;
       transition: all 0.2s ease;
       background-repeat: no-repeat;
       box-sizing: border-box; }
