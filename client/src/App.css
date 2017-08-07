@@ -168,3 +168,24 @@ a.gridtile-container {
   @media (min-width: 650px) {
     .about-us-image-bar {
       display: block; } }
+
+.footer-container-inner {
+  padding: 4rem 0rem 4rem;
+  display: flex;
+  justify-content: space-around; }
+  @media (min-width: 650px) {
+    .footer-container-inner {
+      justify-content: center; } }
+
+.footer-item {
+  text-align: center; }
+  @media (min-width: 650px) {
+    .footer-item {
+      padding-left: 2.5rem; } }
+  .footer-item p, .footer-item a {
+    text-decoration: none;
+    color: #7D7D7D;
+    text-transform: uppercase;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 1rem;
+    font-weight: 700; }
