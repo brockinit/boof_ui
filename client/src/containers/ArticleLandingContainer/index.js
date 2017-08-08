@@ -42,8 +42,8 @@ class ArticleLandingContainer extends React.Component {
         <div className="homepage-container">
           <Metadata
             title="Read our articles"
-            description="Giving you better odds through data science, machine learning, and years of football fandom."
-            url="https:www.betterodds.io"
+            description="Articles written by experienced fans, big data analysis and machine learning technologies to give you better odds this fantasy football season."
+            url="https:www.betterodds.io/articles"
             image="/assets/boof-logo-metadata.png"
             />
           <div className="header-container-outer outer">
