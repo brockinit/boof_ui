@@ -23,7 +23,6 @@ const AboutUsContainer = () => {
         </div>
       </div>
       <AboutUsBody />
-      <ContactForm />
     </div>
   );
 };
