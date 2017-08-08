@@ -92,7 +92,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/boof-test/dev/1502168599155-2017-08-08T05:03:19.155Z/boof-test.zip"
+          "S3Key": "serverless/boof-test/dev/1502169177712-2017-08-08T05:12:57.712Z/boof-test.zip"
         },
         "FunctionName": "boof-test-dev-mailChimp",
         "Handler": "mailChimp/index.handler",
@@ -116,14 +116,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "MailChimpLambdaVersionh1vBbkytAeQk0VZrszQGboQmJGZtYgVQI6iOfxfDzs0": {
+    "MailChimpLambdaVersion1QbZ38m0Jg60Ndeotoa3pCHOl50vRHKCuGsTF6sqRAc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "MailChimpLambdaFunction"
         },
-        "CodeSha256": "h1vBbkytAeQk0VZrszQGboQmJGZtYgVQI6iOfxfDzs0="
+        "CodeSha256": "1QbZ38m0Jg60Ndeotoa3pCHOl50vRHKCuGsTF6sqRAc="
       }
     },
     "ApiGatewayRestApi": {
@@ -160,7 +160,7 @@
               "StatusCode": "200",
               "ResponseParameters": {
                 "method.response.header.Access-Control-Allow-Origin": "'*'",
-                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
                 "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
                 "method.response.header.Access-Control-Allow-Credentials": "'false'"
               },
@@ -222,7 +222,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1502168599164": {
+    "ApiGatewayDeployment1502169177736": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -277,7 +277,7 @@
     "MailChimpLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "MailChimpLambdaVersionh1vBbkytAeQk0VZrszQGboQmJGZtYgVQI6iOfxfDzs0"
+        "Ref": "MailChimpLambdaVersion1QbZ38m0Jg60Ndeotoa3pCHOl50vRHKCuGsTF6sqRAc"
       }
     },
     "ServiceEndpoint": {
