@@ -49,7 +49,7 @@ class ArticleLandingContainer extends React.Component {
           <div className="header-container-outer outer">
             <div className="header-container div-container">
               <PageHeader title="Our Thoughts" />
-              <PageHeaderSubText text="Giving you better odds this fantasy football season" />
+              <PageHeaderSubText text="To give you better odds this fantasy football season" />
               <PageIntroText text="Articles written by experienced fans, big data analysis and machine learning technologies to give you better odds this fantasy football season." />
             </div>
           </div>
