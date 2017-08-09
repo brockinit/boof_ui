@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './containers/HomepageContainer';
 import AboutUs from './containers/AboutUsContainer';
+import ContactUs from './containers/ContactUsContainer';
 import Article from './containers/ArticleContainer';
 import ArticleLanding from './containers/ArticleLandingContainer';
 import Footer from './components/Footer';
@@ -16,6 +17,7 @@ const App = () =>
         <NavBar />
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={AboutUs} />
+        <Route exact path="/contact" component={ContactUs} />
         <Route exact path="/articles" component={ArticleLanding} />
         <Route path="/article/:articleId" component={Article} />
         <Footer />
