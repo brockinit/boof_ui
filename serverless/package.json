@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mailchimp": "1.2.0"
+    "mailchimp-api-v3": "1.7.0"
   }
 }
