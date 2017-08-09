@@ -26,7 +26,6 @@ class ContactForm extends Component {
       }
       let oReq = new XMLHttpRequest();
       oReq.open('POST', 'https://us16.api.mailchimp.com/3.0/lists/96d472b10a/members')
-      oReq.setRequestHeader('Access-Control-Allow-Origin':'*', 'Authorization', 'Basic ' + btoa('username:cb2a47bd962ed39eced32293b05af3a4-us16'), 'Content-Type', 'application/json')
       oReq.addEventListener('load', reqListener)
       oReq.send({ email_address : "takamiya.andrea2@gmail.com", status : "subscribed" })
     })
