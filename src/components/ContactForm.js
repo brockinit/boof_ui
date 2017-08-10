@@ -32,15 +32,24 @@ class ContactForm extends Component {
   addtoMailingList(newUser) {
     return new Promise(function(resolve, reject){
       function reqListener(){
-        console.log('test', resolve(this.responseText));
-        // let results = JSON.parse(this.responseText);
-        // resolve(results);
+        console.log('new user', this);
+        if (this.status === 200) {
+          resolve();
+        } else {
+          reject(this.status);
+        }
       }
       let oReq = new XMLHttpRequest();
       oReq.open('OPTIONS', 'https://bbfmplcut3.execute-api.us-east-1.amazonaws.com/dev', true);
       oReq.setRequestHeader('Content-type', 'application/json');
       oReq.addEventListener('load', reqListener)
       oReq.send(JSON.stringify(newUser))
+    })
+    .then(() => {
+      console.log("success");
+    })
+    .catch(() => {
+      console.log("Failed");
     })
   }
 
