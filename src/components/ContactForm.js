@@ -20,14 +20,27 @@ class ContactForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    return new Promise((resolve, reject) => {
+    this.addtoMailingList({
+      Email: this.state.Email,
+      status: 'subscribed'
+    })
+    .then((data) => {
+      console.log(data, 'data');
+    })
+  }
+
+  addtoMailingList(newUser) {
+    return new Promise(function(resolve, reject){
       function reqListener(){
-        console.log(this, 'this');
+        console.log('test', resolve(this.responseText));
+        // let results = JSON.parse(this.responseText);
+        // resolve(results);
       }
       let oReq = new XMLHttpRequest();
-      oReq.open('POST', 'https://us16.api.mailchimp.com/3.0/lists/96d472b10a/members')
+      oReq.open('OPTIONS', 'https://bbfmplcut3.execute-api.us-east-1.amazonaws.com/dev', true);
+      oReq.setRequestHeader('Content-type', 'application/json');
       oReq.addEventListener('load', reqListener)
-      oReq.send({ email_address : "takamiya.andrea2@gmail.com", status : "subscribed" })
+      oReq.send(JSON.stringify(newUser))
     })
   }
 
