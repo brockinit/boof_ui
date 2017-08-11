@@ -21,7 +21,7 @@ $large-width: 1024px;
 }
 
 #app-container {
-  background-color: #FBFAF8;
+  background-color: #fbfaf8;
 }
 
 .navbar-container {
@@ -41,7 +41,8 @@ $large-width: 1024px;
     padding-left: 2rem;
     white-space: nowrap;
     text-align: center;
-    p, a {
+    p,
+    a {
       font-family: 'Catamaran', 'Helvetica', sans-serif;
       text-transform: uppercase;
       text-decoration: none;
@@ -49,7 +50,7 @@ $large-width: 1024px;
       font-size: 1.1rem;
       font-weight: 700;
     }
-  };
+  }
 }
 
 .outer {
@@ -59,7 +60,7 @@ $large-width: 1024px;
 
 .header-container {
   padding: 4rem 3rem 3rem;
-  h1{
+  h1 {
     font-size: 3.8rem;
     line-height: 4rem;
     margin: 0;
@@ -75,7 +76,7 @@ $large-width: 1024px;
 
 .sub-text-container {
   display: inline-block;
-  border-bottom: 1px solid #AAA;
+  border-bottom: 1px solid #aaa;
   padding-bottom: 2rem;
   p {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
@@ -100,14 +101,14 @@ $large-width: 1024px;
   padding: 8px;
 }
 
-a.gridtile-container {
+.gridtile-container {
   display: block;
   width: 300px;
   height: 250px;
   box-sizing: border-box;
   margin: 8px;
   transition: all 0.2s ease;
-  .gridtile-text{
+  .gridtile-text {
     position: absolute;
     z-index: 1;
     width: 300px;
@@ -119,9 +120,9 @@ a.gridtile-container {
       visibility: hidden;
     }
   }
-  &:hover{
+  &:hover {
     transition: all 0.2s ease;
-    .gridtile-text{
+    .gridtile-text {
       padding: 35px 35px 35px 35px;
       width: 300px;
       height: 250px;
@@ -175,7 +176,7 @@ a.gridtile-container {
     @include medium {
       font-size: 3.2rem;
       line-height: 5rem;
-    };
+    }
   }
   p {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
@@ -190,14 +191,17 @@ a.gridtile-container {
     font-size: 1.1rem;
     line-height: 2.3rem;
   }
-  table, th, td {
+  table,
+  th,
+  td {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
     border: 1px solid black;
     border-collapse: collapse;
   }
-  em, strong {
+  em,
+  strong {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
     font-weight: 700;
   }
@@ -227,7 +231,7 @@ a.gridtile-container {
   display: none;
   @include medium {
     display: block;
-  };
+  }
 }
 
 // Footer Styles
@@ -245,9 +249,10 @@ a.gridtile-container {
   @include medium {
     padding-left: 2.5rem;
   }
-  p, a {
+  p,
+  a {
     text-decoration: none;
-    color: #7D7D7D;
+    color: #7d7d7d;
     text-transform: uppercase;
     font-family: 'Catamaran', sans-serif;
     font-size: 1rem;
@@ -278,14 +283,14 @@ input {
   border-bottom: 1px solid transparent;
   transition: all 0.2s ease;
 
-  &:focus{
+  &:focus {
     outline: none;
     border-bottom: 1px solid gray;
     transition: all 0.2s ease;
   }
 }
 
-input[type="text"]{
+input[type="text"] {
   line-height: 3.5rem;
   padding-left: 1.3rem;
   box-sizing: border-box;
@@ -304,7 +309,7 @@ input[type="text"]{
   padding: 1.3rem;
 }
 
-input[type="submit"]{
+input[type="submit"] {
   padding: 1rem;
   font-size: 1.2rem;
   width: 100%;
@@ -316,14 +321,14 @@ input[type="submit"]{
   border-bottom: 2px solid darken(green, 10%);
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: darken(green, 5%);
     color: white;
     border-bottom: 1px solid darken(green, 20%);
     transform: translateY(3px);
   }
 
-  &:focus{
+  &:focus {
     outline: none;
   }
 }
@@ -341,12 +346,12 @@ input[type="submit"]{
 }
 
 .notice-container-error {
-  border: 1px solid #D64D3D;
+  border: 1px solid #d64d3d;
   margin-bottom: 1rem;
   width: 103%;
   p {
     padding: 0.4rem 0.3rem 0.3rem 1.3rem;
     font-family: 'Catamaran', sans-serif;
-    color: #D64D3D;
+    color: #d64d3d;
   }
 }
