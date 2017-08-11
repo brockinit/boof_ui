@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import { ajax } from 'jquery';
 import $ from 'jquery';
+import { MAILCHIMP_ENDPOINT } from '../constants';
 
 class ContactForm extends Component {
 
@@ -39,12 +39,12 @@ class ContactForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(event, 'event');
-    console.log(this, 'this');
       const options = {
-        url: 'https://kwfpz52gwh.execute-api.us-east-1.amazonaws.com/dev/',
+        url: MAILCHIMP_ENDPOINT,
         data: JSON.stringify({
-          emailAddress: this.state.emailAddress
+          emailAddress: this.state.emailAddress,
+          firstName: this.state.firstName,
+          lastName: this.state.lastName
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -58,34 +58,6 @@ class ContactForm extends Component {
         console.log('error', err);
         })
     }
-
-  // addtoMailingList(newUser) {
-
-    // return new Promise(function(resolve, reject){
-    //   function reqListener(){
-    //     console.log('this', this);
-    //     if (this.status === 200) {
-    //       resolve(
-    //         console.log(this.status)
-    //       );
-    //     } else {
-    //       reject(this.status, 'resolve status');
-    //     }
-    //   }
-    //   let oReq = new XMLHttpRequest();
-    //   oReq.open('OPTIONS', 'https://kwfpz52gwh.execute-api.us-east-1.amazonaws.com/dev/', true);
-    //   oReq.setRequestHeader('Content-type', 'application/json');
-    //   oReq.addEventListener('load', reqListener)
-    //   console.log((newUser), 'new user');
-    //   oReq.send(JSON.stringify(newUser));
-    // })
-    // .then(() => {
-    //   console.log("success");
-    // })
-    // .catch(() => {
-    //   console.log("Failed");
-    // })
-  // }
 
   render() {
     return (

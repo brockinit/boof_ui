@@ -2,8 +2,6 @@ const Mailchimp = require('mailchimp-api-v3');
 
 module.exports.handler = (event, context, callback) => {
   const API_KEY = process.env.API_KEY;
-  console.log(event, 'event');
-
   const mailchimp = new Mailchimp(API_KEY);
   mailchimp
     .request({
@@ -12,6 +10,10 @@ module.exports.handler = (event, context, callback) => {
       body: {
         email_address: event.emailAddress,
         status: 'subscribed',
+        merge_fields: {
+          FNAME: event.firstName,
+          LNAME: event.lastName
+        }
       },
     })
     .then(function(results) {
