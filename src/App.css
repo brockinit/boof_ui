@@ -221,7 +221,11 @@ input[type="text"] {
   font-family: 'Catamaran', sans-serif; }
 
 .message {
-  height: 10rem; }
+  height: 10rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  border-style: none; }
 
 input[type="submit"] {
   padding: 1rem;

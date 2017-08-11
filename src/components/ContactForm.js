@@ -100,7 +100,7 @@ class ContactForm extends Component {
               <input type='text' onChange={this.handleChangeEmail} placeholder="Email Address" name='emailAddress' value={this.state.emailAddress} className="input" />
               <input type='text' onChange={this.handleChangeFirstName} placeholder="First Name" name='firstName' value={this.state.firstName} className="input" />
               <input type='text' onChange={this.handleChangeLastName} placeholder="Last Name" name='lastName' value={this.state.lastName} className="input" />
-              <input type='text' onChange={this.handleChangeContactUsNote} placeholder="Write us a note" name='contactUsNote' value={this.state.contactUsNote} className="message" />
+              <textarea onChange={this.handleChangeContactUsNote} placeholder="Write us a note" name='contactUsNote' value={this.state.contactUsNote} className="message" />
               <input className="contact-button" type="submit" value="Contact Us" />
             </form>
           </div>

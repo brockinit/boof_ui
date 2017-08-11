@@ -295,6 +295,10 @@ input[type="text"]{
 
 .message {
   height: 10rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  border-style: none;
 }
 
 input[type="submit"]{
