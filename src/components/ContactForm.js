@@ -11,6 +11,7 @@ class ContactForm extends Component {
       emailAddress: '',
       firstName: '',
       lastName: '',
+      contactUsNote: '',
       sentStatus: ''
     }
 
@@ -18,6 +19,7 @@ class ContactForm extends Component {
     this.handleChangeEmail=this.handleChangeEmail.bind(this);
     this.handleChangeFirstName=this.handleChangeFirstName.bind(this);
     this.handleChangeLastName=this.handleChangeLastName.bind(this);
+    this.handleChangeContactUsNote=this.handleChangeContactUsNote.bind(this);
   }
 
   handleChangeEmail(event){
@@ -38,6 +40,12 @@ class ContactForm extends Component {
     })
   }
 
+  handleChangeContactUsNote(event){
+    this.setState({
+      contactUsNote : event.target.value
+    })
+  }
+
   handleSubmit(event) {
     event.preventDefault();
       const options = {
@@ -45,7 +53,8 @@ class ContactForm extends Component {
         data: JSON.stringify({
           emailAddress: this.state.emailAddress,
           firstName: this.state.firstName,
-          lastName: this.state.lastName
+          lastName: this.state.lastName,
+          contactUsNote: this.state.contactUsNote
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +66,8 @@ class ContactForm extends Component {
             sentStatus: 'sent',
             emailAddress: '',
             firstName: '',
-            lastName: ''
+            lastName: '',
+            contactUsNote: ''
           })
         } else {
           this.setState({
@@ -90,7 +100,8 @@ class ContactForm extends Component {
               <input type='text' onChange={this.handleChangeEmail} placeholder="Email Address" name='emailAddress' className="input" />
               <input type='text' onChange={this.handleChangeFirstName} placeholder="First Name" name='firstName' className="input" />
               <input type='text' onChange={this.handleChangeLastName} placeholder="Last Name" name='lastName' className="input" />
-              <input className="button contact-button" type="submit" value="Contact Us" />
+              <input type='text' onChange={this.handleChangeContactUsNote} placeholder="Write us a note" name='contactUsNote' className="message" />
+              <input className="contact-button" type="submit" value="Contact Us" />
             </form>
           </div>
         </div>

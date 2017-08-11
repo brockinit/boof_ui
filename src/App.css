@@ -191,19 +191,18 @@ a.gridtile-container {
     font-weight: 700; }
 
 .contact-us-container {
-  padding: 0rem 3rem 3rem; }
+  padding: 0rem 3rem 3rem 3rem; }
 
 .contact-us-inner {
-  max-width: 1000px;
-  margin: auto; }
+  max-width: 800px; }
   .contact-us-inner h2 {
     font-family: 'Catamaran', sans-serif;
     text-align: center; }
 
 input {
   display: block;
-  width: 400px;
   font-size: 1.2rem;
+  width: 100%;
   font-family: 'Catamaran', sans-serif;
   color: gray;
   border: 0;
@@ -216,17 +215,16 @@ input {
 
 input[type="text"] {
   line-height: 3.5rem;
-  padding: 0 0.8rem; }
+  margin-bottom: 1rem;
+  font-family: 'Catamaran', sans-serif; }
 
-.input {
-  margin-bottom: 1.5rem; }
-  .input > * {
-    display: block; }
+.message {
+  height: 10rem; }
 
 input[type="submit"] {
-  padding: 1rem 0.8rem;
+  padding: 1rem;
   font-size: 1.2rem;
-  width: 425px;
+  width: 100%;
   font-family: 'Catamaran', sans-serif;
   display: block;
   background-color: #469557;
@@ -243,18 +241,18 @@ input[type="submit"] {
 
 .notice-container-success {
   border: 1px solid #469557;
-  margin-bottom: 1.2rem;
-  width: 425px; }
+  margin-bottom: 1rem;
+  width: 100%; }
   .notice-container-success p {
-    padding: 0.6rem 0.5rem 0.5rem 1.3rem;
+    padding: 0.4rem 0.3rem 0.3rem 1.3rem;
     font-family: 'Catamaran', sans-serif;
     color: #469557; }
 
 .notice-container-error {
   border: 1px solid #D64D3D;
-  margin-bottom: 1.2rem;
-  width: 425px; }
+  margin-bottom: 1rem;
+  width: 100%; }
   .notice-container-error p {
-    padding: 0.6rem 0.5rem 0.5rem 1.3rem;
+    padding: 0.4rem 0.3rem 0.3rem 1.3rem;
     font-family: 'Catamaran', sans-serif;
     color: #D64D3D; }
