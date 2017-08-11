@@ -1,23 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Notice extends Component {
-
-  render(props) {
-    const status = 'success';
-    return(
-      <div className="notice-container">
-        {status ? (
-          <div className="notice">
-            <p>Your message was sent!</p>
-          </div>
-        ) : (
-          <div className="notice">
-            <p>Your message was not sent</p>
-          </div>
-        )}
+const Notice = (props) => {
+  return(
+    <div className={props.noticeContainerClass}>
+      <div className={props.class}>
+        <p>{props.status}</p>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Notice;

@@ -54,7 +54,10 @@ class ContactForm extends Component {
       $.post(options).then((data) => {
         if (data.statusCode === 200) {
           this.setState({
-            sentStatus: 'sent'
+            sentStatus: 'sent',
+            emailAddress: '',
+            firstName: '',
+            lastName: ''
           })
         } else {
           this.setState({
@@ -65,12 +68,23 @@ class ContactForm extends Component {
     }
 
   render() {
-    const sent = this.state.sentStatus;
-
     return (
       <div className="contact-us-container">
         <div className="contact-us-inner">
-        {sent ? (<Notice status='success'/>) : (<Notice status='failure'/>)}
+        {(() => {
+          switch (this.state.sentStatus) {
+            case "": return "";
+            case "sent": return <Notice
+              status="Your message has been sent! We'll contact you shortly"
+              class="success-message"
+              noticeContainerClass="notice-container-success" />;
+            case "error": return <Notice
+              status="An error occured, please try again"
+              noticeContainerClass="notice-container-error"
+              class="error-message" />;
+            default: return "";
+          }
+        })()}
           <div className="form-container">
             <form onSubmit={this.handleSubmit}>
               <input type='text' onChange={this.handleChangeEmail} placeholder="Email Address" name='emailAddress' className="input" />
