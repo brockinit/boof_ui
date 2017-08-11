@@ -1,27 +1,28 @@
-const Mailchimp = require('mailchimp-api-v3')
+const Mailchimp = require('mailchimp-api-v3');
 
 module.exports.handler = (event, context, callback) => {
+  const API_KEY = process.env.API_KEY;
+  console.log(event, 'event');
 
-const API_KEY = process.env.API_KEY;
-
-const mailchimp = new Mailchimp(API_KEY);
-  mailchimp.request({
-    method: 'post',
-    path: '/lists/96d472b10a/members',
-    body : {
-      email_address : event.body.Email,
-      status : "subscribed"
-    }
-  })
-  .then(function(results) {
-    callback(null, {
-      statusCode: 200,
-      body: JSON.stringify({test: "object"})
+  const mailchimp = new Mailchimp(API_KEY);
+  mailchimp
+    .request({
+      method: 'post',
+      path: '/lists/96d472b10a/members',
+      body: {
+        email_address: event.emailAddress,
+        status: 'subscribed',
+      },
+    })
+    .then(function(results) {
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify({ test: 'object' }),
+      });
+    })
+    .catch(function(err) {
+      callback(err, {
+        statusCode: 500,
+      });
     });
-  })
-  .catch(function (err) {
-    callback(err, {
-      statusCode: 500
-    });
-  });
-}
+};

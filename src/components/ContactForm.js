@@ -1,57 +1,91 @@
 import React, { Component } from 'react';
+// import { ajax } from 'jquery';
+import $ from 'jquery';
 
 class ContactForm extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      Email: ''
+      emailAddress: '',
+      firstName: '',
+      lastName: '',
+      sentStatus: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChangeEmail=this.handleChangeEmail.bind(this);
+    this.handleChangeFirstName=this.handleChangeFirstName.bind(this);
+    this.handleChangeLastName=this.handleChangeLastName.bind(this);
   }
 
   handleChangeEmail(event){
     this.setState({
-      Email : event.target.value
+      emailAddress : event.target.value
+    })
+  }
+
+  handleChangeFirstName(event){
+    this.setState({
+      firstName : event.target.value
+    })
+  }
+
+  handleChangeLastName(event){
+    this.setState({
+      lastName : event.target.value
     })
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    this.addtoMailingList({
-      Email: this.state.Email,
-      status: 'subscribed'
-    })
-    .then((data) => {
-      console.log(data, 'data');
-    })
-  }
-
-  addtoMailingList(newUser) {
-    return new Promise(function(resolve, reject){
-      function reqListener(){
-        console.log('new user', this);
-        if (this.status === 200) {
-          resolve();
-        } else {
-          reject(this.status);
+    console.log(event, 'event');
+    console.log(this, 'this');
+      const options = {
+        url: 'https://kwfpz52gwh.execute-api.us-east-1.amazonaws.com/dev/',
+        data: JSON.stringify({
+          emailAddress: this.state.emailAddress
+        }),
+        headers: {
+          'Content-Type': 'application/json',
         }
-      }
-      let oReq = new XMLHttpRequest();
-      oReq.open('OPTIONS', 'https://bbfmplcut3.execute-api.us-east-1.amazonaws.com/dev', true);
-      oReq.setRequestHeader('Content-type', 'application/json');
-      oReq.addEventListener('load', reqListener)
-      oReq.send(JSON.stringify(newUser))
-    })
-    .then(() => {
-      console.log("success");
-    })
-    .catch(() => {
-      console.log("Failed");
-    })
-  }
+      };
+      $.post(options).then(() => {
+        this.setState({
+          sentStatus: 'sent'
+        })
+      }).catch((err) => {
+        console.log('error', err);
+        })
+    }
+
+  // addtoMailingList(newUser) {
+
+    // return new Promise(function(resolve, reject){
+    //   function reqListener(){
+    //     console.log('this', this);
+    //     if (this.status === 200) {
+    //       resolve(
+    //         console.log(this.status)
+    //       );
+    //     } else {
+    //       reject(this.status, 'resolve status');
+    //     }
+    //   }
+    //   let oReq = new XMLHttpRequest();
+    //   oReq.open('OPTIONS', 'https://kwfpz52gwh.execute-api.us-east-1.amazonaws.com/dev/', true);
+    //   oReq.setRequestHeader('Content-type', 'application/json');
+    //   oReq.addEventListener('load', reqListener)
+    //   console.log((newUser), 'new user');
+    //   oReq.send(JSON.stringify(newUser));
+    // })
+    // .then(() => {
+    //   console.log("success");
+    // })
+    // .catch(() => {
+    //   console.log("Failed");
+    // })
+  // }
 
   render() {
     return (
@@ -59,7 +93,9 @@ class ContactForm extends Component {
         <h1>Contact Us</h1>
           <div className="generalForm">
           <form onSubmit={this.handleSubmit}>
-            <input type='text' onChange={this.handleChangeEmail} placeholder="Email Address" name='Email' />
+            <input type='text' onChange={this.handleChangeEmail} placeholder="Email Address" name='emailAddress' />
+            <input type='text' onChange={this.handleChangeFirstName} placeholder="First Name" name='firstName' />
+            <input type='text' onChange={this.handleChangeLastName} placeholder="Last Name" name='lastName' />
             <input className="contact-us-submit" type="submit" value="Contact Us" />
           </form>
         </div>
