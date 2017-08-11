@@ -216,6 +216,7 @@ input {
 input[type="text"] {
   line-height: 3.5rem;
   padding-left: 1.3rem;
+  box-sizing: border-box;
   margin-bottom: 1rem;
   font-family: 'Catamaran', sans-serif; }
 
@@ -225,7 +226,7 @@ input[type="text"] {
 input[type="submit"] {
   padding: 1rem;
   font-size: 1.2rem;
-  width: 103%;
+  width: 100%;
   font-family: 'Catamaran', sans-serif;
   display: block;
   background-color: #469557;
@@ -244,7 +245,7 @@ input[type="submit"] {
 .notice-container-success {
   border: 1px solid #469557;
   margin-bottom: 1rem;
-  width: 103%; }
+  width: 100%; }
   .notice-container-success p {
     padding: 0.4rem 0.3rem 0.3rem 1.3rem;
     font-family: 'Catamaran', sans-serif;
