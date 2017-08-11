@@ -62,23 +62,19 @@ class ContactForm extends Component {
 
   render() {
     const sent = this.state.sentStatus;
-    if (sent === 'sent'){
-      <div>Test</div>;
-    } else {
-      <div></div>;
-    }
 
     return (
-      <div id="contact-us-container">
-        <Notice sent={sent} />
-        <h1>Contact Us</h1>
-          <div className="generalForm">
-          <form onSubmit={this.handleSubmit}>
-            <input type='text' onChange={this.handleChangeEmail} placeholder="Email Address" name='emailAddress' />
-            <input type='text' onChange={this.handleChangeFirstName} placeholder="First Name" name='firstName' />
-            <input type='text' onChange={this.handleChangeLastName} placeholder="Last Name" name='lastName' />
-            <input className="contact-us-submit" type="submit" value="Contact Us" />
-          </form>
+      <div className="contact-us-container">
+        <div className="contact-us-inner">
+        {sent ? (<Notice />) : (null)}
+          <div className="form-container">
+            <form onSubmit={this.handleSubmit}>
+              <input type='text' onChange={this.handleChangeEmail} placeholder="Email Address" name='emailAddress' className="input" />
+              <input type='text' onChange={this.handleChangeFirstName} placeholder="First Name" name='firstName' className="input" />
+              <input type='text' onChange={this.handleChangeLastName} placeholder="Last Name" name='lastName' className="input" />
+              <input className="button contact-button" type="submit" value="Contact Us" />
+            </form>
+          </div>
         </div>
       </div>
     );

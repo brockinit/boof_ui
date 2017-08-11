@@ -2,8 +2,10 @@ import React from 'react';
 
 const Notice = props => {
   return(
-    <div>
-      <p>Your message was sent successfully</p>
+    <div className="notice-container">
+      <div className="notice">
+        <p>Your message was sent successfully</p>
+      </div>
     </div>
   );
 };

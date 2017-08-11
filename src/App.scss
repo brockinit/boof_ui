@@ -254,3 +254,84 @@ a.gridtile-container {
     font-weight: 700;
   }
 }
+
+// Forms
+.contact-us-container {
+  padding: 0rem 3rem 3rem;
+}
+
+.contact-us-inner {
+  max-width: 1000px;
+  margin: auto;
+  h2 {
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+  }
+}
+
+input {
+  display: block;
+  width: 400px;
+  font-size: 1.2rem;
+  font-family: 'Catamaran', sans-serif;
+  color: gray;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+
+  &:focus{
+    outline: none;
+    border-bottom: 1px solid gray;
+    transition: all 0.2s ease;
+  }
+}
+
+input[type="text"]{
+  line-height: 3.5rem;
+  padding: 0 0.8rem;
+}
+
+.input{
+  margin-bottom: 1.5rem;
+
+  > *{
+    display: block;
+  }
+}
+
+input[type="submit"]{
+  padding: 1rem 0.8rem;
+  font-size: 1.2rem;
+  width: 425px;
+  font-family: 'Catamaran', sans-serif;
+  display: block;
+  background-color: #469557;
+  color: white;
+  text-align: center;
+  border-bottom: 2px solid darken(green, 10%);
+
+  &:hover{
+    background-color: darken(green, 5%);
+    color: white;
+    border-bottom: 1px solid darken(green, 20%);
+    transform: translateY(3px);
+  }
+
+  &:focus{
+    outline: none;
+  }
+}
+
+.notice-container {
+  border: 1px solid #469557;
+  margin-bottom: 1.2rem;
+  width: 425px;
+}
+
+.notice {
+  padding: 0.4rem;
+  p {
+    font-family: 'Catamaran', sans-serif;
+    color: #469557;
+  }
+}
