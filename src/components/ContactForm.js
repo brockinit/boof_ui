@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import { MAILCHIMP_ENDPOINT } from '../constants';
+import Notice from './Notice';
 
 class ContactForm extends Component {
 
@@ -60,8 +61,16 @@ class ContactForm extends Component {
     }
 
   render() {
+    const sent = this.state.sentStatus;
+    if (sent === 'sent'){
+      <div>Test</div>;
+    } else {
+      <div></div>;
+    }
+
     return (
       <div id="contact-us-container">
+        <Notice sent={sent} />
         <h1>Contact Us</h1>
           <div className="generalForm">
           <form onSubmit={this.handleSubmit}>
