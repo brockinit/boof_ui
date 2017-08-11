@@ -51,13 +51,17 @@ class ContactForm extends Component {
           'Content-Type': 'application/json',
         }
       };
-      $.post(options).then(() => {
-        this.setState({
-          sentStatus: 'sent'
-        })
-      }).catch((err) => {
-        console.log('error', err);
-        })
+      $.post(options).then((data) => {
+        if (data.statusCode === 200) {
+          this.setState({
+            sentStatus: 'sent'
+          })
+        } else {
+          this.setState({
+            sentStatus: 'error'
+          })
+        }
+      })
     }
 
   render() {
@@ -66,7 +70,7 @@ class ContactForm extends Component {
     return (
       <div className="contact-us-container">
         <div className="contact-us-inner">
-        {sent ? (<Notice />) : (null)}
+        {sent ? (<Notice status='success'/>) : (<Notice status='failure'/>)}
           <div className="form-container">
             <form onSubmit={this.handleSubmit}>
               <input type='text' onChange={this.handleChangeEmail} placeholder="Email Address" name='emailAddress' className="input" />
