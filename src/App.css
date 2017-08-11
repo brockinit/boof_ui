@@ -225,7 +225,10 @@ input[type="text"] {
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 1rem;
-  border-style: none; }
+  border-style: none;
+  font-family: 'Catamaran', sans-serif;
+  color: gray;
+  padding: 1.3rem; }
 
 input[type="submit"] {
   padding: 1rem;
