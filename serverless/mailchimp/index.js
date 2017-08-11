@@ -12,7 +12,8 @@ module.exports.handler = (event, context, callback) => {
         status: 'subscribed',
         merge_fields: {
           FNAME: event.firstName,
-          LNAME: event.lastName
+          LNAME: event.lastName,
+          NOTE: event.contactUsNote
         }
       },
     })
