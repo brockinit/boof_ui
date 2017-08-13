@@ -262,7 +262,11 @@ $large-width: 1024px;
 
 // Forms
 .contact-us-container {
-  padding: 0rem 3rem 3rem 3rem;
+  padding: 0rem 1rem 3rem 1rem;
+
+  @include medium {
+    padding: 0rem 3rem 3rem 3rem;
+  }
 }
 
 .contact-us-inner {
@@ -348,7 +352,7 @@ input[type="submit"] {
 .notice-container-error {
   border: 1px solid #d64d3d;
   margin-bottom: 1rem;
-  width: 103%;
+  width: 100%;
   p {
     padding: 0.4rem 0.3rem 0.3rem 1.3rem;
     font-family: 'Catamaran', sans-serif;
