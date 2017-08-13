@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const AboutUsBody = props => {
   return (
@@ -12,7 +12,7 @@ const AboutUsBody = props => {
           shop in Hawaii, he's neck deep in deep learning and developing ways in
           which he can predict seemingly randoms events, such as sporting events
           and stock prices. If forced to name one thing he loves as much as
-          football, it’d be Persian cats.{" "}
+          football, it’d be Persian cats.
         </p>
         <h2>Sal</h2>
         <p>
