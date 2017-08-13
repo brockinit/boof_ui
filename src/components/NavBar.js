@@ -17,7 +17,7 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="menu-item">
-          <Link to="about">
+          <Link to="/about">
             <p>About Us</p>
           </Link>
         </div>
