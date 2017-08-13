@@ -15,6 +15,11 @@ const Footer = () => {
             <p>About Us</p>
           </Link>
         </div>
+        <div className="footer-item">
+          <Link to="/articles">
+            <p>Articles</p>
+          </Link>
+        </div>
       </div>
     </div>
   );

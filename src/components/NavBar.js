@@ -22,7 +22,7 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="menu-item">
-          <Link to="article/cleveland-browns-quarterback-madness-part-1">
+          <Link to="/articles">
             <p>Articles</p>
           </Link>
         </div>

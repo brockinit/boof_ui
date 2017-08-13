@@ -7,7 +7,7 @@ import Metadata from '../../components/Metadata';
 import { BLOG_POST_ENDPOINT } from '../../constants';
 import { ajax } from 'jquery';
 
-class HomepageContainer extends React.Component {
+class ArticleLandingContainer extends React.Component {
   constructor(props) {
     super(props);
     this.getArticles = this.getArticles.bind(this);
@@ -41,16 +41,16 @@ class HomepageContainer extends React.Component {
     return (
       <div className="homepage-container">
         <Metadata
-          title="Better Odds of Football"
-          description="Giving you better odds through data science, machine learning, and years of football fandom."
-          url="https:www.betterodds.io"
+          title="Read our articles"
+          description="We love football and believe that fantasy sports decisions should be based off of data, not intuiton."
+          url="https:www.betterodds.io/articles"
           image="/assets/boof-logo-metadata.png"
         />
         <div className="header-container-outer outer">
           <div className="header-container div-container">
-            <PageHeader title="Better Odds of Football" />
-            <PageHeaderSubText text="Football - Stats - Blog" />
-            <PageIntroText text="See some of our rants below" />
+            <PageHeader title="Our Thoughts" />
+            <PageHeaderSubText text="To give you better odds this fantasy football season" />
+            <PageIntroText text="We love football and believe that fantasy sports decisions should be based off of data, not intuiton." />
           </div>
         </div>
         <div className="gridcard-container-outer outer">
@@ -75,4 +75,4 @@ class HomepageContainer extends React.Component {
   }
 }
 
-export default HomepageContainer;
+export default ArticleLandingContainer;
