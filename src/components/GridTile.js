@@ -1,9 +1,10 @@
 import React from 'react';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 const GridTile = props => {
   return (
-    <a className="gridtile-container" href={`article/${props.slug}`}>
+    <Link to={`article/${props.slug}`} className="gridtile-container">
       <div className="gridtile-text">
         <h2>
           {props.title}
@@ -19,7 +20,7 @@ const GridTile = props => {
         className="gridtile-image"
         style={{ backgroundImage: `url(${props.image})` }}
       />
-    </a>
+  </Link>
   );
 };
 
