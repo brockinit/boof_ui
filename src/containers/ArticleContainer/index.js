@@ -22,24 +22,20 @@ class ArticleContainer extends Component {
 
   componentDidMount() {
     const postId = this.props.location.pathname.split('/').pop();
-    return ajax(BLOG_POST_ENDPOINT)
-      .then(items => {
-        for (var i = 0; i < items.length; i++) {
-          if (items[i].fields.slug === postId) {
-            return this.setState({
-              articleBody: items[i].fields.articleBody,
-              articleTitle: items[i].fields.articleTitle,
-              articleShortDescription: items[i].fields.articleShortDescription,
-              author: items[i].fields.author,
-              dateCreated: moment(items[i].fields.dateCreated).format('LL'),
-              slug: items[i].fields.slug,
-            });
-          }
+    return ajax(BLOG_POST_ENDPOINT).then(items => {
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].fields.slug === postId) {
+          return this.setState({
+            articleBody: items[i].fields.articleBody,
+            articleTitle: items[i].fields.articleTitle,
+            articleShortDescription: items[i].fields.articleShortDescription,
+            author: items[i].fields.author,
+            dateCreated: moment(items[i].fields.dateCreated).format('LL'),
+            slug: items[i].fields.slug,
+          });
         }
-      })
-      .catch(err => {
-        console.log('error', err);
-      });
+      }
+    });
   }
 
   parseMarkdown() {
@@ -56,11 +52,13 @@ class ArticleContainer extends Component {
             title={this.state.articleTitle}
             description={this.state.articleShortDescription}
             url={`https://www.betterodds.io/${this.state.slug}`}
-            image="/assets/boof-logo-metadata.png" />
+            image="/assets/boof-logo-metadata.png"
+          />
           <ArticleHeader
             title={this.state.articleTitle}
             author={this.state.author}
-            date={this.state.dateCreated} />
+            date={this.state.dateCreated}
+          />
           {this.state.articleBody &&
             <div
               className="article-body"
