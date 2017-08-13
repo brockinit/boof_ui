@@ -42,15 +42,15 @@ class ArticleLandingContainer extends React.Component {
       <div className="homepage-container">
         <Metadata
           title="Read our articles"
-          description="We love football and believe that fantasy sports decisions should be based off of data, not intuiton."
+          description="Providing knowledge that'll supercharge your fantasy squad and set you up to dominate this season"
           url="https:www.betterodds.io/articles"
           image="/assets/boof-logo-metadata.png"
         />
         <div className="header-container-outer outer">
           <div className="header-container div-container">
             <PageHeader title="Our Thoughts" />
-            <PageHeaderSubText text="To give you better odds this fantasy football season" />
-            <PageIntroText text="We love football and believe that fantasy sports decisions should be based off of data, not intuiton." />
+            <PageHeaderSubText text="On football, data, and other things we geek out over." />
+            <PageIntroText text="Providing knowledge that'll supercharge your fantasy squad and set you up to dominate this season" />
           </div>
         </div>
         <div className="gridcard-container-outer outer">

@@ -1,5 +1,5 @@
 #app-container {
-  background-color: #FBFAF8; }
+  background-color: #fbfaf8; }
 
 .navbar-container {
   padding: 3rem 3rem 3rem 3rem;
@@ -17,7 +17,8 @@
       padding-left: 2rem;
       white-space: nowrap;
       text-align: center; }
-      .menu-item p, .menu-item a {
+      .menu-item p,
+      .menu-item a {
         font-family: 'Catamaran', 'Helvetica', sans-serif;
         text-transform: uppercase;
         text-decoration: none;
@@ -45,7 +46,7 @@
 
 .sub-text-container {
   display: inline-block;
-  border-bottom: 1px solid #AAA;
+  border-bottom: 1px solid #aaa;
   padding-bottom: 2rem; }
   .sub-text-container p {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
@@ -65,25 +66,25 @@
   justify-content: center;
   padding: 8px; }
 
-a.gridtile-container {
+.gridtile-container {
   display: block;
   width: 300px;
   height: 250px;
   box-sizing: border-box;
   margin: 8px;
   transition: all 0.2s ease; }
-  a.gridtile-container .gridtile-text {
+  .gridtile-container .gridtile-text {
     position: absolute;
     z-index: 1;
     width: 300px;
     overflow: hidden; }
-    a.gridtile-container .gridtile-text h2 {
+    .gridtile-container .gridtile-text h2 {
       visibility: hidden; }
-    a.gridtile-container .gridtile-text p {
+    .gridtile-container .gridtile-text p {
       visibility: hidden; }
-  a.gridtile-container:hover {
+  .gridtile-container:hover {
     transition: all 0.2s ease; }
-    a.gridtile-container:hover .gridtile-text {
+    .gridtile-container:hover .gridtile-text {
       padding: 35px 35px 35px 35px;
       width: 300px;
       height: 250px;
@@ -92,12 +93,12 @@ a.gridtile-container {
       transition: all 0.2s ease;
       background-repeat: no-repeat;
       box-sizing: border-box; }
-      a.gridtile-container:hover .gridtile-text h2 {
+      .gridtile-container:hover .gridtile-text h2 {
         font-family: 'Catamaran', sans-serif;
         visibility: visible;
         color: white;
         font-size: 18px; }
-      a.gridtile-container:hover .gridtile-text p {
+      .gridtile-container:hover .gridtile-text p {
         font-family: 'Catamaran', sans-serif;
         visibility: visible;
         color: white;
@@ -139,13 +140,16 @@ a.gridtile-container {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
     font-size: 1.1rem;
     line-height: 2.3rem; }
-  .article-body table, .article-body th, .article-body td {
+  .article-body table,
+  .article-body th,
+  .article-body td {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
     border: 1px solid black;
     border-collapse: collapse; }
-  .article-body em, .article-body strong {
+  .article-body em,
+  .article-body strong {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
     font-weight: 700; }
   .article-body p > img {
@@ -182,10 +186,91 @@ a.gridtile-container {
   @media (min-width: 650px) {
     .footer-item {
       padding-left: 2.5rem; } }
-  .footer-item p, .footer-item a {
+  .footer-item p,
+  .footer-item a {
     text-decoration: none;
-    color: #7D7D7D;
+    color: #7d7d7d;
     text-transform: uppercase;
     font-family: 'Catamaran', sans-serif;
     font-size: 1rem;
     font-weight: 700; }
+
+.contact-us-container {
+  padding: 0rem 1rem 3rem 1rem; }
+  @media (min-width: 650px) {
+    .contact-us-container {
+      padding: 0rem 3rem 3rem 3rem; } }
+
+.contact-us-inner {
+  max-width: 800px; }
+  .contact-us-inner h2 {
+    font-family: 'Catamaran', sans-serif;
+    text-align: center; }
+
+input {
+  display: block;
+  font-size: 1.2rem;
+  width: 100%;
+  font-family: 'Catamaran', sans-serif;
+  color: gray;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease; }
+  input:focus {
+    outline: none;
+    border-bottom: 1px solid gray;
+    transition: all 0.2s ease; }
+
+input[type="text"] {
+  line-height: 3.5rem;
+  padding-left: 1.3rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  font-family: 'Catamaran', sans-serif; }
+
+.message {
+  height: 10rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  border-style: none;
+  font-family: 'Catamaran', sans-serif;
+  color: gray;
+  padding: 1.3rem; }
+
+input[type="submit"] {
+  padding: 1rem;
+  font-size: 1.2rem;
+  width: 100%;
+  font-family: 'Catamaran', sans-serif;
+  display: block;
+  background-color: #469557;
+  color: white;
+  text-align: center;
+  border-bottom: 2px solid #004d00;
+  cursor: pointer; }
+  input[type="submit"]:hover {
+    background-color: #006700;
+    color: white;
+    border-bottom: 1px solid #001a00;
+    transform: translateY(3px); }
+  input[type="submit"]:focus {
+    outline: none; }
+
+.notice-container-success {
+  border: 1px solid #469557;
+  margin-bottom: 1rem;
+  width: 100%; }
+  .notice-container-success p {
+    padding: 0.4rem 0.3rem 0.3rem 1.3rem;
+    font-family: 'Catamaran', sans-serif;
+    color: #469557; }
+
+.notice-container-error {
+  border: 1px solid #d64d3d;
+  margin-bottom: 1rem;
+  width: 100%; }
+  .notice-container-error p {
+    padding: 0.4rem 0.3rem 0.3rem 1.3rem;
+    font-family: 'Catamaran', sans-serif;
+    color: #d64d3d; }

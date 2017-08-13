@@ -1,10 +1,10 @@
 import React from 'react';
-
-import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+import NavBar from './components/NavBar';
 import HomepageContainer from './containers/HomepageContainer';
 import AboutUsContainer from './containers/AboutUsContainer';
+import ContactUsContainer from './containers/ContactUsContainer';
 import ArticleContainer from './containers/ArticleContainer';
 import ArticleLandingContainer from './containers/ArticleLandingContainer';
 import Footer from './components/Footer';
@@ -17,7 +17,8 @@ const App = () =>
         <Route exact path="/" component={HomepageContainer} />
         <Route exact path="/about" component={AboutUsContainer} />
         <Route exact path="/articles" component={ArticleLandingContainer} />
-        <Route path="/article/:articleId" component={ArticleContainer} />
+        <Route exact path="/contact" component={ContactUsContainer} />
+        <Route path="/articles/:articleId" component={ArticleContainer} />
         <Footer />
       </div>
     </Router>
