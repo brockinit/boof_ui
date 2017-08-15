@@ -1,6 +1,6 @@
-import React from 'react';
-import Logo from '../assets/boof-logo-colored.svg';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Logo from "../assets/boof-logo-colored.svg";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -14,6 +14,11 @@ const NavBar = () => {
         <div className="menu-item">
           <Link to="/articles">
             <p>Articles</p>
+          </Link>
+        </div>
+        <div className="menu-item">
+          <Link to="/draftmanual2017">
+            <p>Draft 2017</p>
           </Link>
         </div>
         <div className="menu-item">
