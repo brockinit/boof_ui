@@ -51,12 +51,14 @@
   .sub-text-container p {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
     font-style: italic;
-    font-size: 19px; }
+    font-size: 19px;
+    line-height: 2rem; }
 
 .intro-text-container {
   padding-top: 2rem; }
   .intro-text-container p {
-    font-family: 'Noto Serif', 'Helvetica', sans-serif; }
+    font-family: 'Noto Serif', 'Helvetica', sans-serif;
+    line-height: 1.5rem; }
 
 .gridcard-container {
   display: flex;
