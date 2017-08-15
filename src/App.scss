@@ -359,3 +359,43 @@ input[type="submit"] {
     color: #d64d3d;
   }
 }
+
+.draft-manual-ad-container {
+  background-color: #84bc9c;
+  text-align: center;
+  padding: 2rem 2rem 3rem 2rem;
+  h2 {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  p {
+    font-family: 'Catamaran', sans-serif;
+  }
+  .button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    margin: auto;
+    margin-top: 2rem;
+    width: 10rem;
+    font-family: 'Catamaran', sans-serif;
+    display: block;
+    background-color: white;
+    color: #469557;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid darken(#469557, 10%);
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(#469557, 5%);
+      color: white;
+      border-bottom: 1px solid darken(#469557, 20%);
+      transform: translateY(3px);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

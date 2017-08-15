@@ -274,3 +274,35 @@ input[type="submit"] {
     padding: 0.4rem 0.3rem 0.3rem 1.3rem;
     font-family: 'Catamaran', sans-serif;
     color: #d64d3d; }
+
+.draft-manual-ad-container {
+  background-color: #84bc9c;
+  text-align: center;
+  padding: 2rem 2rem 3rem 2rem; }
+  .draft-manual-ad-container h2 {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700; }
+  .draft-manual-ad-container p {
+    font-family: 'Catamaran', sans-serif; }
+  .draft-manual-ad-container .button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    margin: auto;
+    margin-top: 2rem;
+    width: 10rem;
+    font-family: 'Catamaran', sans-serif;
+    display: block;
+    background-color: white;
+    color: #469557;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #367243;
+    cursor: pointer; }
+    .draft-manual-ad-container .button:hover {
+      background-color: #3e844d;
+      color: white;
+      border-bottom: 1px solid #25502e;
+      transform: translateY(3px); }
+    .draft-manual-ad-container .button:focus {
+      outline: none; }
