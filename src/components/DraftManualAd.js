@@ -7,7 +7,7 @@ const DraftManualAd = props => {
       <div className="draft-manual-ad-inner">
         <h2>2017 Better Odds of Football Draft Manual!</h2>
         <p>The valuable insight that you need to dominate your draft</p>
-        <Link to="/" className="button">
+        <Link to="/draftmanual2017" className="button">
           Get a Draft Manual
         </Link>
       </div>
