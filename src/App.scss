@@ -253,6 +253,7 @@ $grass-img: url('./assets/banner-grass.png');
   flex: 0 0 100%;
   @include medium {
     padding-left: 2.5rem;
+    flex: none;
   }
   p,
   a {

@@ -189,7 +189,8 @@
   flex: 0 0 100%; }
   @media (min-width: 650px) {
     .footer-item {
-      padding-left: 2.5rem; } }
+      padding-left: 2.5rem;
+      flex: none; } }
   .footer-item p,
   .footer-item a {
     text-decoration: none;
