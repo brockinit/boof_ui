@@ -5,10 +5,10 @@ const DraftManualAd = props => {
   return (
     <div className="draft-manual-ad-container">
       <div className="draft-manual-ad-inner">
-        <h2>2017 Better Odds of Football Draft Manual!</h2>
+        <h2>Better Odds Fantasy Football Draft Guide 2017</h2>
         <p>The valuable insight that you need to dominate your draft</p>
         <Link to="/draftmanual2017" className="button">
-          Get a Draft Manual
+          Get Yours
         </Link>
       </div>
     </div>

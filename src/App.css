@@ -278,33 +278,35 @@ input[type="submit"] {
     color: #d64d3d; }
 
 .draft-manual-ad-container {
-  background-color: #84bc9c;
   text-align: center;
-  padding: 2rem 2rem 3rem 2rem; }
+  padding: 2.7rem 2rem 3.7rem 2rem;
+  background: url("./assets/banner-grass.png") center center;
+  box-sizing: border-box;
+  margin-top: 3rem; }
   .draft-manual-ad-container h2 {
-    font-family: 'Catamaran', sans-serif;
-    font-size: 2.5rem;
+    font-family: 'Bitter', serif;
+    font-size: 2rem;
     font-weight: 700; }
   .draft-manual-ad-container p {
-    font-family: 'Catamaran', sans-serif; }
+    font-family: 'Bitter', serif; }
   .draft-manual-ad-container .button {
     padding: 1rem;
     font-size: 1.2rem;
     margin: auto;
     margin-top: 2rem;
     width: 10rem;
-    font-family: 'Catamaran', sans-serif;
+    font-family: 'Bitter', serif;
     display: block;
     background-color: white;
-    color: #469557;
+    color: #679010;
     text-align: center;
     text-decoration: none;
-    border: 2px solid #367243;
+    border: 2px solid #46620b;
+    box-sizing: border-box;
     cursor: pointer; }
     .draft-manual-ad-container .button:hover {
-      background-color: #3e844d;
+      background-color: #57790d;
       color: white;
-      border-bottom: 1px solid #25502e;
       transform: translateY(3px); }
     .draft-manual-ad-container .button:focus {
       outline: none; }

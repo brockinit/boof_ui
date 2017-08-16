@@ -4,7 +4,6 @@ import PageHeader from "../../components/PageHeader";
 import PageHeaderSubText from "../../components/PageHeaderSubText";
 import PageIntroText from "../../components/PageIntroText";
 import AboutUsBody from "../../components/AboutUsBody";
-import DraftManualAd from "../../components/DraftManualAd";
 
 const AboutUsContainer = () => {
   return (
@@ -23,7 +22,6 @@ const AboutUsContainer = () => {
         </div>
       </div>
       <AboutUsBody />
-      <DraftManualAd />
     </div>
   );
 };
