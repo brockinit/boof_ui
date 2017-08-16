@@ -242,13 +242,15 @@ $grass-img: url('./assets/banner-grass.png');
 .footer-container-inner {
   padding: 4rem 0rem 4rem;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
   @include medium {
     justify-content: center;
   }
 }
 .footer-item {
   text-align: center;
+  flex: 0 0 100%;
   @include medium {
     padding-left: 2.5rem;
   }

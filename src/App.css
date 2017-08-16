@@ -178,13 +178,15 @@
 .footer-container-inner {
   padding: 4rem 0rem 4rem;
   display: flex;
-  justify-content: space-around; }
+  flex-wrap: wrap;
+  justify-content: center; }
   @media (min-width: 650px) {
     .footer-container-inner {
       justify-content: center; } }
 
 .footer-item {
-  text-align: center; }
+  text-align: center;
+  flex: 0 0 100%; }
   @media (min-width: 650px) {
     .footer-item {
       padding-left: 2.5rem; } }
