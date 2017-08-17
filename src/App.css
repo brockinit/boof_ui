@@ -146,7 +146,9 @@
   .article-body th,
   .article-body td {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0.3rem;
     line-height: 1.5rem;
     border: 1px solid black;
     border-collapse: collapse; }
@@ -288,13 +290,16 @@ input[type="submit"] {
   margin-top: 3rem; }
   .draft-manual-ad-container h2 {
     font-family: 'Bitter', serif;
-    font-size: 2rem;
-    font-weight: 700; }
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    color: white; }
   .draft-manual-ad-container p {
-    font-family: 'Bitter', serif; }
+    font-family: 'Bitter', serif;
+    color: white;
+    line-height: 1.5rem; }
   .draft-manual-ad-container .button {
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: auto;
     margin-top: 2rem;
     width: 10rem;
