@@ -1,6 +1,6 @@
-import React from "react";
-import Logo from "../assets/boof-logo-colored.svg";
-import { Link } from "react-router-dom";
+import React from 'react';
+import Logo from '../assets/boof-logo-colored.svg';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (

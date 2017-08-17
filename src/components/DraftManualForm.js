@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import $ from "jquery";
-import { MAILCHIMP_ENDPOINT } from "../constants";
-import Notice from "./Notice";
+import React, { Component } from 'react';
+import $ from 'jquery';
+import { MAILCHIMP_ENDPOINT } from '../constants';
+import Notice from './Notice';
 
 class DraftManualForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      emailAddress: "",
-      firstName: "",
-      lastName: "",
-      contactUsNote: "",
-      sentStatus: ""
+      emailAddress: '',
+      firstName: '',
+      lastName: '',
+      contactUsNote: '',
+      sentStatus: '',
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +20,7 @@ class DraftManualForm extends Component {
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
 
@@ -32,24 +32,24 @@ class DraftManualForm extends Component {
         emailAddress: this.state.emailAddress,
         firstName: this.state.firstName,
         lastName: this.state.lastName,
-        contactUsNote: this.state.contactUsNote
+        contactUsNote: this.state.contactUsNote,
       }),
       headers: {
-        "Content-Type": "application/json"
-      }
+        'Content-Type': 'application/json',
+      },
     };
     $.post(options).then(data => {
       if (data.statusCode === 200) {
         this.setState({
-          sentStatus: "sent",
-          emailAddress: "",
-          firstName: "",
-          lastName: "",
-          contactUsNote: ""
+          sentStatus: 'sent',
+          emailAddress: '',
+          firstName: '',
+          lastName: '',
+          contactUsNote: '',
         });
       } else {
         this.setState({
-          sentStatus: "error"
+          sentStatus: 'error',
         });
       }
     });
@@ -61,7 +61,7 @@ class DraftManualForm extends Component {
         <div className="contact-us-inner">
           {(() => {
             switch (this.state.sentStatus) {
-              case "sent":
+              case 'sent':
                 return (
                   <Notice
                     status="Your message has been sent! We'll contact you shortly"
@@ -69,7 +69,7 @@ class DraftManualForm extends Component {
                     noticeContainerClass="notice-container-success"
                   />
                 );
-              case "error":
+              case 'error':
                 return (
                   <Notice
                     status="An error occured, please try again"
@@ -78,7 +78,7 @@ class DraftManualForm extends Component {
                   />
                 );
               default:
-                return "";
+                return '';
             }
           })()}
           <div className="form-container">

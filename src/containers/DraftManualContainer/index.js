@@ -1,11 +1,11 @@
-import React from "react";
-import Metadata from "../../components/Metadata";
-import PageHeader from "../../components/PageHeader";
-import PageHeaderSubText from "../../components/PageHeaderSubText";
-import PageIntroText from "../../components/PageIntroText";
-import DraftManualForm from "../../components/DraftManualForm";
+import React from 'react';
+import Metadata from '../../components/Metadata';
+import PageHeader from '../../components/PageHeader';
+import PageHeaderSubText from '../../components/PageHeaderSubText';
+import PageIntroText from '../../components/PageIntroText';
+import DraftManualForm from '../../components/DraftManualForm';
 
-const ContactUsContainer = () => {
+const DraftManualContainer = () => {
   return (
     <div className="contact-us-container outer">
       <Metadata
@@ -26,4 +26,4 @@ const ContactUsContainer = () => {
   );
 };
 
-export default ContactUsContainer;
+export default DraftManualContainer;
