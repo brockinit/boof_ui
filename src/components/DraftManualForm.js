@@ -8,9 +8,6 @@ class DraftManualForm extends Component {
     super(props);
     this.state = {
       emailAddress: '',
-      firstName: '',
-      lastName: '',
-      contactUsNote: '',
       sentStatus: '',
     };
 
@@ -30,9 +27,6 @@ class DraftManualForm extends Component {
       url: MAILCHIMP_ENDPOINT,
       data: JSON.stringify({
         emailAddress: this.state.emailAddress,
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        contactUsNote: this.state.contactUsNote,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -43,9 +37,6 @@ class DraftManualForm extends Component {
         this.setState({
           sentStatus: 'sent',
           emailAddress: '',
-          firstName: '',
-          lastName: '',
-          contactUsNote: '',
         });
       } else {
         this.setState({
@@ -90,29 +81,6 @@ class DraftManualForm extends Component {
                 name="emailAddress"
                 value={this.state.emailAddress}
                 className="input"
-              />
-              <input
-                type="text"
-                onChange={this.handleChange}
-                placeholder="First Name"
-                name="firstName"
-                value={this.state.firstName}
-                className="input"
-              />
-              <input
-                type="text"
-                onChange={this.handleChange}
-                placeholder="Last Name"
-                name="lastName"
-                value={this.state.lastName}
-                className="input"
-              />
-              <textarea
-                onChange={this.handleChange}
-                placeholder="Write us a note"
-                name="contactUsNote"
-                value={this.state.contactUsNote}
-                className="message"
               />
               <input
                 className="contact-button"
