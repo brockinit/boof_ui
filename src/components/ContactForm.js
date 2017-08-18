@@ -38,21 +38,23 @@ class ContactForm extends Component {
         'Content-Type': 'application/json',
       },
     };
-    $.post(options).then(data => {
-      if (data.statusCode === 200) {
-        this.setState({
-          sentStatus: 'sent',
-          emailAddress: '',
-          firstName: '',
-          lastName: '',
-          contactUsNote: '',
-        });
-      } else {
-        this.setState({
-          sentStatus: 'error',
-        });
-      }
-    });
+    $.post(options)
+      .then(data => {
+        if (data.statusCode === 200) {
+          this.setState({
+            sentStatus: 'sent',
+            emailAddress: '',
+            firstName: '',
+            lastName: '',
+            contactUsNote: '',
+          });
+        } else {
+          this.setState({
+            sentStatus: 'error',
+          });
+        }
+      })
+      .catch(() => this.setState({ sentStatus: 'error' }));
   }
 
   render() {
