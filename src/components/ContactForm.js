@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import { MAILCHIMP_ENDPOINT } from '../constants';
+import { CONTACT_ENDPOINT } from '../constants';
 import Notice from './Notice';
 
 class ContactForm extends Component {
@@ -27,7 +27,7 @@ class ContactForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const options = {
-      url: MAILCHIMP_ENDPOINT,
+      url: CONTACT_ENDPOINT,
       data: JSON.stringify({
         emailAddress: this.state.emailAddress,
         firstName: this.state.firstName,

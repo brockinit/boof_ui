@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import { MAILCHIMP_ENDPOINT } from '../constants';
+import { DRAFT_MANUAL_ENDPOINT } from '../constants';
 import Notice from './Notice';
 
 class DraftManualForm extends Component {
@@ -24,7 +24,7 @@ class DraftManualForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const options = {
-      url: MAILCHIMP_ENDPOINT,
+      url: DRAFT_MANUAL_ENDPOINT,
       data: JSON.stringify({
         emailAddress: this.state.emailAddress,
       }),

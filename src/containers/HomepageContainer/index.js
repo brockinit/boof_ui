@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactLoading from 'react-loading';
 import PageHeader from '../../components/PageHeader';
 import PageHeaderSubText from '../../components/PageHeaderSubText';
 import PageIntroText from '../../components/PageIntroText';
@@ -56,29 +55,21 @@ class HomepageContainer extends React.Component {
           </div>
         </div>
         <div className="gridcard-container-outer outer">
-          {this.state.articles.length === 0
-            ? <ReactLoading
-                className="loading"
-                type="spinningBubbles"
-                color="#444"
-                height="300"
-                width="200"
-              />
-            : <div className="gridcard-container div-container">
-                {this.state.articles.map(({ fields, sys }, index) => {
-                  return (
-                    <div key={index}>
-                      <GridTile
-                        title={fields.articleTitle}
-                        author={fields.author}
-                        image={fields.images[0].fields.file.url}
-                        date={fields.dateCreated}
-                        slug={fields.slug}
-                      />
-                    </div>
-                  );
-                })}
-              </div>}
+          <div className="gridcard-container div-container">
+            {this.state.articles.map(({ fields, sys }, index) => {
+              return (
+                <div key={index}>
+                  <GridTile
+                    title={fields.articleTitle}
+                    author={fields.author}
+                    image={fields.images[0].fields.file.url}
+                    date={fields.dateCreated}
+                    slug={fields.slug}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
         <DraftManualAd />
       </div>
