@@ -32,18 +32,14 @@ class DraftManualForm extends Component {
         'Content-Type': 'application/json',
       },
     };
-    $.post(options).then(data => {
-      if (data.statusCode === 200) {
+    $.post(options)
+      .then(data => {
         this.setState({
           sentStatus: 'sent',
           emailAddress: '',
         });
-      } else {
-        this.setState({
-          sentStatus: 'error',
-        });
-      }
-    });
+      })
+      .catch(() => this.setState({ sentStatus: 'error' }));
   }
 
   render() {
