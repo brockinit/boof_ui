@@ -16,7 +16,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className="footer-item">
-          <Link to="/draftmanual2017">
+          <Link to="/draftmanual">
             <p>2017 Draft</p>
           </Link>
         </div>

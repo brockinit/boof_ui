@@ -58,7 +58,7 @@ class HomepageContainer extends React.Component {
           <div className="gridcard-container div-container">
             {this.state.articles.map(({ fields, sys }, index) => {
               return (
-                <div>
+                <div key={index}>
                   <GridTile
                     title={fields.articleTitle}
                     author={fields.author}

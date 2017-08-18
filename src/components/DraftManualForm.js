@@ -85,7 +85,7 @@ class DraftManualForm extends Component {
               <input
                 className="contact-button"
                 type="submit"
-                value="Get Your 2017 Draft Manual"
+                value="For free? Sure!"
               />
             </form>
           </div>

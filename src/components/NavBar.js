@@ -17,7 +17,7 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="menu-item">
-          <Link to="/draftmanual2017">
+          <Link to="/draftmanual">
             <p>Draft 2017</p>
           </Link>
         </div>
