@@ -3,14 +3,11 @@ import $ from 'jquery';
 import { MAILCHIMP_ENDPOINT } from '../constants';
 import Notice from './Notice';
 
-class ContactForm extends Component {
+class DraftManualForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       emailAddress: '',
-      firstName: '',
-      lastName: '',
-      contactUsNote: '',
       sentStatus: '',
     };
 
@@ -30,9 +27,6 @@ class ContactForm extends Component {
       url: MAILCHIMP_ENDPOINT,
       data: JSON.stringify({
         emailAddress: this.state.emailAddress,
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        contactUsNote: this.state.contactUsNote,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -40,19 +34,10 @@ class ContactForm extends Component {
     };
     $.post(options)
       .then(data => {
-        if (data.statusCode === 200) {
-          this.setState({
-            sentStatus: 'sent',
-            emailAddress: '',
-            firstName: '',
-            lastName: '',
-            contactUsNote: '',
-          });
-        } else {
-          this.setState({
-            sentStatus: 'error',
-          });
-        }
+        this.setState({
+          sentStatus: 'sent',
+          emailAddress: '',
+        });
       })
       .catch(() => this.setState({ sentStatus: 'error' }));
   }
@@ -94,32 +79,9 @@ class ContactForm extends Component {
                 className="input"
               />
               <input
-                type="text"
-                onChange={this.handleChange}
-                placeholder="First Name"
-                name="firstName"
-                value={this.state.firstName}
-                className="input"
-              />
-              <input
-                type="text"
-                onChange={this.handleChange}
-                placeholder="Last Name"
-                name="lastName"
-                value={this.state.lastName}
-                className="input"
-              />
-              <textarea
-                onChange={this.handleChange}
-                placeholder="Write us a note"
-                name="contactUsNote"
-                value={this.state.contactUsNote}
-                className="message"
-              />
-              <input
                 className="contact-button"
                 type="submit"
-                value="Contact Us"
+                value="For free? Sure!"
               />
             </form>
           </div>
@@ -129,4 +91,4 @@ class ContactForm extends Component {
   }
 }
 
-export default ContactForm;
+export default DraftManualForm;

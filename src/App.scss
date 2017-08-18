@@ -1,6 +1,7 @@
 $small-width: 425px;
 $medium-width: 650px;
 $large-width: 1024px;
+$grass-img: url('./assets/banner-grass.png');
 
 @mixin small {
   @media (min-width: #{$small-width}) {
@@ -82,6 +83,7 @@ $large-width: 1024px;
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
     font-style: italic;
     font-size: 19px;
+    line-height: 2rem;
   }
 }
 
@@ -89,6 +91,7 @@ $large-width: 1024px;
   padding-top: 2rem;
   p {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
+    line-height: 1.5rem;
   }
 }
 
@@ -195,7 +198,9 @@ $large-width: 1024px;
   th,
   td {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0.3rem;
     line-height: 1.5rem;
     border: 1px solid black;
     border-collapse: collapse;
@@ -239,15 +244,18 @@ $large-width: 1024px;
 .footer-container-inner {
   padding: 4rem 0rem 4rem;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
   @include medium {
     justify-content: center;
   }
 }
 .footer-item {
   text-align: center;
+  flex: 0 0 100%;
   @include medium {
     padding-left: 2.5rem;
+    flex: none;
   }
   p,
   a {
@@ -357,5 +365,51 @@ input[type="submit"] {
     padding: 0.4rem 0.3rem 0.3rem 1.3rem;
     font-family: 'Catamaran', sans-serif;
     color: #d64d3d;
+  }
+}
+
+.draft-manual-ad-container {
+  text-align: center;
+  padding: 2.7rem 2rem 3.7rem 2rem;
+  background: $grass-img center center;
+  box-sizing: border-box;
+  margin-top: 3rem;
+
+  h2 {
+    font-family: 'Bitter', serif;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    color: white;
+  }
+  p {
+    font-family: 'Bitter', serif;
+    color: white;
+    line-height: 1.5rem;
+  }
+  .button {
+    padding: 1rem;
+    font-size: 1rem;
+    margin: auto;
+    margin-top: 2rem;
+    width: 10rem;
+    font-family: 'Bitter', serif;
+    display: block;
+    background-color: white;
+    color: #679010;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid darken(#679010, 10%);
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(#679010, 5%);
+      color: white;
+      transform: translateY(3px);
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 }

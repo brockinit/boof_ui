@@ -4,6 +4,7 @@ import PageHeaderSubText from '../../components/PageHeaderSubText';
 import PageIntroText from '../../components/PageIntroText';
 import GridTile from '../../components/GridTile';
 import Metadata from '../../components/Metadata';
+import DraftManualAd from '../../components/DraftManualAd';
 import { BLOG_POST_ENDPOINT } from '../../constants';
 import { ajax } from 'jquery';
 
@@ -57,7 +58,7 @@ class HomepageContainer extends React.Component {
           <div className="gridcard-container div-container">
             {this.state.articles.map(({ fields, sys }, index) => {
               return (
-                <div>
+                <div key={index}>
                   <GridTile
                     title={fields.articleTitle}
                     author={fields.author}
@@ -70,6 +71,7 @@ class HomepageContainer extends React.Component {
             })}
           </div>
         </div>
+        <DraftManualAd />
       </div>
     );
   }

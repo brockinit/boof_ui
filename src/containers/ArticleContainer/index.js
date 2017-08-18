@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Metadata from '../../components/Metadata';
 import ArticleHeader from '../../components/ArticleHeader';
+import DraftManualAd from '../../components/DraftManualAd';
 import marked from 'marked';
 import moment from 'moment';
 import { ajax } from 'jquery';
@@ -46,25 +47,28 @@ class ArticleContainer extends Component {
 
   render() {
     return (
-      <div className="article-container outer">
-        <div className="article-container-inner">
-          <Metadata
-            title={this.state.articleTitle}
-            description={this.state.articleShortDescription}
-            url={`https://www.betterodds.io/${this.state.slug}`}
-            image="/assets/boof-logo-metadata.png"
-          />
-          <ArticleHeader
-            title={this.state.articleTitle}
-            author={this.state.author}
-            date={this.state.dateCreated}
-          />
-          {this.state.articleBody &&
-            <div
-              className="article-body"
-              dangerouslySetInnerHTML={this.parseMarkdown()}
-            />}
+      <div>
+        <div className="article-container outer">
+          <div className="article-container-inner">
+            <Metadata
+              title={this.state.articleTitle}
+              description={this.state.articleShortDescription}
+              url={`https://www.betterodds.io/${this.state.slug}`}
+              image="/assets/boof-logo-metadata.png"
+            />
+            <ArticleHeader
+              title={this.state.articleTitle}
+              author={this.state.author}
+              date={this.state.dateCreated}
+            />
+            {this.state.articleBody &&
+              <div
+                className="article-body"
+                dangerouslySetInnerHTML={this.parseMarkdown()}
+              />}
+          </div>
         </div>
+        <DraftManualAd />
       </div>
     );
   }
