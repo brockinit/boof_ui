@@ -1,17 +1,14 @@
-import React, { Component } from "react";
-import $ from "jquery";
-import { MAILCHIMP_ENDPOINT } from "../constants";
-import Notice from "./Notice";
+import React, { Component } from 'react';
+import $ from 'jquery';
+import { MAILCHIMP_ENDPOINT } from '../constants';
+import Notice from './Notice';
 
 class DraftManualForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      emailAddress: "",
-      firstName: "",
-      lastName: "",
-      contactUsNote: "",
-      sentStatus: ""
+      emailAddress: '',
+      sentStatus: '',
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +17,7 @@ class DraftManualForm extends Component {
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
 
@@ -30,29 +27,19 @@ class DraftManualForm extends Component {
       url: MAILCHIMP_ENDPOINT,
       data: JSON.stringify({
         emailAddress: this.state.emailAddress,
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        contactUsNote: this.state.contactUsNote
       }),
       headers: {
-        "Content-Type": "application/json"
-      }
+        'Content-Type': 'application/json',
+      },
     };
-    $.post(options).then(data => {
-      if (data.statusCode === 200) {
+    $.post(options)
+      .then(data => {
         this.setState({
-          sentStatus: "sent",
-          emailAddress: "",
-          firstName: "",
-          lastName: "",
-          contactUsNote: ""
+          sentStatus: 'sent',
+          emailAddress: '',
         });
-      } else {
-        this.setState({
-          sentStatus: "error"
-        });
-      }
-    });
+      })
+      .catch(() => this.setState({ sentStatus: 'error' }));
   }
 
   render() {
@@ -61,7 +48,7 @@ class DraftManualForm extends Component {
         <div className="contact-us-inner">
           {(() => {
             switch (this.state.sentStatus) {
-              case "sent":
+              case 'sent':
                 return (
                   <Notice
                     status="Your message has been sent! We'll contact you shortly"
@@ -69,7 +56,7 @@ class DraftManualForm extends Component {
                     noticeContainerClass="notice-container-success"
                   />
                 );
-              case "error":
+              case 'error':
                 return (
                   <Notice
                     status="An error occured, please try again"
@@ -78,7 +65,7 @@ class DraftManualForm extends Component {
                   />
                 );
               default:
-                return "";
+                return '';
             }
           })()}
           <div className="form-container">
@@ -92,32 +79,9 @@ class DraftManualForm extends Component {
                 className="input"
               />
               <input
-                type="text"
-                onChange={this.handleChange}
-                placeholder="First Name"
-                name="firstName"
-                value={this.state.firstName}
-                className="input"
-              />
-              <input
-                type="text"
-                onChange={this.handleChange}
-                placeholder="Last Name"
-                name="lastName"
-                value={this.state.lastName}
-                className="input"
-              />
-              <textarea
-                onChange={this.handleChange}
-                placeholder="Write us a note"
-                name="contactUsNote"
-                value={this.state.contactUsNote}
-                className="message"
-              />
-              <input
                 className="contact-button"
                 type="submit"
-                value="Get Your 2017 Draft Manual"
+                value="For free? Sure!"
               />
             </form>
           </div>

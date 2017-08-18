@@ -1,11 +1,10 @@
-import React from "react";
-import Metadata from "../../components/Metadata";
-import PageHeader from "../../components/PageHeader";
-import PageHeaderSubText from "../../components/PageHeaderSubText";
-import PageIntroText from "../../components/PageIntroText";
-import DraftManualForm from "../../components/DraftManualForm";
+import React from 'react';
+import Metadata from '../../components/Metadata';
+import PageHeader from '../../components/PageHeader';
+import PageHeaderSubText from '../../components/PageHeaderSubText';
+import DraftManualForm from '../../components/DraftManualForm';
 
-const ContactUsContainer = () => {
+const DraftManualContainer = () => {
   return (
     <div className="contact-us-container outer">
       <Metadata
@@ -16,9 +15,8 @@ const ContactUsContainer = () => {
       />
       <div className="header-container-outer">
         <div className="header-container div-container">
-          <PageHeader title="Get Your 2017 Draft Manual" />
-          <PageHeaderSubText text="Fantasy Football 2017 Draft Manual, complete with individual defensive player rankings and suggestions" />
-          <PageIntroText text="Enter your information below and we'll send you a PDF of the 2017 Better Odds of Football draft manual." />
+          <PageHeader title="Your Fantasy Football Weapon." />
+          <PageHeaderSubText text="A comprehensive draft manual, complete with individual defensive player rankings and aggregate statistics" />
         </div>
       </div>
       <DraftManualForm />
@@ -26,4 +24,4 @@ const ContactUsContainer = () => {
   );
 };
 
-export default ContactUsContainer;
+export default DraftManualContainer;

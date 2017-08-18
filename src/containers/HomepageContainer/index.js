@@ -1,12 +1,12 @@
-import React from "react";
-import PageHeader from "../../components/PageHeader";
-import PageHeaderSubText from "../../components/PageHeaderSubText";
-import PageIntroText from "../../components/PageIntroText";
-import GridTile from "../../components/GridTile";
-import Metadata from "../../components/Metadata";
-import DraftManualAd from "../../components/DraftManualAd";
-import { BLOG_POST_ENDPOINT } from "../../constants";
-import { ajax } from "jquery";
+import React from 'react';
+import PageHeader from '../../components/PageHeader';
+import PageHeaderSubText from '../../components/PageHeaderSubText';
+import PageIntroText from '../../components/PageIntroText';
+import GridTile from '../../components/GridTile';
+import Metadata from '../../components/Metadata';
+import DraftManualAd from '../../components/DraftManualAd';
+import { BLOG_POST_ENDPOINT } from '../../constants';
+import { ajax } from 'jquery';
 
 class HomepageContainer extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class HomepageContainer extends React.Component {
       author: null,
       dateCreated: null,
       image: null,
-      slug: null
+      slug: null,
     };
   }
 
@@ -35,7 +35,7 @@ class HomepageContainer extends React.Component {
 
   viewPost(event) {
     event.preventDefault();
-    this.props.history.push("/article");
+    this.props.history.push('/article');
   }
 
   render() {
@@ -58,7 +58,7 @@ class HomepageContainer extends React.Component {
           <div className="gridcard-container div-container">
             {this.state.articles.map(({ fields, sys }, index) => {
               return (
-                <div>
+                <div key={index}>
                   <GridTile
                     title={fields.articleTitle}
                     author={fields.author}
