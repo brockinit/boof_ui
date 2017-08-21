@@ -285,7 +285,8 @@ input[type="submit"] {
 .draft-manual-ad-container {
   text-align: center;
   padding: 2.7rem 2rem 3.7rem 2rem;
-  background: url("./assets/banner-grass.png") center center;
+  background: url("./assets/banner-grass.png") no-repeat center center fixed;
+  background-size: cover;
   box-sizing: border-box;
   margin-top: 3rem; }
   .draft-manual-ad-container h2 {
