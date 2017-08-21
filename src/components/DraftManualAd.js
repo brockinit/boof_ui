@@ -8,7 +8,7 @@ class DraftManualAd extends Component {
     super(props);
     this.state = {
       emailAddress: '',
-      sentStatus: ''
+      sentStatus: '',
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,7 +17,7 @@ class DraftManualAd extends Component {
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
 
@@ -26,18 +26,18 @@ class DraftManualAd extends Component {
     const options = {
       url: DRAFT_MANUAL_ENDPOINT,
       data: JSON.stringify({
-        emailAddress: this.state.emailAddress
+        emailAddress: this.state.emailAddress,
       }),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     };
     $.post(options)
       .then(data => {
         if (data.statusCode === 200) {
           this.setState({
             sentStatus: 'sent',
-            emailAddress: ''
+            emailAddress: '',
           });
         } else {
           this.setState({ sentStatus: 'error' });
@@ -80,7 +80,7 @@ class DraftManualAd extends Component {
               <input
                 type="text"
                 onChange={this.handleChange}
-                placeholder="Email Address to Receive Your Draft Manual"
+                placeholder="Email Address"
                 name="emailAddress"
                 value={this.state.emailAddress}
                 className="input"
