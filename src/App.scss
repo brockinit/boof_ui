@@ -387,30 +387,37 @@ input[type="submit"] {
     color: white;
     line-height: 1.5rem;
   }
-  .button {
-    padding: 1rem;
-    font-size: 1rem;
+}
+
+.draft-manual-form-container {
+  form {
+    display: flex;
+    flex-flow: wrap;
+    width: 75%;
     margin: auto;
-    margin-top: 2rem;
-    width: 10rem;
-    font-family: 'Bitter', serif;
-    display: block;
-    background-color: white;
-    color: #679010;
-    text-align: center;
-    text-decoration: none;
-    border: 2px solid darken(#679010, 10%);
-    box-sizing: border-box;
-    cursor: pointer;
+    margin-top: 3rem;
+  }
 
-    &:hover {
-      background-color: darken(#679010, 5%);
+  input[type="text"] {
+    height: 4rem;
+    flex: 0 0 75%;
+  }
+
+  input[type="submit"] {
+    width: 25%;
+    height: 4rem;
+    flex: 0 0 25%;
+  }
+
+  .draft-manual-ad-container-success,
+  .draft-manual-ad-container-error {
+    width: 100%;
+
+    p {
+      font-family: 'Catamaran', sans-serif;
       color: white;
-      transform: translateY(3px);
-    }
-
-    &:focus {
-      outline: none;
+      line-height: 0.5rem;
+      text-align: left;
     }
   }
 }
