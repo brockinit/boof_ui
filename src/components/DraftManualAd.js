@@ -77,19 +77,21 @@ class DraftManualAd extends Component {
                     return '';
                 }
               })()}
-              <input
-                type="text"
-                onChange={this.handleChange}
-                placeholder="Email Address to Receive Your Draft Manual"
-                name="emailAddress"
-                value={this.state.emailAddress}
-                className="input"
-              />
-              <input
-                className="contact-button"
-                type="submit"
-                value="For Free? Sure!"
-              />
+              <div className="input-container">
+                <input
+                  type="text"
+                  onChange={this.handleChange}
+                  placeholder="Email Address to Receive Your Draft Manual"
+                  name="emailAddress"
+                  value={this.state.emailAddress}
+                  className="input"
+                />
+                <input
+                  className="contact-button"
+                  type="submit"
+                  value="For Free? Sure!"
+                />
+              </div>
             </form>
           </div>
         </div>

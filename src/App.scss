@@ -393,20 +393,38 @@ input[type="submit"] {
   form {
     display: flex;
     flex-flow: wrap;
-    width: 75%;
     margin: auto;
     margin-top: 3rem;
+    @include small {
+      width: 75%;
+    }
+  }
+  .input-container {
+    flex: 0 0 100%;
+    display: flex;
+    flex-flow: wrap;
+    @include small {
+      flex-flow: nowrap;
+    }
   }
 
   input[type="text"] {
     height: 4rem;
-    flex: 0 0 75%;
+    margin: auto;
+    @include small {
+      flex: 0 0 75%;
+    }
   }
 
   input[type="submit"] {
-    width: 25%;
     height: 4rem;
-    flex: 0 0 25%;
+    flex: 0 0 75%;
+    margin: auto;
+    margin-top: 1rem;
+    @include small {
+      flex: 0 0 25%;
+      margin-top: 0rem;
+    }
   }
 
   .draft-manual-ad-container-success,
