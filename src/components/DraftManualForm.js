@@ -8,7 +8,7 @@ class DraftManualForm extends Component {
     super(props);
     this.state = {
       emailAddress: '',
-      sentStatus: '',
+      sentStatus: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,7 +17,7 @@ class DraftManualForm extends Component {
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.value
     });
   }
 
@@ -26,18 +26,22 @@ class DraftManualForm extends Component {
     const options = {
       url: DRAFT_MANUAL_ENDPOINT,
       data: JSON.stringify({
-        emailAddress: this.state.emailAddress,
+        emailAddress: this.state.emailAddress
       }),
       headers: {
-        'Content-Type': 'application/json',
-      },
+        'Content-Type': 'application/json'
+      }
     };
     $.post(options)
       .then(data => {
-        this.setState({
-          sentStatus: 'sent',
-          emailAddress: '',
-        });
+        if (data.statusCode === 200) {
+          this.setState({
+            sentStatus: 'sent',
+            emailAddress: ''
+          });
+        } else {
+          this.setState({ sentStatus: 'error' });
+        }
       })
       .catch(() => this.setState({ sentStatus: 'error' }));
   }

@@ -285,7 +285,8 @@ input[type="submit"] {
 .draft-manual-ad-container {
   text-align: center;
   padding: 2.7rem 2rem 3.7rem 2rem;
-  background: url("./assets/banner-grass.png") center center;
+  background: url("./assets/banner-grass.png") no-repeat center center fixed;
+  background-size: cover;
   box-sizing: border-box;
   margin-top: 3rem; }
   .draft-manual-ad-container h2 {
@@ -297,24 +298,29 @@ input[type="submit"] {
     font-family: 'Bitter', serif;
     color: white;
     line-height: 1.5rem; }
-  .draft-manual-ad-container .button {
-    padding: 1rem;
-    font-size: 1rem;
-    margin: auto;
-    margin-top: 2rem;
-    width: 10rem;
-    font-family: 'Bitter', serif;
-    display: block;
-    background-color: white;
-    color: #679010;
-    text-align: center;
-    text-decoration: none;
-    border: 2px solid #46620b;
-    box-sizing: border-box;
-    cursor: pointer; }
-    .draft-manual-ad-container .button:hover {
-      background-color: #57790d;
-      color: white;
-      transform: translateY(3px); }
-    .draft-manual-ad-container .button:focus {
-      outline: none; }
+
+.draft-manual-form-container form {
+  display: flex;
+  flex-flow: wrap;
+  width: 75%;
+  margin: auto;
+  margin-top: 3rem; }
+
+.draft-manual-form-container input[type="text"] {
+  height: 4rem;
+  flex: 0 0 75%; }
+
+.draft-manual-form-container input[type="submit"] {
+  width: 25%;
+  height: 4rem;
+  flex: 0 0 25%; }
+
+.draft-manual-form-container .draft-manual-ad-container-success,
+.draft-manual-form-container .draft-manual-ad-container-error {
+  width: 100%; }
+  .draft-manual-form-container .draft-manual-ad-container-success p,
+  .draft-manual-form-container .draft-manual-ad-container-error p {
+    font-family: 'Catamaran', sans-serif;
+    color: white;
+    line-height: 0.5rem;
+    text-align: left; }

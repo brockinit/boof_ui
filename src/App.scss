@@ -371,7 +371,8 @@ input[type="submit"] {
 .draft-manual-ad-container {
   text-align: center;
   padding: 2.7rem 2rem 3.7rem 2rem;
-  background: $grass-img center center;
+  background: $grass-img no-repeat center center fixed;
+  background-size: cover;
   box-sizing: border-box;
   margin-top: 3rem;
 
@@ -386,30 +387,55 @@ input[type="submit"] {
     color: white;
     line-height: 1.5rem;
   }
-  .button {
-    padding: 1rem;
-    font-size: 1rem;
+}
+
+.draft-manual-form-container {
+  form {
+    display: flex;
+    flex-flow: wrap;
     margin: auto;
-    margin-top: 2rem;
-    width: 10rem;
-    font-family: 'Bitter', serif;
-    display: block;
-    background-color: white;
-    color: #679010;
-    text-align: center;
-    text-decoration: none;
-    border: 2px solid darken(#679010, 10%);
-    box-sizing: border-box;
-    cursor: pointer;
-
-    &:hover {
-      background-color: darken(#679010, 5%);
-      color: white;
-      transform: translateY(3px);
+    margin-top: 3rem;
+    @include small {
+      width: 75%;
     }
+  }
+  .input-container {
+    flex: 0 0 100%;
+    display: flex;
+    flex-flow: wrap;
+    @include small {
+      flex-flow: nowrap;
+    }
+  }
 
-    &:focus {
-      outline: none;
+  input[type="text"] {
+    height: 4rem;
+    margin: auto;
+    @include small {
+      flex: 0 0 75%;
+    }
+  }
+
+  input[type="submit"] {
+    height: 4rem;
+    flex: 0 0 75%;
+    margin: auto;
+    margin-top: 1rem;
+    @include small {
+      flex: 0 0 25%;
+      margin-top: 0rem;
+    }
+  }
+
+  .draft-manual-ad-container-success,
+  .draft-manual-ad-container-error {
+    width: 100%;
+
+    p {
+      font-family: 'Catamaran', sans-serif;
+      color: white;
+      line-height: 0.5rem;
+      text-align: left;
     }
   }
 }
