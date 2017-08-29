@@ -96,7 +96,7 @@
       background-repeat: no-repeat;
       box-sizing: border-box; }
       .gridtile-container:hover .gridtile-text h2 {
-        font-family: 'Catamaran', sans-serif;
+        font-family: 'Noto Serif';
         visibility: visible;
         color: white;
         font-size: 18px; }
@@ -115,6 +115,24 @@
   width: 100%;
   height: 250px;
   box-sizing: border-box; }
+
+.gridtile-subtext-container {
+  width: 300px;
+  height: 100%;
+  margin-bottom: 2rem; }
+  .gridtile-subtext-container a, .gridtile-subtext-container h2 {
+    font-family: 'Noto Serif';
+    color: black;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-align: center; }
+  .gridtile-subtext-container p {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    color: gray; }
+  .gridtile-subtext-container hr {
+    width: 2rem; }
 
 .article-container {
   margin: 10% 10% 10% 10%; }
