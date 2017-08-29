@@ -2,18 +2,14 @@ import { gql } from 'react-apollo';
 
 export default gql`
   query {
-    allSeasRushes {
-      edges {
-        node {
-          id
-          rushLong
-          playerName
-          ydsPerRec
-          team
-          rushTds
-          rushYards
-          seas
-        }
+    allSeasRushes(first: 10) {
+      nodes {
+        id
+        team
+        seas
+        playerName
+        ydsFromScrm
+        rushAttGame
       }
     }
   }

@@ -11,15 +11,7 @@ class DashboardContainer extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {}
-
   render() {
-    if (!this.props.data.loading) {
-      console.log(
-        'this.props.data.allSeasRushes.edges',
-        this.props.data.allSeasRushes.edges
-      );
-    }
     return (
       <div className="homepage-container">
         <Metadata
