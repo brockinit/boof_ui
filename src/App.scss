@@ -191,8 +191,12 @@ $grass-img: url('./assets/banner-grass.png');
   margin-top: 3rem;
   p {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8rem;
+    @include medium {
     font-size: 1.1rem;
     line-height: 2.3rem;
+    }
   }
   table,
   th,
@@ -211,8 +215,8 @@ $grass-img: url('./assets/banner-grass.png');
     font-weight: 700;
   }
   p > img {
-    max-width: 175%;
-    margin-left: -35%;
+    width: 100%;
+    margin: auto;
   }
 }
 
