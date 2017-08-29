@@ -211,8 +211,8 @@ $grass-img: url('./assets/banner-grass.png');
     font-weight: 700;
   }
   p > img {
-    max-width: 175%;
-    margin-left: -35%;
+    width: 100%;
+    margin: auto;
   }
 }
 
