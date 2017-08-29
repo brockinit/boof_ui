@@ -49,7 +49,6 @@ $grass-img: url('./assets/banner-grass.png');
       text-decoration: none;
       color: black;
       font-size: 1.1rem;
-      font-weight: 700;
     }
   }
 }
@@ -65,9 +64,9 @@ $grass-img: url('./assets/banner-grass.png');
     font-size: 3.8rem;
     line-height: 4rem;
     margin: 0;
-    font-weight: bold;
     font-family: 'Catamaran', 'Helvetica', sans-serif;
     padding-bottom: 1.5rem;
+    font-weight: normal;
     @include medium {
       font-size: 5.5rem;
       line-height: 6rem;
@@ -135,7 +134,7 @@ $grass-img: url('./assets/banner-grass.png');
       background-repeat: no-repeat;
       box-sizing: border-box;
       h2 {
-        font-family: 'Catamaran', sans-serif;
+        font-family: 'Noto Serif';
         visibility: visible;
         color: white;
         font-size: 18px;
@@ -161,6 +160,29 @@ $grass-img: url('./assets/banner-grass.png');
   box-sizing: border-box;
 }
 
+.gridtile-subtext-container {
+  width: 300px;
+  height: 100%;
+  margin-bottom: 2rem;
+  a,h2 {
+    font-family: 'Noto Serif';
+    color: black;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-align: center;
+    font-weight: normal;
+  }
+  p {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    color: gray;
+  }
+  hr {
+    width: 2rem;
+  }
+}
+
 // Article Styles
 
 .article-container {
@@ -176,6 +198,7 @@ $grass-img: url('./assets/banner-grass.png');
     font-family: 'Catamaran', sans-serif;
     font-size: 2.5rem;
     line-height: 2.8rem;
+    font-weight: normal;
     @include medium {
       font-size: 3.2rem;
       line-height: 5rem;
@@ -197,6 +220,9 @@ $grass-img: url('./assets/banner-grass.png');
     font-size: 1.1rem;
     line-height: 2.3rem;
     }
+  }
+  h2 {
+    font-weight: normal;
   }
   table,
   th,
@@ -228,6 +254,7 @@ $grass-img: url('./assets/banner-grass.png');
     font-family: 'Catamaran', sans-serif;
     font-size: 1.5rem;
     line-height: 2rem;
+    font-weight: normal;
   }
   p {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
@@ -268,7 +295,6 @@ $grass-img: url('./assets/banner-grass.png');
     text-transform: uppercase;
     font-family: 'Catamaran', sans-serif;
     font-size: 1rem;
-    font-weight: 700;
   }
 }
 

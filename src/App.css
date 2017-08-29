@@ -23,8 +23,7 @@
         text-transform: uppercase;
         text-decoration: none;
         color: black;
-        font-size: 1.1rem;
-        font-weight: 700; } }
+        font-size: 1.1rem; } }
 
 .outer {
   max-width: 1100px;
@@ -36,9 +35,9 @@
     font-size: 3.8rem;
     line-height: 4rem;
     margin: 0;
-    font-weight: bold;
     font-family: 'Catamaran', 'Helvetica', sans-serif;
-    padding-bottom: 1.5rem; }
+    padding-bottom: 1.5rem;
+    font-weight: normal; }
     @media (min-width: 650px) {
       .header-container h1 {
         font-size: 5.5rem;
@@ -96,7 +95,7 @@
       background-repeat: no-repeat;
       box-sizing: border-box; }
       .gridtile-container:hover .gridtile-text h2 {
-        font-family: 'Catamaran', sans-serif;
+        font-family: 'Noto Serif';
         visibility: visible;
         color: white;
         font-size: 18px; }
@@ -116,6 +115,25 @@
   height: 250px;
   box-sizing: border-box; }
 
+.gridtile-subtext-container {
+  width: 300px;
+  height: 100%;
+  margin-bottom: 2rem; }
+  .gridtile-subtext-container a, .gridtile-subtext-container h2 {
+    font-family: 'Noto Serif';
+    color: black;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-align: center;
+    font-weight: normal; }
+  .gridtile-subtext-container p {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    color: gray; }
+  .gridtile-subtext-container hr {
+    width: 2rem; }
+
 .article-container {
   margin: 10% 10% 10% 10%; }
   @media (min-width: 650px) {
@@ -127,7 +145,8 @@
   .article-header-container h1 {
     font-family: 'Catamaran', sans-serif;
     font-size: 2.5rem;
-    line-height: 2.8rem; }
+    line-height: 2.8rem;
+    font-weight: normal; }
     @media (min-width: 650px) {
       .article-header-container h1 {
         font-size: 3.2rem;
@@ -146,6 +165,8 @@
       .article-body p {
         font-size: 1.1rem;
         line-height: 2.3rem; } }
+  .article-body h2 {
+    font-weight: normal; }
   .article-body table,
   .article-body th,
   .article-body td {
@@ -169,7 +190,8 @@
   .about-us-content-container h2 {
     font-family: 'Catamaran', sans-serif;
     font-size: 1.5rem;
-    line-height: 2rem; }
+    line-height: 2rem;
+    font-weight: normal; }
   .about-us-content-container p {
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
     font-size: 1rem;
@@ -203,8 +225,7 @@
     color: #7d7d7d;
     text-transform: uppercase;
     font-family: 'Catamaran', sans-serif;
-    font-size: 1rem;
-    font-weight: 700; }
+    font-size: 1rem; }
 
 .contact-us-container {
   padding: 0rem 1rem 3rem 1rem; }

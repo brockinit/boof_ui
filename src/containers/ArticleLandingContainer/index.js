@@ -3,6 +3,7 @@ import PageHeader from '../../components/PageHeader';
 import PageHeaderSubText from '../../components/PageHeaderSubText';
 import PageIntroText from '../../components/PageIntroText';
 import GridTile from '../../components/GridTile';
+import GridSubText from '../../components/GridSubText';
 import Metadata from '../../components/Metadata';
 import DraftManualAd from '../../components/DraftManualAd';
 import { BLOG_POST_ENDPOINT } from '../../constants';
@@ -64,6 +65,11 @@ class ArticleLandingContainer extends React.Component {
                     author={fields.author}
                     image={fields.images[0].fields.file.url}
                     date={fields.dateCreated}
+                    slug={fields.slug}
+                  />
+                <GridSubText
+                    title={fields.articleTitle}
+                    author={fields.author}
                     slug={fields.slug}
                   />
                 </div>
