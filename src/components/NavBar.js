@@ -22,6 +22,11 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="menu-item">
+          <Link to="/dashboard">
+            <p>Dashboard</p>
+          </Link>
+        </div>
+        <div className="menu-item">
           <Link to="/about">
             <p>About Us</p>
           </Link>

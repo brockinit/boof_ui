@@ -7,6 +7,7 @@ import AboutUsContainer from './containers/AboutUsContainer';
 import ContactUsContainer from './containers/ContactUsContainer';
 import ArticleContainer from './containers/ArticleContainer';
 import ArticleLandingContainer from './containers/ArticleLandingContainer';
+import DashboardContainer from './containers/DashboardContainer';
 import DraftManualContainer from './containers/DraftManualContainer';
 import Footer from './components/Footer';
 
@@ -20,6 +21,7 @@ const App = () =>
         <Route exact path="/articles" component={ArticleLandingContainer} />
         <Route exact path="/contact" component={ContactUsContainer} />
         <Route exact path="/draftmanual" component={DraftManualContainer} />
+        <Route exact path="/dashboard" component={DashboardContainer} />
         <Route path="/articles/:articleId" component={ArticleContainer} />
         <Footer />
       </div>
