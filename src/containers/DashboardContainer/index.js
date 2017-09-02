@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'react-apollo';
 import Metadata from '../../components/Metadata';
 import DraftManualAd from '../../components/DraftManualAd';
-import { allSeasRushes } from '../../queries';
 
 class DashboardContainer extends React.Component {
   constructor(props) {
@@ -32,4 +30,4 @@ DashboardContainer.propTypes = {
   }).isRequired,
 };
 
-export default graphql(allSeasRushes)(DashboardContainer);
+export default DashboardContainer;
