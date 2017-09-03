@@ -7,11 +7,34 @@ const TextCell = ({ rowIndex, data, col, ...props }) =>
     {data[rowIndex][col]}
   </Cell>;
 
+const HeaderCell = ({ handleSort, col, sortDir }) =>
+  <Cell>
+    <a onClick={e => handleSort(e, col)}>
+      {col} {sortDir ? (sortDir === 'DESC' ? '↓' : '↑') : ''}
+    </a>
+  </Cell>;
+
 class StatTable extends React.Component {
   constructor(props) {
     super(props);
     this.calculateColumns = this.calculateColumns.bind(this);
-    this.state = {};
+    this.onSortChange = this.onSortChange.bind(this);
+    this.state = {
+      stats: [],
+      sortDirection: 'ASC',
+      sortBy: '',
+    };
+  }
+
+  componentWillReceiveProps(nextProps, nextState) {
+    if (this.props.stats !== nextProps.stats) {
+      this.setState({ stats: nextProps.stats });
+    }
+  }
+
+  reverseSortDirection() {
+    let sortDirection = this.state.sortDirection === 'ASC' ? 'DESC' : 'ASC';
+    this.setState({ sortDirection });
   }
 
   calculateColumns(node) {
@@ -21,11 +44,34 @@ class StatTable extends React.Component {
     return Object.keys(node);
   }
 
+  onSortChange(event, colName) {
+    event.preventDefault();
+    const { stats, sortDirection } = this.state;
+    const statNodes = [...this.state.stats.nodes];
+
+    const sortedStats = statNodes.sort((a, b) => {
+      if (sortDirection === 'ASC') {
+        return a[colName] - b[colName];
+      } else {
+        return b[colName] - a[colName];
+      }
+    });
+    this.reverseSortDirection();
+
+    return this.setState({
+      stats: { ...stats, nodes: sortedStats },
+      sortBy: colName,
+    });
+  }
+
   render() {
-    const { data, stats } = this.props;
-    if (data.loading) {
+    const { data: { loading } } = this.props;
+    const { sortDirection, stats, sortBy } = this.state;
+
+    if (loading) {
       return <div>Loading...</div>;
     }
+
     const tableData = stats.nodes;
     return (
       <div className="stat-table">
@@ -39,13 +85,18 @@ class StatTable extends React.Component {
           {...this.props}
         >
           {this.calculateColumns(tableData[0]).map((col, index) => {
+            if (col === '__typename' || col === 'id') {
+              return null;
+            }
             return (
               <Column
                 key={index}
                 header={
-                  <Cell>
-                    {col}
-                  </Cell>
+                  <HeaderCell
+                    handleSort={this.onSortChange}
+                    col={col}
+                    sortDir={sortBy === col ? sortDirection : null}
+                  />
                 }
                 cell={<TextCell data={tableData} col={col} />}
                 fixed={true}
