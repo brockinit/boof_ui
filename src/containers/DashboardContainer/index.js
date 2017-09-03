@@ -1,15 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { graphql } from 'react-apollo';
 import Metadata from '../../components/Metadata';
 import DraftManualAd from '../../components/DraftManualAd';
+import StatTable from '../../components/StatTable';
+import queries from '../../queries';
 
 class DashboardContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.createTableWithData = this.createTableWithData.bind(this);
+    this.state = {
+      dataCategory: 'allSeasRushes',
+    };
+  }
+
+  createTableWithData(query) {
+    return graphql(query, {
+      props: ({ data }) => ({
+        stats: data[this.state.dataCategory],
+        data,
+      }),
+    })(StatTable);
   }
 
   render() {
+    const { dataCategory, statTable } = this.state;
+    const Table = this.createTableWithData(queries[dataCategory]);
     return (
       <div className="homepage-container">
         <Metadata
@@ -18,16 +35,13 @@ class DashboardContainer extends React.Component {
           url="https:www.betterodds.io"
           image="/assets/boof-logo-metadata.png"
         />
-        <DraftManualAd />
+        <Table />
+        {/*<DraftManualAd /> */}
       </div>
     );
   }
 }
 
-DashboardContainer.propTypes = {
-  data: PropTypes.shape({
-    loading: PropTypes.bool.isRequired,
-  }).isRequired,
-};
+DashboardContainer.propTypes = {};
 
 export default DashboardContainer;

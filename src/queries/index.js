@@ -1,3 +1,3 @@
 import allSeasRushes from './allSeasRushes';
 
-export { allSeasRushes };
+export default { allSeasRushes };
