@@ -28,14 +28,14 @@ class StatTable extends React.Component {
     }
     const tableData = stats.nodes;
     return (
-      <div>
+      <div className="stat-table">
         <h2>Table</h2>
         <Table
           rowHeight={50}
           headerHeight={50}
           rowsCount={tableData.length}
-          width={1000}
-          height={500}
+          width={1100}
+          height={750}
           {...this.props}
         >
           {this.calculateColumns(tableData[0]).map((col, index) => {

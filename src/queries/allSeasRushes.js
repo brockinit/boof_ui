@@ -2,7 +2,7 @@ import { gql } from 'react-apollo';
 
 export default gql`
   query {
-    allSeasRushes(first: 10) {
+    allSeasRushes {
       nodes {
         id
         team

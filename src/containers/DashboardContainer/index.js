@@ -25,18 +25,22 @@ class DashboardContainer extends React.Component {
   }
 
   render() {
-    const { dataCategory, statTable } = this.state;
+    const { dataCategory } = this.state;
     const Table = this.createTableWithData(queries[dataCategory]);
     return (
       <div>
-        <Metadata
-          title="Better Odds of Football"
-          description="Giving you better odds through data science, machine learning, and years of football fandom."
-          url="https:www.betterodds.io"
-          image="/assets/boof-logo-metadata.png"
-        />
-        <Table />
-        {/*<DraftManualAd /> */}
+        <div className="dashboard-container">
+          <Metadata
+            title="Better Odds of Football"
+            description="Giving you better odds through data science, machine learning, and years of football fandom."
+            url="https:www.betterodds.io"
+            image="/assets/boof-logo-metadata.png"
+          />
+          <Table />
+        </div>
+        <div>
+          <DraftManualAd />
+        </div>
       </div>
     );
   }
