@@ -28,7 +28,7 @@ class DashboardContainer extends React.Component {
     const { dataCategory, statTable } = this.state;
     const Table = this.createTableWithData(queries[dataCategory]);
     return (
-      <div className="homepage-container">
+      <div>
         <Metadata
           title="Better Odds of Football"
           description="Giving you better odds through data science, machine learning, and years of football fandom."

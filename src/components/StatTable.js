@@ -10,33 +10,50 @@ const TextCell = ({ rowIndex, data, col, ...props }) =>
 class StatTable extends React.Component {
   constructor(props) {
     super(props);
+    this.calculateColumns = this.calculateColumns.bind(this);
     this.state = {};
+  }
+
+  calculateColumns(node) {
+    if (!node || Array.isArray(node)) {
+      return [];
+    }
+    return Object.keys(node);
   }
 
   render() {
     const { data, stats } = this.props;
-    const tableData = !data.loading ? stats.nodes : [];
-    console.log('tableData', tableData);
+    if (data.loading) {
+      return <div>Loading...</div>;
+    }
+    const tableData = stats.nodes;
     return (
       <div>
         <h2>Table</h2>
-        {tableData.length > 0
-          ? <Table
-              rowHeight={50}
-              headerHeight={50}
-              rowsCount={tableData.length}
-              width={1000}
-              height={500}
-              {...this.props}
-            >
+        <Table
+          rowHeight={50}
+          headerHeight={50}
+          rowsCount={tableData.length}
+          width={1000}
+          height={500}
+          {...this.props}
+        >
+          {this.calculateColumns(tableData[0]).map((col, index) => {
+            return (
               <Column
-                header={<Cell>Last Name</Cell>}
-                cell={<TextCell data={tableData} col="playerName" />}
+                key={index}
+                header={
+                  <Cell>
+                    {col}
+                  </Cell>
+                }
+                cell={<TextCell data={tableData} col={col} />}
                 fixed={true}
-                width={100}
+                width={150}
               />
-            </Table>
-          : ''}
+            );
+          })}
+        </Table>
       </div>
     );
   }
