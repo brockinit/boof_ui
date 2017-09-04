@@ -157,8 +157,8 @@
     font-family: 'Noto Serif', 'Helvetica', sans-serif;
     font-weight: 700; }
   .article-body p > img {
-    max-width: 175%;
-    margin-left: -35%; }
+    width: 100%;
+    margin: auto; }
 
 .about-us-content-container {
   padding: 0rem 3rem 3rem; }

@@ -65,7 +65,7 @@ class StatTable extends React.Component {
   }
 
   render() {
-    const { data: { loading } } = this.props;
+    const { data: { loading }, title } = this.props;
     const { sortDirection, stats, sortBy } = this.state;
 
     if (loading) {
@@ -75,7 +75,9 @@ class StatTable extends React.Component {
     const tableData = stats.nodes;
     return (
       <div className="stat-table">
-        <h2>Table</h2>
+        <h2>
+          {title}
+        </h2>
         <Table
           rowHeight={50}
           headerHeight={50}
@@ -99,7 +101,6 @@ class StatTable extends React.Component {
                   />
                 }
                 cell={<TextCell data={tableData} col={col} />}
-                fixed={true}
                 width={150}
               />
             );

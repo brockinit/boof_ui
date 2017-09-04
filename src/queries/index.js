@@ -1,5 +1,6 @@
 import allSeasRushes from './allSeasRushes';
 import allPlayers from './allPlayers';
+import allSeasPasses from './allSeasPasses';
 
 export default {
   allSeasRushes: {
@@ -9,5 +10,9 @@ export default {
   allPlayers: {
     query: allPlayers,
     title: 'Players',
+  },
+  allSeasPasses: {
+    query: allSeasPasses,
+    title: 'Passing (Season)',
   },
 };
