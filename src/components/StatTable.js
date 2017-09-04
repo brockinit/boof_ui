@@ -1,4 +1,5 @@
 import React from 'react';
+import Select from 'react-select';
 import PropTypes from 'prop-types';
 import { Table, Column, Cell } from 'fixed-data-table';
 
@@ -65,7 +66,7 @@ class StatTable extends React.Component {
   }
 
   render() {
-    const { data: { loading }, title } = this.props;
+    const { data: { loading }, title, selectData } = this.props;
     const { sortDirection, stats, sortBy } = this.state;
 
     if (loading) {
@@ -73,11 +74,20 @@ class StatTable extends React.Component {
     }
 
     const tableData = stats.nodes;
+    const selectOptions = [
+      { label: 'Passing (Season)', value: 'allSeasPasses' },
+      { label: 'Rushing (Season)', value: 'allSeasRushes' },
+      { label: 'Players', value: 'allPlayers' },
+    ];
+    console.log('selectData', selectData);
     return (
       <div className="stat-table">
-        <h2>
-          {title}
-        </h2>
+        <Select
+          name="form-field-name"
+          value={title}
+          options={selectOptions}
+          onChange={selectData}
+        />
         <Table
           rowHeight={50}
           headerHeight={50}

@@ -10,6 +10,7 @@ class DashboardContainer extends React.Component {
   constructor(props) {
     super(props);
     this.createTableWithData = this.createTableWithData.bind(this);
+    this.selectData = this.selectData.bind(this);
     this.state = {
       dataCategory: 'allSeasPasses',
     };
@@ -24,6 +25,10 @@ class DashboardContainer extends React.Component {
     })(StatTable);
   }
 
+  selectData({ value }) {
+    return this.setState({ dataCategory: value });
+  }
+
   render() {
     const { dataCategory } = this.state;
     const Table = this.createTableWithData(queries[dataCategory].query);
@@ -36,7 +41,10 @@ class DashboardContainer extends React.Component {
             url="https:www.betterodds.io"
             image="/assets/boof-logo-metadata.png"
           />
-          <Table title={queries[dataCategory].title} />
+          <Table
+            title={queries[dataCategory].title}
+            selectData={this.selectData}
+          />
         </div>
         <div>
           <DraftManualAd />
