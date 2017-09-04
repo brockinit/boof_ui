@@ -1,3 +1,4 @@
 import allSeasRushes from './allSeasRushes';
+import allPlayers from './allPlayers';
 
-export default { allSeasRushes };
+export default { allSeasRushes, allPlayers };
